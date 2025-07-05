@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discshop - Seu Marketplace de Produtos Digitais e Físicos</title>
     <meta name="description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
-    <meta name="keywords" content="Discshop, marketplace, produtos digitais, produtos físicos, comprar, vender, seguro, plataforma, comunidade, gamer, eletrônicos, loja online">
+    <meta name="keywords" content="Discshop, marketplace, produtos digitais, produtos físicos, comprar, vender, seguro, plataforma, comunidade, gamer, eletrônicos, loja online, e-commerce">
     <meta name="author" content="Discshop Team">
     
     <meta property="og:type" content="website">
@@ -21,21 +21,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Estilos CSS incorporados diretamente no HTML */
+        /* Estilos CSS incorporados para facilitar o GitHub Pages */
         :root {
             --primary-color: #0a192f; /* Azul escuro principal (quase preto) */
             --secondary-color: #FF5722; /* Laranja vibrante da Discshop */
             --accent-gradient: linear-gradient(45deg, #FF5722, #E64A19); /* Gradiente de laranja */
-            --background-color: #f8f9fa; /* Cinza claro para o fundo das seções */
-            --light-background: #ffffff; /* Branco para cards e popups */
-            --text-color: #333; /* Cor padrão do texto */
-            --light-text-color: #e6f1ff; /* Cinzento claro, para texto em fundos escuros */
-            --subtle-text-color: #a8b2d1; /* Texto mais sutil */
-            --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); /* Sombra mais escura para profundidade */
-            --border-radius: 16px;
-            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            --background-color: #f0f4f8; /* Cinza claro suave para o fundo das seções */
+            --light-background: #ffffff; /* Branco puro para cards e popups */
+            --text-color: #2c3e50; /* Texto mais escuro e legível */
+            --light-text-color: #ecf0f1; /* Texto claro para fundos escuros */
+            --subtle-text-color: #7f8c8d; /* Texto sutil para descrições menores */
+            --shadow: 0 15px 40px -10px rgba(2, 12, 27, 0.4); /* Sombra mais pronunciada */
+            --border-radius: 12px; /* Arredondamento padrão */
+            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Transições mais suaves */
         }
 
         /* RESET E CONFIGURAÇÕES GLOBAIS */
@@ -43,11 +44,12 @@
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--primary-color); /* Fundo inicial escuro para o preloader */
+            background-color: var(--primary-color);
             color: var(--text-color);
             overflow-x: hidden;
+            line-height: 1.6;
         }
-        body.loaded { background-color: var(--background-color); } /* Fundo claro para o restante do site */
+        body.loaded { background-color: var(--background-color); }
         body.no-scroll { overflow-y: hidden; }
 
         /* PRELOADER */
@@ -64,21 +66,22 @@
             z-index: 9999;
             opacity: 1;
             visibility: visible;
-            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
         .preloader.hidden {
             opacity: 0;
             visibility: hidden;
         }
         .preloader .logo { 
-            font-size: clamp(2.5rem, 8vw, 4rem); 
-            font-weight: 700; 
-            color: var(--secondary-color); /* Laranja vibrante */
-            animation: pulse 1.5s infinite ease-in-out; 
+            font-size: clamp(3rem, 10vw, 5rem); 
+            font-weight: 800; 
+            color: var(--secondary-color);
+            animation: pulse 1.8s infinite ease-in-out; 
+            text-shadow: 0 0 15px rgba(255, 87, 34, 0.5); /* Mais brilho */
         }
-        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(0.95); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.8; } }
 
-        /* CABEÇALHO E NAVEGAÇÃO */
+        /* HEADER & NAVIGATION */
         .hero {
             height: 100vh;
             position: relative;
@@ -88,8 +91,7 @@
             align-items: center;
             text-align: center;
             overflow: hidden;
-            /* Fundo de imagem da Discshop */
-            background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagem mais abstrata para marketplace */
+            background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -102,7 +104,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem para contraste */
+            background-color: rgba(0, 0, 0, 0.6); /* Mais escuro para melhor contraste do texto */
             z-index: 0;
         }
         .hero-content { 
@@ -112,26 +114,26 @@
             margin: 0 auto;
         }
         .hero h1 {
-            font-size: clamp(4rem, 10vw, 6rem); 
+            font-size: clamp(4.5rem, 12vw, 7rem); /* Título maior */
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 0.7rem;
-            color: var(--secondary-color); /* Laranja vibrante */
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
         .hero p {
-            font-size: clamp(1.2rem, 4vw, 1.6rem); 
+            font-size: clamp(1.3rem, 4.5vw, 1.8rem); /* Parágrafo maior */
             font-weight: 400;
             color: var(--light-text-color);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem; /* Mais espaçamento */
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
         .hero .cta-button { 
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
         nav { 
             position: fixed; 
@@ -139,7 +141,7 @@
             left: 0; 
             width: 100%; 
             z-index: 1000; 
-            padding: 20px 50px; 
+            padding: 25px 60px; /* Padding maior */
             display: flex; 
             justify-content: flex-end; 
             align-items: center; 
@@ -147,33 +149,47 @@
             background-color: transparent;
         }
         nav.scrolled { 
-            background-color: rgba(10, 25, 47, 0.95); /* Fundo mais opaco ao rolar */
-            backdrop-filter: blur(8px); /* Blur mais sutil */
+            background-color: rgba(10, 25, 47, 0.98); /* Quase opaco ao rolar */
+            backdrop-filter: blur(12px); /* Blur mais forte */
             box-shadow: var(--shadow); 
-            padding: 15px 50px; 
+            padding: 15px 60px; 
         }
         nav a { 
             color: var(--light-text-color); 
             text-decoration: none; 
-            margin: 0 20px; 
-            font-size: 1rem; 
+            margin: 0 22px; /* Mais espaçamento */
+            font-size: 1.05rem; /* Fonte um pouco maior */
             font-weight: 500; 
             transition: var(--transition); 
+            position: relative; /* Para o underline animado */
+        }
+        nav a::after { /* Underline animado */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease-out;
+        }
+        nav a:hover::after {
+            width: 100%;
         }
         nav.scrolled a {
             color: var(--light-text-color);
         }
         nav a:hover { 
-            color: var(--secondary-color); /* Laranja no hover */
+            color: var(--secondary-color);
         }
         
-        /* ESTILOS GERAIS */
+        /* GENERAL STYLES */
         main { background-color: var(--background-color); position: relative; }
         section {
             display: none;
             opacity: 0;
-            transition: opacity 0.6s ease-in-out;
-            padding: 120px 20px; 
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1); /* Transição mais longa */
+            padding: 100px 20px; /* Ajuste padding */
             max-width: 1200px; 
             margin: 0 auto;
         }
@@ -183,69 +199,81 @@
             opacity: 1;
         }
 
-        .section-title { text-align: center; font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; color: var(--primary-color); }
-        .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto 80px auto; color: #555; }
+        .section-title { text-align: center; font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 800; margin-bottom: 20px; color: var(--primary-color); text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+        .section-subtitle { text-align: center; font-size: clamp(1.1rem, 3vw, 1.4rem); max-width: 800px; margin: 0 auto 60px auto; color: var(--subtle-text-color); line-height: 1.8; }
         
-        /* ANIMAÇÃO RGB E BOTÃO PRINCIPAL */
+        /* CTA BUTTON & RGB GLOW */
         .cta-button {
-            display: inline-block;
-            font-size: 1.1rem;
-            font-weight: 600;
+            display: inline-flex; /* Para alinhar ícone se houver */
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.2rem; /* Maior */
+            font-weight: 700; /* Mais bold */
             color: var(--primary-color);
             background: var(--accent-gradient);
-            padding: 16px 35px;
+            padding: 18px 40px; /* Mais padding */
             border: none;
             border-radius: 50px;
             text-decoration: none;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); /* Sombra alaranjada */
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5); /* Sombra mais suave e espalhada */
             cursor: pointer;
+            position: relative;
+            z-index: 1; /* Para o conteúdo ficar acima do glow */
+            overflow: hidden; /* Para o glow */
         }
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.6); /* Sombra mais intensa */
+            transform: translateY(-5px); /* Mais efeito */
+            box-shadow: 0 12px 35px rgba(255, 87, 34, 0.7); /* Sombra mais dramática */
         }
-        @keyframes rgb-animation {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-        .cta-button.rgb-glow, .plan-card.rgb-glow {
-            position: relative;
-            overflow: hidden;
-            z-index: 0;
-        }
-        .cta-button.rgb-glow::before, .plan-card.rgb-glow::before {
-            content: "";
+        .cta-button.rgb-glow::before {
+            content: '';
             position: absolute;
-            top: 50%; left: 50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: conic-gradient(from 0deg, red, yellow, lime, aqua, blue, magenta, red);
             transform: translate(-50%, -50%);
             opacity: 0;
-            transition: opacity 0.5s ease;
-            animation: rgb-animation 4s linear infinite;
+            filter: blur(20px); /* Mais blur */
+            animation: rgb-animation 6s linear infinite; /* Mais lenta e constante */
             z-index: -1;
         }
-        .cta-button.rgb-glow:hover::before, .plan-card.rgb-glow:hover::before {
+        .cta-button.rgb-glow:hover::before {
             opacity: 1;
         }
-        .plan-card.rgb-glow::before {
-            filter: blur(15px);
+        .cta-button span { /* Se tiver texto dentro do botão com ícone */
+            position: relative;
+            z-index: 2; /* Acima do glow */
         }
-        
-        /* SEÇÃO NOSSA COMUNIDADE */
-        #community .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        #community .philosophy-card { background-color: var(--light-background); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); }
-        #community .philosophy-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        #community .philosophy-card .image-wrapper { height: 220px; overflow: hidden; }
-        #community .philosophy-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-        #community .philosophy-card:hover img { transform: scale(1.05); }
-        #community .philosophy-card .content { padding: 30px; }
-        #community .philosophy-card h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px; }
-        #community .philosophy-card p { font-size: 1rem; line-height: 1.6; color: #666; }
+        .cta-button i { /* Ícones dentro do botão */
+            font-size: 1.3em;
+            margin-right: 5px;
+        }
 
-        /* SEÇÃO COMO FUNCIONA */
+        /* SECTION: NOSSA COMUNIDADE */
+        #community { background-color: var(--light-background); } /* Fundo branco para esta seção */
+        #community .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        #community .philosophy-card { 
+            background-color: var(--light-background); 
+            border-radius: var(--border-radius); 
+            overflow: hidden; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Sombra mais nítida */
+            transition: var(--transition); 
+            border: 1px solid #e0e0e0; /* Borda sutil */
+        }
+        #community .philosophy-card:hover { 
+            transform: translateY(-12px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* Sombra mais profunda */
+        }
+        #community .philosophy-card .image-wrapper { height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: var(--primary-color); }
+        #community .philosophy-card img { width: 80%; height: auto; object-fit: contain; transition: transform 0.4s ease; filter: brightness(0.9); } /* Ícones ficam mais claros sobre o fundo escuro */
+        #community .philosophy-card:hover img { transform: scale(1.05); filter: none; }
+        #community .philosophy-card .content { padding: 25px; text-align: left; }
+        #community .philosophy-card h3 { font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px; font-weight: 700; }
+        #community .philosophy-card p { font-size: 0.95rem; line-height: 1.7; color: var(--text-color); }
+
+        /* SECTION: COMO FUNCIONA */
         #how-it-works .about-us-content {
             display: flex;
             flex-direction: column;
@@ -253,101 +281,103 @@
             text-align: center;
         }
         #how-it-works .about-us-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 25px;
-            max-width: 800px;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--subtle-text-color);
+            margin-bottom: 20px;
+            max-width: 850px;
         }
         #how-it-works .about-us-content .highlight {
-            font-weight: 600;
-            color: var(--secondary-color); /* Laranja para destaque */
+            font-weight: 700;
+            color: var(--secondary-color);
         }
 
-        /* SEÇÃO RECURSOS */
-        #resources .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; perspective: 2000px; }
-        #resources .plan-card { background-color: var(--light-background); border-radius: var(--border-radius); padding: 40px; text-align: center; border: 1px solid #eee; transition: all 0.3s ease; will-change: transform; transform-style: preserve-3d; display: flex; flex-direction: column; }
+        /* SECTION: RECURSOS */
+        #resources { background-color: var(--light-background); } /* Fundo branco */
+        #resources .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        #resources .plan-card { 
+            background-color: var(--light-background); 
+            border-radius: var(--border-radius); 
+            padding: 35px; 
+            text-align: center; 
+            border: 1px solid #e0e0e0; 
+            transition: var(--transition); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            display: flex; 
+            flex-direction: column; 
+        }
+        #resources .plan-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         #resources .plan-card-content { flex-grow: 1; }
-        #resources .plan-card h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 15px; }
+        #resources .plan-card h3 { font-size: 1.7rem; color: var(--primary-color); margin-bottom: 15px; font-weight: 700;}
         #resources .plan-price { 
-            font-size: 2.5rem; 
-            font-weight: 700; 
-            color: var(--primary-color);
+            font-size: 2.8rem; /* Maior */
+            font-weight: 800; /* Mais bold */
+            color: var(--secondary-color); /* Laranja */
             margin-bottom: 25px; 
             display: flex; 
             flex-direction: column;
             align-items: center; 
             justify-content: center; 
         }
-        #resources .plan-price span { font-size: 1rem; font-weight: 400; color: #6c757d; }
+        #resources .plan-price span { font-size: 1.1rem; font-weight: 500; color: var(--subtle-text-color); }
         
         #resources .view-offer-button {
-            background-color: var(--secondary-color);
+            background: var(--accent-gradient);
             color: var(--primary-color);
-            padding: 12px 25px;
+            padding: 14px 30px;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            margin-top: auto; /* Empurra para baixo */
+            box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
             text-decoration: none;
             display: inline-block;
         }
         #resources .view-offer-button:hover {
             background-color: #e0b000;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 87, 34, 0.6);
         }
 
-        #resources .plan-card ul { list-style: none; margin: 30px 0; text-align: left; }
-        #resources .plan-card ul li { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 1rem; }
-        #resources .plan-card ul li svg { width: 24px; height: 24px; fill: var(--secondary-color); }
+        #resources .plan-card ul { list-style: none; margin: 25px 0; text-align: left; }
+        #resources .plan-card ul li { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-color); }
+        #resources .plan-card ul li svg { width: 22px; height: 22px; fill: var(--primary-color); } /* Ícones escuros */
         
         /* SEÇÃO CARREIRAS */
         #careers { background: var(--background-color); }
         #careers .job-offer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         #careers .job-card {
             background-color: var(--light-background);
             border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             padding: 30px;
             display: flex;
             flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: var(--transition);
+            border: 1px solid #e0e0e0;
         }
         #careers .job-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
         #careers .job-card h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
             margin-bottom: 15px;
+            font-weight: 700;
         }
-        #careers .job-card .requirements ul {
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 20px;
-        }
-        #careers .job-card .requirements ul li {
-            margin-bottom: 8px;
-            color: #666;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: flex-start;
-        }
-        #careers .job-card .requirements ul li::before {
-            content: '✓';
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin-right: 8px;
-        }
+        #careers .job-card .requirements { margin-bottom: 20px; }
+        #careers .job-card .requirements h4 { font-size: 1.1rem; color: var(--text-color); margin-bottom: 10px; font-weight: 600; }
+        #careers .job-card .requirements ul { list-style: none; padding-left: 0; }
+        #careers .job-card .requirements ul li { margin-bottom: 8px; color: var(--subtle-text-color); font-size: 0.9rem; display: flex; align-items: flex-start; }
+        #careers .job-card .requirements ul li::before { content: '✓'; color: var(--secondary-color); font-weight: bold; margin-right: 8px; }
         #careers .job-card .salary, #careers .job-card .vacancies {
             font-size: 1.05rem;
             color: var(--primary-color);
@@ -356,15 +386,15 @@
         }
         #careers .job-card .salary span, #careers .job-card .vacancies span {
             font-weight: 400;
-            color: #555;
+            color: var(--subtle-text-color);
         }
         #careers .job-card .vacancies.closed span {
-            font-weight: 600;
+            font-weight: 700;
             color: #dc3545;
         }
         
         /* SEÇÃO CONTATO */
-        #contact { background: var(--light-background); }
+        #contact { background: var(--background-color); }
         #contact .contact-form label {
             display: block; 
             margin-bottom: 8px; 
@@ -373,36 +403,73 @@
         }
         #contact .contact-form input, #contact .contact-form textarea { 
             width: 100%; 
-            padding: 18px; 
-            border-radius: 12px; 
+            padding: 16px; /* Maior */
+            border-radius: 10px; /* Mais arredondado */
             border: 1px solid #ccc; 
             font-family: 'Poppins', sans-serif; 
             font-size: 1rem; 
-            transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+            transition: var(--transition); 
+            background-color: var(--light-background);
+            color: var(--text-color);
         }
         #contact .contact-form input:focus, #contact .contact-form textarea:focus { 
             border-color: var(--secondary-color); 
             outline: none; 
-            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3);
+            box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.25); /* Sombra mais suave */
         }
         
         /* SEÇÃO ADMIN (DEMO) */
         #admin-login-area { background: var(--primary-color); }
-        #admin-login-area .admin-container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; overflow: hidden; max-width: 900px; margin: auto; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3); }
-        #admin-login-area .admin-sidebar { background: rgba(10, 25, 47, 0.7); padding: 40px 30px; width: 250px; display: flex; flex-direction: column; align-items: center; color: var(--light-text-color); }
-        #admin-login-area .admin-sidebar svg { width: 60px; height: 60px; fill: var(--secondary-color); margin-bottom: 20px; }
-        #admin-login-area .admin-sidebar h3 { font-size: 1.5rem; text-align: center; }
+        #admin-login-area .admin-container { 
+            background: rgba(255, 255, 255, 0.15); /* Mais transparente */
+            backdrop-filter: blur(15px); /* Mais blur */
+            border-radius: var(--border-radius); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            display: flex; 
+            overflow: hidden; 
+            max-width: 900px; 
+            margin: auto; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4); /* Sombra mais forte */
+        }
+        #admin-login-area .admin-sidebar { 
+            background: rgba(10, 25, 47, 0.8); /* Fundo mais escuro no sidebar */
+            padding: 40px 30px; 
+            width: 250px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            color: var(--light-text-color); 
+        }
+        #admin-login-area .admin-sidebar svg { width: 65px; height: 65px; fill: var(--secondary-color); margin-bottom: 25px; }
+        #admin-login-area .admin-sidebar h3 { font-size: 1.6rem; text-align: center; font-weight: 700; }
         #admin-login-area .admin-main { padding: 40px; width: 100%; color: var(--light-text-color); }
-        #admin-login-area #admin-login input { width: 100%; padding: 15px; margin-bottom: 20px; font-size: 1rem; border-radius: 8px; border: 1px solid #555; background-color: rgba(0,0,0,0.2); color: white; }
-        #admin-login-area #admin-login button { width: 100%; }
+        #admin-login-area #admin-login input { 
+            width: 100%; 
+            padding: 16px; 
+            margin-bottom: 20px; 
+            font-size: 1rem; 
+            border-radius: 8px; 
+            border: 1px solid rgba(255,255,255,0.3); /* Borda mais suave */
+            background-color: rgba(0,0,0,0.15); /* Fundo um pouco mais visível */
+            color: white; 
+            transition: var(--transition);
+        }
+        #admin-login-area #admin-login input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.25);
+            background-color: rgba(0,0,0,0.3);
+        }
+        #admin-login-area #admin-login button { width: 100%; background: var(--accent-gradient); color: var(--primary-color); font-weight: 700; border-radius: 8px; padding: 14px 20px; transition: var(--transition); }
+        #admin-login-area #admin-login button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 87, 34, 0.4); }
         #admin-login-area #admin-dashboard { display: none; }
-        #admin-login-area #admin-dashboard h3 { margin-bottom: 20px; }
-        #admin-login-area .message-item { background: rgba(255,255,255,0.9); color: #333; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
-        #admin-login-area .message-item:nth-child(even) { background: rgba(255,255,255,0.8); }
-        #admin-login-area .message-item h4 { color: var(--primary-color); margin-bottom: 5px; }
-        #admin-login-area .message-item .timestamp { font-size: 0.8rem; color: #777; text-align: right; margin-top: 10px; }
+        #admin-login-area #admin-dashboard h3 { margin-bottom: 20px; font-size: 1.8rem; font-weight: 700; }
+        #admin-login-area .message-item { background: rgba(255,255,255,0.95); color: var(--text-color); border-radius: 10px; padding: 25px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        #admin-login-area .message-item:nth-child(even) { background: rgba(255,255,255,0.9); }
+        #admin-login-area .message-item h4 { color: var(--primary-color); margin-bottom: 8px; font-size: 1.1rem; }
+        #admin-login-area .message-item p { font-size: 0.95rem; color: #555; }
+        #admin-login-area .message-item .timestamp { font-size: 0.8rem; color: var(--subtle-text-color); text-align: right; margin-top: 10px; }
         
-        footer { background-color: var(--primary-color); color: var(--subtle-text-color); text-align: center; padding: 50px 20px; }
+        footer { background-color: var(--primary-color); color: var(--subtle-text-color); text-align: center; padding: 50px 20px; font-size: 0.9rem; }
 
         /* POPUP STYLES (geral) */
         .popup-overlay {
@@ -411,14 +478,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.75); /* Mais escuro */
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 10000;
             visibility: hidden;
             opacity: 0;
-            transition: visibility 0s, opacity 0.3s ease;
+            transition: visibility 0s, opacity 0.4s ease-in-out;
         }
         .popup-overlay.active {
             visibility: visible;
@@ -426,35 +493,44 @@
         }
         .popup-content {
             background-color: var(--light-background);
-            padding: 30px;
+            padding: 40px; /* Mais padding */
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             text-align: center;
-            max-width: 400px;
+            max-width: 450px; /* Um pouco maior */
             width: 90%;
             position: relative;
+            transform: translateY(20px); /* Animação de entrada */
+            opacity: 0;
+            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        }
+        .popup-overlay.active .popup-content {
+            transform: translateY(0);
+            opacity: 1;
         }
         .popup-content h3 {
             color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.8rem;
+            margin-bottom: 20px; /* Mais espaçamento */
+            font-size: 2.2rem; /* Maior */
+            font-weight: 800;
         }
         .popup-content p {
-            color: #555;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            color: var(--text-color); /* Texto mais escuro */
+            font-size: 1.15rem; /* Maior */
+            margin-bottom: 25px; /* Mais espaçamento */
+            line-height: 1.7;
         }
         .popup-close {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
+            top: 18px; /* Ajustado */
+            right: 18px; /* Ajustado */
+            font-size: 1.8rem; /* Maior */
             cursor: pointer;
             color: #999;
-            transition: color 0.2s ease;
+            transition: var(--transition);
         }
         .popup-close:hover {
-            color: var(--primary-color);
+            color: var(--secondary-color); /* Cor de destaque no hover */
         }
 
         /* RESPONSIVE DESIGN */
@@ -472,17 +548,17 @@
                 padding: 10px 20px;
             }
             .hero h1 {
-                font-size: clamp(3rem, 9vw, 5rem);
+                font-size: clamp(3.5rem, 10vw, 5.5rem);
             }
             .hero p {
-                font-size: clamp(1rem, 3.5vw, 1.4rem);
+                font-size: clamp(1.1rem, 3.8vw, 1.6rem);
             }
             .section-title {
-                font-size: 2.2rem;
+                font-size: clamp(2rem, 5vw, 3rem);
             }
             .section-subtitle {
-                font-size: 1rem;
-                margin-bottom: 50px;
+                font-size: clamp(1rem, 2.8vw, 1.2rem);
+                margin-bottom: 40px;
             }
             #community .philosophy-grid, #resources .plans-grid, #careers .job-offer-grid {
                 grid-template-columns: 1fr;
@@ -499,6 +575,15 @@
             }
             #admin-login-area .admin-main {
                 padding: 20px;
+            }
+            .popup-content {
+                padding: 25px;
+            }
+            .popup-content h3 {
+                font-size: 1.8rem;
+            }
+            .popup-content p {
+                font-size: 1rem;
             }
         }
 
@@ -518,10 +603,20 @@
                 border-bottom: none;
             }
             section {
-                padding: 80px 15px;
+                padding: 60px 15px;
             }
             #contact .contact-form input, #contact .contact-form textarea {
                 padding: 12px;
+            }
+            .hero h1 {
+                font-size: clamp(3rem, 9vw, 4rem);
+            }
+            .hero p {
+                font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 15px 30px;
             }
         }
     </style>
@@ -535,10 +630,11 @@
 <div class="popup-overlay" id="info-popup">
     <div class="popup-content">
         <span class="popup-close">×</span>
-        <h3>Por que a Discshop?</h3>
-        <p>Com mais de **10.000 usuários registrados** e uma plataforma **100% segura**, a Discshop é o seu destino ideal para compra e venda!</p>
-        <p>Desfrute de comunicação direta entre compradores e vendedores, pagamentos via PIX e uma moderação de conteúdo eficaz.</p>
-        <a href="javascript:void(0)" class="cta-button interactive rgb-glow popup-close-button">Entendi!</a> </div>
+        <h3>Bem-vindo à Discshop!</h3>
+        <p>Experimente a segurança e a vibração da nossa comunidade. Com mais de **10.000 usuários registrados** e uma plataforma **100% segura**, sua experiência de compra e venda nunca foi tão boa!</p>
+        <p>Acesse a loja e descubra um mundo de produtos.</p>
+        <a href="javascript:void(0)" class="cta-button interactive rgb-glow popup-close-button">Entendi!</a>
+    </div>
 </div>
 
 
@@ -551,15 +647,15 @@
         <a href="#how-it-works" class="nav-link interactive">Como Funciona</a>
         <a href="#resources" class="nav-link interactive">Recursos</a>
         <a href="#careers" class="nav-link interactive">Carreiras</a>
-        <a href="#contact" class="nav-link interactive">Contato</a>
+        <a href="#terms-of-service" class="nav-link interactive">Termos de Serviço</a> <a href="#contact" class="nav-link interactive">Contato</a>
         <a href="#admin-login-area" class="nav-link interactive">Admin (Demo)</a>
     </nav>
 
     <div class="hero-content">
         <h1 class="main-title">Discshop</h1> 
-        <p>Seu Marketplace Definitivo para Compras e Vendas Seguras. <br>Junte-se à nossa comunidade de mais de 10.000 pessoas!</p>
+        <p>Seu Marketplace Definitivo para Compras e Vendas Seguras. <br>Comunidade vibrante e mais de 10.000 usuários ativos!</p>
         <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" class="cta-button interactive rgb-glow" target="_blank" rel="noopener noreferrer">
-            Acessar a Loja Discshop
+            Acessar a Loja Discshop <i class="fas fa-arrow-right"></i>
         </a>
     </div>
 </header> 
@@ -571,8 +667,8 @@
         <p class="section-subtitle">Na Discshop, construímos um ambiente de confiança e inovação para suas transações.</p>
         <div class="philosophy-grid">
             <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1579547945413-497f69b82bb8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Comunidade digital"></div><div class="content"><h3>Comunidade Ativa</h3><p>Conecte-se com mais de 10.000 usuários. Encontre o que procura ou venda o que não usa mais.</p></div></div>
-            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1601004318040-dc57224fdd94?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cadeado de segurança"></div><div class="content"><h3>100% Segura</h3><p>Sua segurança é nossa prioridade. Transações protegidas e moderação de conteúdo rigorosa.</p></div></div>
-            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Facilidade de uso"></div><div class="content"><h3>Facilidade de Uso</h3><p>Interface intuitiva para listar seus produtos ou encontrar ofertas em segundos.</p></div></div>
+            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://img.freepik.com/fotos-premium/cadeado-de-seguranca-digital-simbolizando-protecao-em-um-cenario-de-rede_795881-32330.jpg" alt="Cadeado de segurança"></div><div class="content"><h3>100% Segura</h3><p>Sua segurança é nossa prioridade. Transações protegidas e moderação de conteúdo rigorosa.</p></div></div>
+            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://img.freepik.com/vetores-premium/conceito-de-ilustracao-isometrica-plana-a-facilidade-de-usar-o-aplicativo-para-smartphone_18660-2459.jpg" alt="Facilidade de uso"></div><div class="content"><h3>Facilidade de Uso</h3><p>Interface intuitiva para listar seus produtos ou encontrar ofertas em segundos.</p></div></div>
         </div>
     </section>
 
@@ -609,11 +705,11 @@
                     <div class="plan-price">
                         0% <span>/ comissão</span>
                     </div>
-                    <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" target="_blank" class="view-offer-button interactive">Comece a Vender</a>
+                    <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" target="_blank" class="view-offer-button interactive">Comece a Vender <i class="fas fa-external-link-alt"></i></a>
                     <ul>
-                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>Publicação Intuitiva</li>
-                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>Gerencie Seus Produtos</li>
-                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.04 12.13l-1.22-1.22c.04-.33.08-.66.08-1s-.04-.67-.08-1l1.22-1.22c.28-.28.36-.67.25-1.02l-.9-2.99c-.16-.54-.68-.88-1.23-.82l-1.43.21c-.43-.34-.9-.63-1.41-.85L15.5 1.5c-.13-.58-.64-1-1.25-1h-4.5c-.61 0-1.12.42-1.25 1L8.23 3.44c-.51.22-.98-.51-1.41.85l-1.43-.21c-.55-.06-1.07.28-1.23.82l-.9 2.99c-.11.35-.03.74.25 1.02l1.22 1.22c-.04.33-.08-.66-.08-1s.04-.67.08-1l-1.22 1.22c-.28.28-.36.67-.25 1.02l.9 2.99c.16.54.68.88 1.23.82l1.43-.21c.43.34.9.63 1.41.85l.27 1.71c.13.58.64 1 1.25 1h4.5c.61 0 1.12-.42 1.25-1l.27-1.71c.51-.22.98-.51 1.41-.85l1.43.21c.55.06 1.07-.28 1.23-.82l.9-2.99c.11-.36.03-.75-.25-1.03zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg>Alcançe 10.000+ Usuários</li>
+                        <li><i class="fas fa-check-circle"></i> Publicação Intuitiva</li>
+                        <li><i class="fas fa-boxes"></i> Gerencie Seus Produtos</li>
+                        <li><i class="fas fa-users"></i> Alcance 10.000+ Usuários</li>
                     </ul>
                 </div>
             </div>
@@ -623,11 +719,11 @@
                     <div class="plan-price">
                         100% <span>/ transparência</span>
                     </div>
-                    <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" target="_blank" class="view-offer-button interactive">Comece a Comprar</a>
+                    <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" target="_blank" class="view-offer-button interactive">Comece a Comprar <i class="fas fa-external-link-alt"></i></a>
                     <ul>
-                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>Comunicação Direta</li>
-                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>Pagamento via PIX</li>
-                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.04 12.13l-1.22-1.22c.04-.33.08-.66.08-1s-.04-.67-.08-1l1.22-1.22c.28-.28.36-.67.25-1.02l-.9-2.99c-.16-.54-.68-.88-1.23-.82l-1.43.21c-.43-.34-.9-.63-1.41-.85L15.5 1.5c-.13-.58-.64-1-1.25-1h-4.5c-.61 0-1.12.42-1.25 1L8.23 3.44c-.51.22-.98-.51-1.41.85l-1.43-.21c-.55-.06-1.07.28-1.23.82l-.9 2.99c-.11.35-.03.74.25 1.02l1.22 1.22c-.04.33-.08-.66-.08-1s.04-.67.08-1l-1.22 1.22c-.28.28-.36.67-.25 1.02l.9 2.99c.16.54.68.88 1.23.82l1.43-.21c.43.34.9.63 1.41.85l.27 1.71c.13.58.64 1 1.25 1h4.5c.61 0 1.12-.42 1.25-1l.27-1.71c.51-.22.98-.51 1.41-.85l1.43.21c.55.06 1.07-.28 1.23-.82l.9-2.99c.11-.36.03-.75-.25-1.03zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg>Moderação de Conteúdo</li>
+                        <li><i class="fas fa-comments"></i> Comunicação Direta</li>
+                        <li><i class="fas fa-handshake"></i> Pagamento via PIX</li>
+                        <li><i class="fas fa-shield-alt"></i> Moderação de Conteúdo</li>
                     </ul>
                 </div>
             </div>
@@ -636,7 +732,8 @@
 
     ---
 
-    <section id="careers"> <h2 class="section-title">Oportunidades de Carreira</h2>
+    <section id="careers">
+        <h2 class="section-title">Oportunidades de Carreira</h2>
         <p class="section-subtitle">
             As nossas vagas encontram-se de momento fechadas.
             <br>
@@ -648,10 +745,10 @@
                 <div class="requirements">
                     <h4>Requisitos:</h4>
                     <ul>
-                        <li>Conhecimento em JavaScript, Node.js e React</li>
-                        <li>Experiência básica com bancos de dados (SQL/NoSQL)</li>
-                        <li>Capacidade de aprendizado rápido e trabalho em equipe</li>
-                        <li>Formação em TI ou áreas correlatas (cursando ou completo)</li>
+                        <li><i class="fas fa-code"></i> Conhecimento em JavaScript, Node.js e React</li>
+                        <li><i class="fas fa-database"></i> Experiência básica com bancos de dados (SQL/NoSQL)</li>
+                        <li><i class="fas fa-user-friends"></i> Capacidade de aprendizado rápido e trabalho em equipe</li>
+                        <li><i class="fas fa-graduation-cap"></i> Formação em TI ou áreas correlatas (cursando ou completo)</li>
                     </ul>
                 </div>
                 <div class="salary">Salário: <span>A combinar</span></div>
@@ -663,15 +760,51 @@
                 <div class="requirements">
                     <h4>Requisitos:</h4>
                     <ul>
-                        <li>Experiência em atendimento ao cliente online</li>
-                        <li>Excelente comunicação escrita e oral</li>
-                        <li>Proatividade na resolução de problemas</li>
-                        <li>Familiaridade com plataformas de marketplace</li>
+                        <li><i class="fas fa-headset"></i> Experiência em atendimento ao cliente online</li>
+                        <li><i class="fas fa-comment-dots"></i> Excelente comunicação escrita e oral</li>
+                        <li><i class="fas fa-lightbulb"></i> Proatividade na resolução de problemas</li>
+                        <li><i class="fas fa-store-alt"></i> Familiaridade com plataformas de marketplace</li>
                     </ul>
                 </div>
                 <div class="salary">Salário: <span>A combinar</span></div>
                 <div class="vacancies closed">Vagas: <span>Fechadas</span></div>
             </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="terms-of-service"> <h2 class="section-title">Termos de Serviço</h2>
+        <p class="section-subtitle">Ao utilizar a Discshop, você concorda com os seguintes termos e condições:</p>
+        <div class="terms-content">
+            <h3>1. Aceitação dos Termos</h3>
+            <p>Ao acessar e usar a plataforma Discshop, você concorda em cumprir estes Termos de Serviço e todas as leis e regulamentos aplicáveis. Se você não concorda com qualquer um destes termos, está proibido de usar ou acessar este site.</p>
+
+            <h3>2. Uso da Plataforma</h3>
+            <ul>
+                <li><strong>Registro:</strong> Para acessar certas funcionalidades, você deve se registrar e criar uma conta. Você é responsável por manter a confidencialidade de sua senha e por todas as atividades que ocorram em sua conta.</li>
+                <li><strong>Conduta do Usuário:</strong> Você concorda em não usar a Discshop para qualquer finalidade ilegal ou proibida por estes Termos. Isso inclui, mas não se limita a, postar conteúdo ilegal, fraudulento, difamatório ou que viole direitos autorais.</li>
+                <li><strong>Moderação:</strong> A Discshop reserva-se o direito de monitorar e remover qualquer conteúdo ou usuário que viole estes termos, a nosso critério exclusivo.</li>
+            </ul>
+
+            <h3>3. Transações de Compra e Venda</h3>
+            <ul>
+                <li><strong>Responsabilidade:</strong> A Discshop é uma plataforma que conecta compradores e vendedores. Não somos responsáveis pela qualidade, segurança ou legalidade dos itens anunciados, nem pela veracidade ou precisão dos anúncios.</li>
+                <li><strong>Pagamentos:</strong> As transações de pagamento (ex: via PIX) são feitas diretamente entre comprador e vendedor. A Discshop não processa nem retém fundos.</li>
+                <li><strong>Disputas:</strong> Em caso de disputas entre compradores e vendedores, a Discshop pode oferecer suporte na mediação, mas não garante a resolução a favor de qualquer parte.</li>
+            </ul>
+
+            <h3>4. Propriedade Intelectual</h3>
+            <p>Todo o conteúdo presente na Discshop (textos, gráficos, logos, etc.), exceto o conteúdo de usuário, é propriedade da Discshop ou de seus licenciadores e protegido por leis de propriedade intelectual.</p>
+
+            <h3>5. Limitação de Responsabilidade</h3>
+            <p>A Discshop não será responsável por quaisquer danos diretos, indiretos, incidentais, especiais ou consequenciais resultantes do uso ou da incapacidade de usar a plataforma.</p>
+
+            <h3>6. Alterações nos Termos</h3>
+            <p>A Discshop reserva-se o direito de revisar estes Termos de Serviço a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual destes Termos.</p>
+
+            <h3>7. Contato</h3>
+            <p>Para dúvidas sobre estes Termos de Serviço, por favor, entre em contato conosco através da seção "Fale Conosco".</p>
         </div>
     </section>
 
@@ -699,11 +832,12 @@
 
     ---
 
-    <section id="admin-login-area"> <h2 class="section-title" style="color: var(--light-text-color);">Área Administrativa (Demo)</h2>
+    <section id="admin-login-area">
+        <h2 class="section-title" style="color: var(--light-text-color);">Área Administrativa (Demo)</h2>
         <p class="section-subtitle" style="color: var(--subtle-text-color);">Acesso simulado para demonstração das funcionalidades de gestão. Não é o painel de administração real da loja Discshop.</p>
         <div class="admin-container">
             <div class="admin-sidebar">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 60px; height: 60px; fill: var(--secondary-color); margin-bottom: 20px;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+                <i class="fas fa-user-shield" style="width: 65px; height: 65px; color: var(--secondary-color); margin-bottom: 25px;"></i>
                 <h3>Login Demo</h3>
             </div>
             <div class="admin-main">
@@ -730,15 +864,16 @@
 </footer>
 
 <script>
+    // JavaScript incorporado diretamente no HTML
     // PRELOADER
     window.addEventListener('load', () => {
         const preloader = document.querySelector('.preloader');
-        document.body.classList.remove('no-scroll'); // Permite o scroll após o preloader
+        document.body.classList.remove('no-scroll'); 
         
-        preloader.classList.add('hidden'); // Inicia a transição de opacidade
+        preloader.classList.add('hidden');
         setTimeout(() => {
-            preloader.style.display = 'none'; // Esconde o preloader após a transição
-            document.body.classList.add('loaded'); // Adiciona classe para estilos pós-carregamento
+            preloader.style.display = 'none';
+            document.body.classList.add('loaded');
             
             const mainTitle = document.querySelector('.main-title');
             const heroParagraph = document.querySelector('.hero p');
@@ -767,7 +902,6 @@
             // Pop-up de informações sobre a Discshop (ativação)
             const infoPopup = document.getElementById('info-popup');
             if (infoPopup) {
-                // Pequeno delay para aparecer após a animação inicial do hero
                 setTimeout(() => {
                     infoPopup.classList.add('active');
                 }, 1500); 
@@ -779,7 +913,7 @@
                 heroSection.classList.add('active');
             }
 
-        }, 800); // Tempo para a transição de opacidade do preloader
+        }, 800);
     });
 
     // Animação da Navbar ao Scroll
@@ -799,8 +933,8 @@
     const popupCloseButtons = infoPopup ? infoPopup.querySelectorAll('.popup-close, .popup-close-button') : [];
 
     popupCloseButtons.forEach(button => {
-        button.addEventListener('click', (e) => { // Adicionado 'e' para prevenir padrão se for link
-            e.preventDefault(); // Previne o comportamento padrão do link, se houver
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); 
             if (infoPopup) {
                 infoPopup.classList.remove('active');
             }
@@ -821,7 +955,7 @@
             return;
         }
 
-        // Credenciais de demonstração (não são as credenciais reais do backend da loja)
+        // Credenciais de demonstração
         if (usernameInput.value === 'demo' && passwordInput.value === 'demo123') {
             loginMessage.style.display = 'none';
             adminLoginDiv.style.display = 'none';
@@ -834,7 +968,7 @@
                 { name: "Clara Lima", email: "clara.l@email.com", message: "Parabéns pela plataforma, muito fácil de usar!", timestamp: "2025-07-03 11:00:00" }
             ];
 
-            messageList.innerHTML = ''; // Limpa mensagens anteriores
+            messageList.innerHTML = ''; 
             if (messages.length > 0) {
                 messages.forEach(msg => {
                     const messageItem = document.createElement('div');
@@ -857,7 +991,7 @@
         }
     }
 
-    // Gerenciamento de Seções Dinâmicas (SPA-like)
+    // Gerenciamento de Seções Dinâmicas (SPA-like) para navegação no site
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('main section, header.hero');
 
@@ -877,11 +1011,10 @@
     // Ajuste para que os links de navegação controlem a exibição das seções
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault(); // Previne o comportamento padrão de âncora
+            e.preventDefault(); 
             const targetId = link.getAttribute('href');
             showSection(targetId);
 
-            // Rola suavemente para a seção
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -893,21 +1026,18 @@
     const contactFormMailto = document.getElementById('contact-form-mailto');
     if (contactFormMailto) {
         contactFormMailto.addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio normal do formulário
+            event.preventDefault(); 
 
             const name = document.getElementById('name-contact').value;
             const email = document.getElementById('email-contact').value;
             const message = document.getElementById('message-contact').value;
 
-            // Construir o link mailto
             const subject = encodeURIComponent(`Mensagem de ${name} via Discshop`);
             const body = encodeURIComponent(`De: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`);
-            const mailtoLink = `mailto:contato@discshop.com?subject=${subject}&body=${body}`; // Email de contato da Discshop
+            const mailtoLink = `mailto:contato@discshop.com?subject=${subject}&body=${body}`; 
 
-            // Abrir o cliente de email
             window.location.href = mailtoLink;
 
-            // Limpar o formulário após o "envio" (abertura do email)
             this.reset();
             alert('Sua mensagem será aberta no seu cliente de e-mail padrão. Por favor, envie-a por lá.');
         });
