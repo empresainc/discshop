@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discshop - Seu Marketplace de Produtos Digitais e Físicos</title>
+    <meta name="description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
+    <meta name="keywords" content="Discshop, marketplace, produtos digitais, produtos físicos, comprar, vender, seguro, plataforma, comunidade, gamer, eletrônicos, loja online">
+    <meta name="author" content="Discshop Team">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://SUA_URL_DO_GITHUB_PAGES_AQUI/">
+    <meta property="og:title" content="Discshop - Seu Marketplace de Produtos Digitais e Físicos">
+    <meta property="og:description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://SUA_URL_DO_GITHUB_PAGES_AQUI/">
+    <meta property="twitter:title" content="Discshop - Seu Marketplace de Produtos Digitais e Físicos">
+    <meta property="twitter:description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos CSS incorporados diretamente no HTML */
+        :root {
+            --primary-color: #0a192f; /* Azul escuro principal (quase preto) */
+            --secondary-color: #FF5722; /* Laranja vibrante da Discshop */
+            --accent-gradient: linear-gradient(45deg, #FF5722, #E64A19); /* Gradiente de laranja */
+            --background-color: #f8f9fa; /* Cinza claro para o fundo das seções */
+            --light-background: #ffffff; /* Branco para cards e popups */
+            --text-color: #333; /* Cor padrão do texto */
+            --light-text-color: #e6f1ff; /* Cinzento claro, para texto em fundos escuros */
+            --subtle-text-color: #a8b2d1; /* Texto mais sutil */
+            --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); /* Sombra mais escura para profundidade */
+            --border-radius: 16px;
+            --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        /* RESET E CONFIGURAÇÕES GLOBAIS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color); /* Fundo inicial escuro para o preloader */
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        body.loaded { background-color: var(--background-color); } /* Fundo claro para o restante do site */
+        body.no-scroll { overflow-y: hidden; }
+
+        /* PRELOADER */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+        }
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader .logo { 
+            font-size: clamp(2.5rem, 8vw, 4rem); 
+            font-weight: 700; 
+            color: var(--secondary-color); /* Laranja vibrante */
+            animation: pulse 1.5s infinite ease-in-out; 
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(0.95); } }
+
+        /* CABEÇALHO E NAVEGAÇÃO */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            /* Fundo de imagem da Discshop */
+            background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagem mais abstrata para marketplace */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: var(--light-text-color);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem para contraste */
+            z-index: 0;
+        }
+        .hero-content { 
+            z-index: 1;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 6rem); 
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 0.7rem;
+            color: var(--secondary-color); /* Laranja vibrante */
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .hero p {
+            font-size: clamp(1.2rem, 4vw, 1.6rem); 
+            font-weight: 400;
+            color: var(--light-text-color);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .hero .cta-button { 
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        nav { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            z-index: 1000; 
+            padding: 20px 50px; 
+            display: flex; 
+            justify-content: flex-end; 
+            align-items: center; 
+            transition: var(--transition); 
+            background-color: transparent;
+        }
+        nav.scrolled { 
+            background-color: rgba(10, 25, 47, 0.95); /* Fundo mais opaco ao rolar */
+            backdrop-filter: blur(8px); /* Blur mais sutil */
+            box-shadow: var(--shadow); 
+            padding: 15px 50px; 
+        }
+        nav a { 
+            color: var(--light-text-color); 
+            text-decoration: none; 
+            margin: 0 20px; 
+            font-size: 1rem; 
+            font-weight: 500; 
+            transition: var(--transition); 
+        }
+        nav.scrolled a {
+            color: var(--light-text-color);
+        }
+        nav a:hover { 
+            color: var(--secondary-color); /* Laranja no hover */
+        }
+        
+        /* ESTILOS GERAIS */
+        main { background-color: var(--background-color); position: relative; }
+        section {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            padding: 120px 20px; 
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+        header.hero.active,
+        section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .section-title { text-align: center; font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; color: var(--primary-color); }
+        .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 700px; margin: 0 auto 80px auto; color: #555; }
+        
+        /* ANIMAÇÃO RGB E BOTÃO PRINCIPAL */
+        .cta-button {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: var(--accent-gradient);
+            padding: 16px 35px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4); /* Sombra alaranjada */
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.6); /* Sombra mais intensa */
+        }
+        @keyframes rgb-animation {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        .cta-button.rgb-glow, .plan-card.rgb-glow {
+            position: relative;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .cta-button.rgb-glow::before, .plan-card.rgb-glow::before {
+            content: "";
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, red, yellow, lime, aqua, blue, magenta, red);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            animation: rgb-animation 4s linear infinite;
+            z-index: -1;
+        }
+        .cta-button.rgb-glow:hover::before, .plan-card.rgb-glow:hover::before {
+            opacity: 1;
+        }
+        .plan-card.rgb-glow::before {
+            filter: blur(15px);
+        }
+        
+        /* SEÇÃO NOSSA COMUNIDADE */
+        #community .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        #community .philosophy-card { background-color: var(--light-background); border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); }
+        #community .philosophy-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        #community .philosophy-card .image-wrapper { height: 220px; overflow: hidden; }
+        #community .philosophy-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        #community .philosophy-card:hover img { transform: scale(1.05); }
+        #community .philosophy-card .content { padding: 30px; }
+        #community .philosophy-card h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 10px; }
+        #community .philosophy-card p { font-size: 1rem; line-height: 1.6; color: #666; }
+
+        /* SEÇÃO COMO FUNCIONA */
+        #how-it-works .about-us-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        #how-it-works .about-us-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+        #how-it-works .about-us-content .highlight {
+            font-weight: 600;
+            color: var(--secondary-color); /* Laranja para destaque */
+        }
+
+        /* SEÇÃO RECURSOS */
+        #resources .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; perspective: 2000px; }
+        #resources .plan-card { background-color: var(--light-background); border-radius: var(--border-radius); padding: 40px; text-align: center; border: 1px solid #eee; transition: all 0.3s ease; will-change: transform; transform-style: preserve-3d; display: flex; flex-direction: column; }
+        #resources .plan-card-content { flex-grow: 1; }
+        #resources .plan-card h3 { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 15px; }
+        #resources .plan-price { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            color: var(--primary-color);
+            margin-bottom: 25px; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+        }
+        #resources .plan-price span { font-size: 1rem; font-weight: 400; color: #6c757d; }
+        
+        #resources .view-offer-button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+        #resources .view-offer-button:hover {
+            background-color: #e0b000;
+            transform: translateY(-2px);
+        }
+
+        #resources .plan-card ul { list-style: none; margin: 30px 0; text-align: left; }
+        #resources .plan-card ul li { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 1rem; }
+        #resources .plan-card ul li svg { width: 24px; height: 24px; fill: var(--secondary-color); }
+        
+        /* SEÇÃO CARREIRAS */
+        #careers { background: var(--background-color); }
+        #careers .job-offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        #careers .job-card {
+            background-color: var(--light-background);
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #careers .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        #careers .job-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        #careers .job-card .requirements ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+        #careers .job-card .requirements ul li {
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        #careers .job-card .requirements ul li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        #careers .job-card .salary, #careers .job-card .vacancies {
+            font-size: 1.05rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        #careers .job-card .salary span, #careers .job-card .vacancies span {
+            font-weight: 400;
+            color: #555;
+        }
+        #careers .job-card .vacancies.closed span {
+            font-weight: 600;
+            color: #dc3545;
+        }
+        
+        /* SEÇÃO CONTATO */
+        #contact { background: var(--light-background); }
+        #contact .contact-form label {
+            display: block; 
+            margin-bottom: 8px; 
+            color: var(--primary-color); 
+            font-weight: 500;
+        }
+        #contact .contact-form input, #contact .contact-form textarea { 
+            width: 100%; 
+            padding: 18px; 
+            border-radius: 12px; 
+            border: 1px solid #ccc; 
+            font-family: 'Poppins', sans-serif; 
+            font-size: 1rem; 
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+        }
+        #contact .contact-form input:focus, #contact .contact-form textarea:focus { 
+            border-color: var(--secondary-color); 
+            outline: none; 
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3);
+        }
+        
+        /* SEÇÃO ADMIN (DEMO) */
+        #admin-login-area { background: var(--primary-color); }
+        #admin-login-area .admin-container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: var(--border-radius); border: 1px solid rgba(255, 255, 255, 0.1); display: flex; overflow: hidden; max-width: 900px; margin: auto; box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3); }
+        #admin-login-area .admin-sidebar { background: rgba(10, 25, 47, 0.7); padding: 40px 30px; width: 250px; display: flex; flex-direction: column; align-items: center; color: var(--light-text-color); }
+        #admin-login-area .admin-sidebar svg { width: 60px; height: 60px; fill: var(--secondary-color); margin-bottom: 20px; }
+        #admin-login-area .admin-sidebar h3 { font-size: 1.5rem; text-align: center; }
+        #admin-login-area .admin-main { padding: 40px; width: 100%; color: var(--light-text-color); }
+        #admin-login-area #admin-login input { width: 100%; padding: 15px; margin-bottom: 20px; font-size: 1rem; border-radius: 8px; border: 1px solid #555; background-color: rgba(0,0,0,0.2); color: white; }
+        #admin-login-area #admin-login button { width: 100%; }
+        #admin-login-area #admin-dashboard { display: none; }
+        #admin-login-area #admin-dashboard h3 { margin-bottom: 20px; }
+        #admin-login-area .message-item { background: rgba(255,255,255,0.9); color: #333; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        #admin-login-area .message-item:nth-child(even) { background: rgba(255,255,255,0.8); }
+        #admin-login-area .message-item h4 { color: var(--primary-color); margin-bottom: 5px; }
+        #admin-login-area .message-item .timestamp { font-size: 0.8rem; color: #777; text-align: right; margin-top: 10px; }
+        
+        footer { background-color: var(--primary-color); color: var(--subtle-text-color); text-align: center; padding: 50px 20px; }
+
+        /* POPUP STYLES (geral) */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease;
+        }
+        .popup-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .popup-content {
+            background-color: var(--light-background);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+        .popup-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        .popup-content p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.2s ease;
+        }
+        .popup-close:hover {
+            color: var(--primary-color);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav a {
+                margin: 5px 10px;
+                font-size: 0.9rem;
+            }
+            nav.scrolled {
+                padding: 10px 20px;
+            }
+            .hero h1 {
+                font-size: clamp(3rem, 9vw, 5rem);
+            }
+            .hero p {
+                font-size: clamp(1rem, 3.5vw, 1.4rem);
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 50px;
+            }
+            #community .philosophy-grid, #resources .plans-grid, #careers .job-offer-grid {
+                grid-template-columns: 1fr;
+            }
+            #community .philosophy-card, #resources .plan-card, #careers .job-card {
+                margin-bottom: 20px;
+            }
+            #admin-login-area .admin-container {
+                flex-direction: column;
+            }
+            #admin-login-area .admin-sidebar {
+                width: 100%;
+                padding: 20px;
+            }
+            #admin-login-area .admin-main {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px;
+            }
+            nav a {
+                margin: 5px 0;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 5px;
+            }
+            nav a:last-child {
+                border-bottom: none;
+            }
+            section {
+                padding: 80px 15px;
+            }
+            #contact .contact-form input, #contact .contact-form textarea {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+<div class="preloader">
+    <div class="logo">Discshop</div>
+</div>
+
+<div class="popup-overlay" id="info-popup">
+    <div class="popup-content">
+        <span class="popup-close">×</span>
+        <h3>Por que a Discshop?</h3>
+        <p>Com mais de **10.000 usuários registrados** e uma plataforma **100% segura**, a Discshop é o seu destino ideal para compra e venda!</p>
+        <p>Desfrute de comunicação direta entre compradores e vendedores, pagamentos via PIX e uma moderação de conteúdo eficaz.</p>
+        <a href="javascript:void(0)" class="cta-button interactive rgb-glow popup-close-button">Entendi!</a> </div>
+</div>
+
+
+<header class="hero" id="hero"> 
+    <div class="hero-overlay"></div>
+    
+    <nav id="navbar">
+        <a href="#hero" class="nav-link interactive">Início</a> 
+        <a href="#community" class="nav-link interactive">Nossa Comunidade</a>
+        <a href="#how-it-works" class="nav-link interactive">Como Funciona</a>
+        <a href="#resources" class="nav-link interactive">Recursos</a>
+        <a href="#careers" class="nav-link interactive">Carreiras</a>
+        <a href="#contact" class="nav-link interactive">Contato</a>
+        <a href="#admin-login-area" class="nav-link interactive">Admin (Demo)</a>
+    </nav>
+
+    <div class="hero-content">
+        <h1 class="main-title">Discshop</h1> 
+        <p>Seu Marketplace Definitivo para Compras e Vendas Seguras. <br>Junte-se à nossa comunidade de mais de 10.000 pessoas!</p>
+        <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" class="cta-button interactive rgb-glow" target="_blank" rel="noopener noreferrer">
+            Acessar a Loja Discshop
+        </a>
+    </div>
+</header> 
+
+<main id="main-content">
+
+    <section id="community">
+        <h2 class="section-title">Nossa Comunidade e Segurança</h2>
+        <p class="section-subtitle">Na Discshop, construímos um ambiente de confiança e inovação para suas transações.</p>
+        <div class="philosophy-grid">
+            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1579547945413-497f69b82bb8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Comunidade digital"></div><div class="content"><h3>Comunidade Ativa</h3><p>Conecte-se com mais de 10.000 usuários. Encontre o que procura ou venda o que não usa mais.</p></div></div>
+            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1601004318040-dc57224fdd94?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cadeado de segurança"></div><div class="content"><h3>100% Segura</h3><p>Sua segurança é nossa prioridade. Transações protegidas e moderação de conteúdo rigorosa.</p></div></div>
+            <div class="philosophy-card interactive"><div class="image-wrapper"><img src="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Facilidade de uso"></div><div class="content"><h3>Facilidade de Uso</h3><p>Interface intuitiva para listar seus produtos ou encontrar ofertas em segundos.</p></div></div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="how-it-works">
+        <h2 class="section-title">Como a Discshop Funciona?</h2>
+        <p class="section-subtitle">
+            Na Discshop, conectar compradores e vendedores é simples e direto.
+            Nosso sistema foi pensado para garantir transparência e eficiência em cada etapa.
+        </p>
+        <div class="about-us-content">
+            <p>
+                Como **Vendedor**, você pode facilmente <span class="highlight">criar anúncios detalhados</span> para seus produtos, sejam eles digitais ou físicos. Basta descrever o item, adicionar fotos e definir seu preço. Nosso sistema de **Whitelist de Vendedores** garante que, uma vez aprovado, seus anúncios futuros sejam publicados instantaneamente, alcançando milhares de compradores.
+            </p>
+            <p>
+                Como **Comprador**, você tem acesso a <span class="highlight">uma vasta gama de produtos</span>. Encontre o que precisa, converse diretamente com o vendedor através do nosso **chat em tempo real** e finalize suas compras de forma segura utilizando o **PIX**.
+            </p>
+            <p>
+                A Discshop monitora ativamente o conteúdo para garantir um ambiente seguro para todos. Nosso foco é em transações fluidas e uma comunidade vibrante.
+            </p>
+        </div>
+    </section>
+
+    ---
+
+    <section id="resources">
+        <h2 class="section-title">Nossos Recursos Principais</h2>
+        <p class="section-subtitle">Descubra as vantagens que a Discshop oferece para otimizar sua experiência de compra e venda.</p>
+        <div class="plans-grid">
+            <div class="plan-card interactive rgb-glow">
+                <div class="plan-card-content">
+                    <h3>Anúncios Rápidos e Fáceis</h3>
+                    <div class="plan-price">
+                        0% <span>/ comissão</span>
+                    </div>
+                    <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" target="_blank" class="view-offer-button interactive">Comece a Vender</a>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>Publicação Intuitiva</li>
+                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>Gerencie Seus Produtos</li>
+                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.04 12.13l-1.22-1.22c.04-.33.08-.66.08-1s-.04-.67-.08-1l1.22-1.22c.28-.28.36-.67.25-1.02l-.9-2.99c-.16-.54-.68-.88-1.23-.82l-1.43.21c-.43-.34-.9-.63-1.41-.85L15.5 1.5c-.13-.58-.64-1-1.25-1h-4.5c-.61 0-1.12.42-1.25 1L8.23 3.44c-.51.22-.98-.51-1.41.85l-1.43-.21c-.55-.06-1.07.28-1.23.82l-.9 2.99c-.11.35-.03.74.25 1.02l1.22 1.22c-.04.33-.08-.66-.08-1s.04-.67.08-1l-1.22 1.22c-.28.28-.36.67-.25 1.02l.9 2.99c.16.54.68.88 1.23.82l1.43-.21c.43.34.9.63 1.41.85l.27 1.71c.13.58.64 1 1.25 1h4.5c.61 0 1.12-.42 1.25-1l.27-1.71c.51-.22.98-.51 1.41-.85l1.43.21c.55.06 1.07-.28 1.23-.82l.9-2.99c.11-.36.03-.75-.25-1.03zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg>Alcançe 10.000+ Usuários</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-card interactive rgb-glow">
+                <div class="plan-card-content">
+                    <h3>Chat em Tempo Real e PIX</h3>
+                    <div class="plan-price">
+                        100% <span>/ transparência</span>
+                    </div>
+                    <a href="https://eyed-relation-azerbaijan-concerning.trycloudflare.com/" target="_blank" class="view-offer-button interactive">Comece a Comprar</a>
+                    <ul>
+                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>Comunicação Direta</li>
+                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path></svg>Pagamento via PIX</li>
+                        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.04 12.13l-1.22-1.22c.04-.33.08-.66.08-1s-.04-.67-.08-1l1.22-1.22c.28-.28.36-.67.25-1.02l-.9-2.99c-.16-.54-.68-.88-1.23-.82l-1.43.21c-.43-.34-.9-.63-1.41-.85L15.5 1.5c-.13-.58-.64-1-1.25-1h-4.5c-.61 0-1.12.42-1.25 1L8.23 3.44c-.51.22-.98-.51-1.41.85l-1.43-.21c-.55-.06-1.07.28-1.23.82l-.9 2.99c-.11.35-.03.74.25 1.02l1.22 1.22c-.04.33-.08-.66-.08-1s.04-.67.08-1l-1.22 1.22c-.28.28-.36.67-.25 1.02l.9 2.99c.16.54.68.88 1.23.82l1.43-.21c.43.34.9.63 1.41.85l.27 1.71c.13.58.64 1 1.25 1h4.5c.61 0 1.12-.42 1.25-1l.27-1.71c.51-.22.98-.51 1.41-.85l1.43.21c.55.06 1.07-.28 1.23-.82l.9-2.99c.11-.36.03-.75-.25-1.03zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg>Moderação de Conteúdo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="careers"> <h2 class="section-title">Oportunidades de Carreira</h2>
+        <p class="section-subtitle">
+            As nossas vagas encontram-se de momento fechadas.
+            <br>
+            Agradecemos o seu interesse e convidamo-lo a visitar esta página futuramente para novas oportunidades.
+        </p>
+        <div class="job-offer-grid">
+            <div class="job-card interactive">
+                <h3>Desenvolvedor Full-Stack Júnior</h3>
+                <div class="requirements">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li>Conhecimento em JavaScript, Node.js e React</li>
+                        <li>Experiência básica com bancos de dados (SQL/NoSQL)</li>
+                        <li>Capacidade de aprendizado rápido e trabalho em equipe</li>
+                        <li>Formação em TI ou áreas correlatas (cursando ou completo)</li>
+                    </ul>
+                </div>
+                <div class="salary">Salário: <span>A combinar</span></div>
+                <div class="vacancies closed">Vagas: <span>Fechadas</span></div>
+            </div>
+
+            <div class="job-card interactive">
+                <h3>Especialista em Suporte ao Cliente</h3>
+                <div class="requirements">
+                    <h4>Requisitos:</h4>
+                    <ul>
+                        <li>Experiência em atendimento ao cliente online</li>
+                        <li>Excelente comunicação escrita e oral</li>
+                        <li>Proatividade na resolução de problemas</li>
+                        <li>Familiaridade com plataformas de marketplace</li>
+                    </ul>
+                </div>
+                <div class="salary">Salário: <span>A combinar</span></div>
+                <div class="vacancies closed">Vagas: <span>Fechadas</span></div>
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <section id="contact">
+        <h2 class="section-title">Fale Conosco</h2>
+        <p class="section-subtitle">Tem alguma dúvida ou sugestão? Envie-nos uma mensagem!</p>
+        <form class="contact-form" id="contact-form-mailto">
+            <div style="margin-bottom: 20px;">
+                <label for="name-contact">Seu Nome</label>
+                <input type="text" id="name-contact" name="name" required placeholder="Nome Completo">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="email-contact">Seu Email</label>
+                <input type="email" id="email-contact" name="email" required placeholder="seu.email@example.com">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="message-contact">Sua Mensagem</label>
+                <textarea id="message-contact" name="message" rows="6" required placeholder="Escreva sua mensagem aqui..."></textarea>
+            </div>
+            <button type="submit" class="cta-button rgb-glow" style="width: auto; padding: 15px 30px; display: block; margin: 0 auto;">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    ---
+
+    <section id="admin-login-area"> <h2 class="section-title" style="color: var(--light-text-color);">Área Administrativa (Demo)</h2>
+        <p class="section-subtitle" style="color: var(--subtle-text-color);">Acesso simulado para demonstração das funcionalidades de gestão. Não é o painel de administração real da loja Discshop.</p>
+        <div class="admin-container">
+            <div class="admin-sidebar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 60px; height: 60px; fill: var(--secondary-color); margin-bottom: 20px;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+                <h3>Login Demo</h3>
+            </div>
+            <div class="admin-main">
+                <div id="admin-login">
+                    <input type="text" id="admin-username" placeholder="Usuário (demo)">
+                    <input type="password" id="admin-password" placeholder="Senha (demo123)">
+                    <button class="cta-button" onclick="loginAdminDemo()">Entrar</button>
+                    <p id="login-message" style="color: red; margin-top: 10px; display: none;">Usuário ou senha inválidos.</p>
+                </div>
+                <div id="admin-dashboard">
+                    <h3 style="color: var(--secondary-color);">Mensagens Recebidas (Simuladas)</h3>
+                    <div id="message-list">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 Discshop. Todos os direitos reservados.</p>
+    <p>Construindo um marketplace seguro e vibrante para você.</p>
+</footer>
+
+<script>
+    // PRELOADER
+    window.addEventListener('load', () => {
+        const preloader = document.querySelector('.preloader');
+        document.body.classList.remove('no-scroll'); // Permite o scroll após o preloader
+        
+        preloader.classList.add('hidden'); // Inicia a transição de opacidade
+        setTimeout(() => {
+            preloader.style.display = 'none'; // Esconde o preloader após a transição
+            document.body.classList.add('loaded'); // Adiciona classe para estilos pós-carregamento
+            
+            const mainTitle = document.querySelector('.main-title');
+            const heroParagraph = document.querySelector('.hero p');
+            const ctaButton = document.querySelector('.hero .cta-button');
+
+            // Animação manual para elementos do hero
+            if (mainTitle) {
+                mainTitle.style.opacity = 1;
+                mainTitle.style.transform = 'translateY(0)';
+                mainTitle.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+                mainTitle.style.transitionDelay = '0.5s';
+            }
+            if (heroParagraph) {
+                heroParagraph.style.opacity = 1;
+                heroParagraph.style.transform = 'translateY(0)';
+                heroParagraph.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+                heroParagraph.style.transitionDelay = '0.7s';
+            }
+            if (ctaButton) {
+                ctaButton.style.opacity = 1;
+                ctaButton.style.transform = 'translateY(0)';
+                ctaButton.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
+                ctaButton.style.transitionDelay = '0.9s';
+            }
+
+            // Pop-up de informações sobre a Discshop (ativação)
+            const infoPopup = document.getElementById('info-popup');
+            if (infoPopup) {
+                // Pequeno delay para aparecer após a animação inicial do hero
+                setTimeout(() => {
+                    infoPopup.classList.add('active');
+                }, 1500); 
+            }
+
+            // Mostrar a seção hero por padrão
+            const heroSection = document.getElementById('hero');
+            if (heroSection) {
+                heroSection.classList.add('active');
+            }
+
+        }, 800); // Tempo para a transição de opacidade do preloader
+    });
+
+    // Animação da Navbar ao Scroll
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+    });
+
+    // POPUP LOGIC para o pop-up de informações da Discshop
+    const infoPopup = document.getElementById('info-popup');
+    const popupCloseButtons = infoPopup ? infoPopup.querySelectorAll('.popup-close, .popup-close-button') : [];
+
+    popupCloseButtons.forEach(button => {
+        button.addEventListener('click', (e) => { // Adicionado 'e' para prevenir padrão se for link
+            e.preventDefault(); // Previne o comportamento padrão do link, se houver
+            if (infoPopup) {
+                infoPopup.classList.remove('active');
+            }
+        });
+    });
+
+    // ADMIN LOGIN (DEMO)
+    function loginAdminDemo() {
+        const usernameInput = document.getElementById('admin-username');
+        const passwordInput = document.getElementById('admin-password');
+        const loginMessage = document.getElementById('login-message');
+        const adminLoginDiv = document.getElementById('admin-login');
+        const adminDashboardDiv = document.getElementById('admin-dashboard');
+        const messageList = document.getElementById('message-list');
+
+        if (!usernameInput || !passwordInput || !loginMessage || !adminLoginDiv || !adminDashboardDiv || !messageList) {
+            console.error("Elementos do admin não encontrados.");
+            return;
+        }
+
+        // Credenciais de demonstração (não são as credenciais reais do backend da loja)
+        if (usernameInput.value === 'demo' && passwordInput.value === 'demo123') {
+            loginMessage.style.display = 'none';
+            adminLoginDiv.style.display = 'none';
+            adminDashboardDiv.style.display = 'block';
+
+            // Simula o carregamento de mensagens de contato
+            const messages = [
+                { name: "Ana Paula", email: "ana.paula@email.com", message: "Gostaria de saber como whitelistar meu vendedor no seu marketplace.", timestamp: "2025-07-01 10:15:00" },
+                { name: "Bruno Costa", email: "bruno.c@email.com", message: "Tive um problema ao listar um produto. Poderiam ajudar?", timestamp: "2025-07-02 14:30:00" },
+                { name: "Clara Lima", email: "clara.l@email.com", message: "Parabéns pela plataforma, muito fácil de usar!", timestamp: "2025-07-03 11:00:00" }
+            ];
+
+            messageList.innerHTML = ''; // Limpa mensagens anteriores
+            if (messages.length > 0) {
+                messages.forEach(msg => {
+                    const messageItem = document.createElement('div');
+                    messageItem.classList.add('message-item');
+                    messageItem.innerHTML = `
+                        <h4>De: ${msg.name} (${msg.email})</h4>
+                        <p>${msg.message}</p>
+                        <div class="timestamp">${msg.timestamp}</div>
+                    `;
+                    messageList.appendChild(messageItem);
+                });
+            } else {
+                messageList.innerHTML = '<p>Nenhuma mensagem recebida.</p>';
+            }
+
+
+        } else {
+            loginMessage.style.display = 'block';
+            loginMessage.textContent = 'Usuário ou senha de DEMONSTRAÇÃO inválidos.';
+        }
+    }
+
+    // Gerenciamento de Seções Dinâmicas (SPA-like)
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section, header.hero');
+
+    function showSection(targetId) {
+        sections.forEach(section => {
+            const sectionId = section.id;
+            const targetIdClean = targetId.startsWith('#') ? targetId.substring(1) : targetId;
+
+            if (sectionId === targetIdClean) { 
+                section.classList.add('active');
+            } else {
+                section.classList.remove('active');
+            }
+        });
+    }
+
+    // Ajuste para que os links de navegação controlem a exibição das seções
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Previne o comportamento padrão de âncora
+            const targetId = link.getAttribute('href');
+            showSection(targetId);
+
+            // Rola suavemente para a seção
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Lógica para o formulário de contato com mailto
+    const contactFormMailto = document.getElementById('contact-form-mailto');
+    if (contactFormMailto) {
+        contactFormMailto.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio normal do formulário
+
+            const name = document.getElementById('name-contact').value;
+            const email = document.getElementById('email-contact').value;
+            const message = document.getElementById('message-contact').value;
+
+            // Construir o link mailto
+            const subject = encodeURIComponent(`Mensagem de ${name} via Discshop`);
+            const body = encodeURIComponent(`De: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`);
+            const mailtoLink = `mailto:contato@discshop.com?subject=${subject}&body=${body}`; // Email de contato da Discshop
+
+            // Abrir o cliente de email
+            window.location.href = mailtoLink;
+
+            // Limpar o formulário após o "envio" (abertura do email)
+            this.reset();
+            alert('Sua mensagem será aberta no seu cliente de e-mail padrão. Por favor, envie-a por lá.');
+        });
+    }
+
+    // Ativa a primeira seção (hero) no carregamento
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.getElementById('hero');
+        if (heroSection && !heroSection.classList.contains('active')) {
+            showSection('#hero');
+        }
+    });
+
+</script>
+</body>
+</html>
