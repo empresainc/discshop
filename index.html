@@ -333,6 +333,14 @@
             margin-bottom: 20px;
             font-size: 2.2rem;
             font-weight: 800;
+            display: flex; /* Para alinhar o ícone com o texto */
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+        }
+        .popup-content h3 i {
+            color: var(--secondary-color); /* Cor do ícone */
+            font-size: 1.8rem; /* Tamanho do ícone */
         }
         .popup-content p {
             color: var(--text-color);
@@ -431,8 +439,9 @@
 <div class="popup-overlay" id="info-popup">
     <div class="popup-content">
         <span class="popup-close">×</span>
-        <h3>Aviso Importante!</h3>
-        <p>Tivemos problemas que a cada hora o servidor estava a cair. A equipa já resolveu a situação e esperamos não cair novamente. Pedimos desculpas pelo erro causado.</p>
+        <h3><i class="fas fa-exclamation-triangle"></i> Atenção, Comunidade Discshop!</h3>
+        <p>Recentemente, enfrentamos **instabilidades em nosso servidor**, com algumas quedas. Queremos informar que nossa equipa técnica agiu rapidamente e **o problema foi totalmente resolvido!**</p>
+        <p>Pedimos sinceras desculpas por qualquer inconveniente e garantimos que estamos a trabalhar para uma experiência ininterrupta.</p>
         <a href="javascript:void(0)" class="cta-button interactive rgb-glow popup-close-button">Entendi!</a>
     </div>
 </div>
