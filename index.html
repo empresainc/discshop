@@ -8,7 +8,7 @@
     <meta name="keywords" content="Discshop, marketplace, produtos digitais, produtos físicos, comprar, vender, seguro, plataforma, comunidade, gamer, eletrônicos, loja online, e-commerce">
     <meta name="author" content="Discshop Team">
     
-    <meta name="google-site-verification" content="vWj1h09S9oIQ90nipgwWrNi-pbtKnvShwHCkXLVn7zI" /> 
+    <meta name="google-site-verification" content="vWj1h09S9oIQ90nipgwWrNi-pbtKnvShwHCkXLVn7zI" />    
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://licenses-leslie-cent-saint.trycloudflare.com"> <meta property="og:title" content="Discshop - Seu Marketplace de Produtos Digitais e Físicos">
@@ -439,30 +439,30 @@
 <div class="popup-overlay" id="info-popup">
     <div class="popup-content">
         <span class="popup-close">×</span>
-        <h3><i class="fas fa-exclamation-triangle"></i> Atenção, Comunidade Discshop!</h3>
-        <p>Recentemente, enfrentamos **instabilidades em nosso servidor**, com algumas quedas. Queremos informar que nossa equipa técnica agiu rapidamente e **o problema foi totalmente resolvido!**</p>
-        <p>Pedimos sinceras desculpas por qualquer inconveniente e garantimos que estamos a trabalhar para uma experiência ininterrupta.</p>
+        <h3><i class="fas fa-bullhorn"></i> Aviso Importante!</h3>
+        <p>Temos uma grande novidade! O **Gustavo** adquiriu a **Discshop MN677Y** e é o nosso **novo CEO**! Fiquem ligados, pois teremos **muitas novidades em breve!**</p>
+        <p>Agradecemos por usar nossa plataforma! Já são **mais de 50 mil clientes felizes!**</p>
         <a href="javascript:void(0)" class="cta-button interactive rgb-glow popup-close-button">Entendi!</a>
     </div>
 </div>
 
 
-<header class="hero" id="hero"> 
+<header class="hero" id="hero">    
     <div class="hero-overlay"></div>
     
     <nav id="navbar">
-        <a href="#hero" class="nav-link interactive">Início</a> 
+        <a href="#hero" class="nav-link interactive">Início</a>    
         <a href="#terms-of-service" class="nav-link interactive">Termos de Serviço</a>
     </nav>
 
     <div class="hero-content">
-        <h1 class="main-title">Discshop</h1> 
+        <h1 class="main-title">Discshop</h1>    
         <p>Seu Marketplace Definitivo para Compras e Vendas Seguras. <br>Comunidade vibrante e mais de 10.000 usuários ativos!</p>
         <a href="https://licenses-leslie-cent-saint.trycloudflare.com" class="cta-button interactive rgb-glow" target="_blank" rel="noopener noreferrer">
             Acessar a Loja Discshop <i class="fas fa-arrow-right"></i>
         </a>
     </div>
-</header> 
+</header>    
 
 <main id="main-content">
 
@@ -513,7 +513,7 @@
     // PRELOADER
     window.addEventListener('load', () => {
         const preloader = document.querySelector('.preloader');
-        document.body.classList.remove('no-scroll'); 
+        document.body.classList.remove('no-scroll');    
         
         preloader.classList.add('hidden');
         setTimeout(() => {
@@ -549,7 +549,7 @@
             if (infoPopup) {
                 setTimeout(() => {
                     infoPopup.classList.add('active');
-                }, 1500); 
+                }, 1500);    
             }
 
             // Mostrar a seção hero por padrão
@@ -579,7 +579,7 @@
 
     popupCloseButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            e.preventDefault(); 
+            e.preventDefault();    
             if (infoPopup) {
                 infoPopup.classList.remove('active');
             }
@@ -595,7 +595,7 @@
             const sectionId = section.id;
             const targetIdClean = targetId.startsWith('#') ? targetId.substring(1) : targetId;
 
-            if (sectionId === targetIdClean) { 
+            if (sectionId === targetIdClean) {    
                 section.classList.add('active');
             } else {
                 section.classList.remove('active');
@@ -606,7 +606,7 @@
     // Ajuste para que os links de navegação controlem a exibição das seções
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault(); 
+            e.preventDefault();    
             const targetId = link.getAttribute('href');
             showSection(targetId);
 
