@@ -3,628 +3,760 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discshop - Seu Marketplace de Produtos Digitais e Físicos</title>
-    <meta name="description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
-    <meta name="keywords" content="Discshop, marketplace, produtos digitais, produtos físicos, comprar, vender, seguro, plataforma, comunidade, gamer, eletrônicos, loja online, e-commerce">
-    <meta name="author" content="Discshop Team">
-    
-    <meta name="google-site-verification" content="vWj1h09S9oIQ90nipgwWrNi-pbtKnvShwHCkXLVn7zI" />    
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://licenses-leslie-cent-saint.trycloudflare.com"> <meta property="og:title" content="Discshop - Seu Marketplace de Produtos Digitais e Físicos">
-    <meta property="og:description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://licenses-leslie-cent-saint.trycloudflare.com"> <meta property="twitter:title" content="Discshop - Seu Marketplace de Produtos Digitais e Físicos">
-    <meta property="twitter:description" content="Discshop: Sua plataforma segura e vibrante para comprar e vender produtos digitais e físicos. Mais de 10 mil usuários, 100% segurança e suporte dedicado.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <title>Conext - Seu Hub de Produtos Digitais e de Jogos</title>
     <style>
-        /* Estilos CSS incorporados para facilitar o GitHub Pages */
-        :root {
-            --primary-color: #0a192f; /* Azul escuro principal (quase preto) */
-            --secondary-color: #FF5722; /* Laranja vibrante da Discshop */
-            --accent-gradient: linear-gradient(45deg, #FF5722, #E64A19); /* Gradiente de laranja */
-            --background-color: #f0f4f8; /* Cinza claro suave para o fundo das seções */
-            --light-background: #ffffff; /* Branco puro para cards e popups */
-            --text-color: #2c3e50; /* Texto mais escuro e legível */
-            --light-text-color: #ecf0f1; /* Texto claro para fundos escuros */
-            --subtle-text-color: #7f8c8d; /* Texto sutil para descrições menores */
-            --shadow: 0 15px 40px -10px rgba(2, 12, 27, 0.4); /* Sombra mais pronunciada */
-            --border-radius: 12px; /* Arredondamento padrão */
-            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); /* Transições mais suaves */
-        }
-
-        /* RESET E CONFIGURAÇÕES GLOBAIS */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* Estilos Gerais */
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
         }
-        body.loaded { background-color: var(--background-color); }
-        body.no-scroll { overflow-y: hidden; }
 
-        /* PRELOADER */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50; /* Um azul escuro sóbrio para o logo */
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header nav ul li {
+            margin-left: 25px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #007bff;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Seção Herói (Destaque) */
+        .hero {
+            background-color: #eaf3f8; /* Azul claro suave */
+            padding: 80px 0;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .hero h1 {
+            font-size: 3.2em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .hero-buttons a {
+            margin: 0 10px;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .hero .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .hero .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .hero .btn-secondary {
+            background-color: transparent;
+            color: #007bff;
+            border: 2px solid #007bff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .hero .btn-secondary:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Seção de Números */
+        .numbers-section {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .numbers-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .number-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .number-item .value {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .number-item .label {
+            font-size: 1.2em;
+            color: #555;
+            font-weight: 600;
+        }
+
+        /* Seção de Funcionalidades */
+        .features {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #f4f7f6;
+        }
+
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .feature-item h3 {
+            color: #007bff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            font-size: 1.05em;
+            color: #666;
+        }
+
+        /* Seção Apoie seu Criador */
+        .support-creator {
+            background-color: #eaf3f8;
+            padding: 60px 0;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .support-creator h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .support-creator p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .support-creator .code-input-group {
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), visibility 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .preloader .logo { 
-            font-size: clamp(3rem, 10vw, 5rem); 
-            font-weight: 800; 
-            color: var(--secondary-color);
-            animation: pulse 1.8s infinite ease-in-out; 
-            text-shadow: 0 0 15px rgba(255, 87, 34, 0.5);
-        }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.8; } }
 
-        /* HEADER & NAVIGATION */
-        .hero {
-            height: 100vh;
-            position: relative;
+        .support-creator .code-input-group input[type="text"] {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 250px;
+            max-width: 80%;
+        }
+
+        .support-creator .code-input-group button {
+            background-color: #28a745; /* Verde para ação de suporte */
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .support-creator .code-input-group button:hover {
+            background-color: #218838;
+        }
+
+        #support-message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #007bff; /* Azul para feedback */
+            min-height: 25px; /* Para evitar salto no layout */
+        }
+        #support-message.error {
+            color: #dc3545; /* Vermelho para erro */
+        }
+
+        /* Seção FAQ */
+        .faq {
+            background-color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .faq h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .faq-item {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+            transform: rotate(0deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px 20px;
+            font-size: 1.05em;
+            color: #555;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Ajuste se as respostas forem muito longas */
+            padding-top: 10px;
+        }
+
+        /* Seção CTA para Registro */
+        .register-cta {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .register-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .register-cta p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .register-cta .cta-button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .register-cta .cta-button-group a {
+            padding: 15px 35px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .register-cta .btn-cliente {
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+        }
+
+        .register-cta .btn-cliente:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .register-cta .btn-empresa {
+            background-color: #28a745; /* Verde para empresa */
+            color: #fff;
+            border: 2px solid #28a745;
+        }
+
+        .register-cta .btn-empresa:hover {
+            background-color: #218838;
+            border-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: #f4f7f6;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer .container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            overflow: hidden;
-            background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: var(--light-text-color);
         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 0;
-        }
-        .hero-content { 
-            z-index: 1;
-            padding: 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: clamp(4.5rem, 12vw, 7rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: var(--secondary-color);
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        .hero p {
-            font-size: clamp(1.3rem, 4.5vw, 1.8rem);
-            font-weight: 400;
-            color: var(--light-text-color);
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        .hero .cta-button { 
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        nav { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            z-index: 1000; 
-            padding: 25px 60px;
-            display: flex; 
-            justify-content: flex-end; 
-            align-items: center; 
-            transition: var(--transition); 
-            background-color: transparent;
-        }
-        nav.scrolled { 
-            background-color: rgba(10, 25, 47, 0.98);
-            backdrop-filter: blur(12px);
-            box-shadow: var(--shadow); 
-            padding: 15px 60px; 
-        }
-        nav a { 
-            color: var(--light-text-color); 
-            text-decoration: none; 
-            margin: 0 22px;
-            font-size: 1.05rem;
-            font-weight: 500; 
-            transition: var(--transition); 
-            position: relative;
-        }
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease-out;
-        }
-        nav a:hover::after {
-            width: 100%;
-        }
-        nav.scrolled a {
-            color: var(--light-text-color);
-        }
-        nav a:hover { 
-            color: var(--secondary-color);
-        }
-        
-        /* GENERAL STYLES */
-        main { background-color: var(--background-color); position: relative; }
-        section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-            padding: 100px 20px;
-            max-width: 1200px; 
-            margin: 0 auto;
-        }
-        header.hero.active,
-        section.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .section-title { text-align: center; font-size: clamp(2.5rem, 6vw, 3.5rem); font-weight: 800; margin-bottom: 20px; color: var(--primary-color); text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
-        .section-subtitle { text-align: center; font-size: clamp(1.1rem, 3vw, 1.4rem); max-width: 800px; margin: 0 auto 60px auto; color: var(--subtle-text-color); line-height: 1.8; }
-        
-        /* CTA BUTTON & RGB GLOW */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            background: var(--accent-gradient);
-            padding: 18px 40px;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
-            cursor: pointer;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 35px rgba(255, 87, 34, 0.7);
-        }
-        .cta-button.rgb-glow::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, red, yellow, lime, aqua, blue, magenta, red);
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            filter: blur(20px);
-            animation: rgb-animation 6s linear infinite;
-            z-index: -1;
-        }
-        .cta-button.rgb-glow:hover::before {
-            opacity: 1;
-        }
-        .cta-button span {
-            position: relative;
-            z-index: 2;
-        }
-        .cta-button i {
-            font-size: 1.3em;
-            margin-right: 5px;
-        }
-        
-        /* SEÇÃO TERMOS DE SERVIÇO */
-        #terms-of-service { background: var(--background-color); }
-        #terms-of-service .terms-content {
-            background-color: var(--light-background);
-            border-radius: var(--border-radius);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            padding: 40px;
-            line-height: 1.8;
-            color: var(--text-color);
-            text-align: left;
-        }
-        #terms-of-service .terms-content h3 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        #terms-of-service .terms-content h3:first-child {
-            margin-top: 0;
-        }
-        #terms-of-service .terms-content p {
-            margin-bottom: 15px;
-        }
-        #terms-of-service .terms-content ul {
-            list-style: disc inside;
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        #terms-of-service .terms-content ul li {
-            margin-bottom: 8px;
-        }
-        #terms-of-service .terms-content strong {
-            color: var(--primary-color);
-        }
-        
-        footer { background-color: var(--primary-color); color: var(--subtle-text-color); text-align: center; padding: 50px 20px; font-size: 0.9rem; }
-
-        /* POPUP STYLES (geral) */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.75);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s, opacity 0.4s ease-in-out;
-        }
-        .popup-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-        .popup-content {
-            background-color: var(--light-background);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            max-width: 450px;
-            width: 90%;
-            position: relative;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-        }
-        .popup-overlay.active .popup-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        .popup-content h3 {
-            color: var(--primary-color);
+        footer nav ul {
+            list-style: none;
+            padding: 0;
             margin-bottom: 20px;
-            font-size: 2.2rem;
-            font-weight: 800;
-            display: flex; /* Para alinhar o ícone com o texto */
-            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Espaço entre o ícone e o texto */
-        }
-        .popup-content h3 i {
-            color: var(--secondary-color); /* Cor do ícone */
-            font-size: 1.8rem; /* Tamanho do ícone */
-        }
-        .popup-content p {
-            color: var(--text-color);
-            font-size: 1.15rem;
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
-        .popup-close {
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #999;
-            transition: var(--transition);
-        }
-        .popup-close:hover {
-            color: var(--secondary-color);
         }
 
-        /* RESPONSIVE DESIGN */
+        footer nav ul li {
+            margin: 0 15px;
+        }
+
+        footer nav ul li a {
+            text-decoration: none;
+            color: #bbb;
+            transition: color 0.3s ease;
+        }
+
+        footer nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Responsividade Básica */
         @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-                justify-content: center;
-                flex-wrap: wrap;
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: 10px;
             }
-            nav a {
-                margin: 5px 10px;
-                font-size: 0.9rem;
+
+            header nav {
+                margin-top: 15px;
+                width: 100%;
             }
-            nav.scrolled {
-                padding: 10px 20px;
+
+            header nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
             }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+
             .hero h1 {
-                font-size: clamp(3.5rem, 10vw, 5.5rem);
+                font-size: 2.5em;
             }
+
             .hero p {
-                font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+                font-size: 1.1em;
             }
-            .section-title {
-                font-size: clamp(2rem, 5vw, 3rem);
+
+            .hero .hero-buttons a {
+                margin: 10px 0;
+                display: block;
+                width: 80%;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
             }
-            .section-subtitle {
-                font-size: clamp(1rem, 2.8vw, 1.2rem);
-                margin-bottom: 40px;
+
+            .feature-grid {
+                grid-template-columns: 1fr;
             }
-            .popup-content {
-                padding: 25px;
+
+            .numbers-grid {
+                flex-direction: column;
+                gap: 30px;
             }
-            .popup-content h3 {
-                font-size: 1.8rem;
+
+            .register-cta .cta-button-group {
+                flex-direction: column;
+                align-items: center;
             }
-            .popup-content p {
-                font-size: 1rem;
+
+            .register-cta .cta-button-group a {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .support-creator .code-input-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .support-creator .code-input-group input[type="text"] {
+                width: 90%;
+            }
+            .support-creator .code-input-group button {
+                width: 90%;
             }
         }
 
         @media (max-width: 480px) {
-            nav {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 10px;
+            header .logo {
+                font-size: 1.5em;
             }
-            nav a {
-                margin: 5px 0;
-                text-align: center;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-                padding-bottom: 5px;
-            }
-            nav a:last-child {
-                border-bottom: none;
-            }
-            section {
-                padding: 60px 15px;
-            }
+
             .hero h1 {
-                font-size: clamp(3rem, 9vw, 4rem);
+                font-size: 2em;
             }
+
             .hero p {
-                font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+                font-size: 1em;
             }
-            .cta-button {
-                font-size: 1rem;
-                padding: 15px 30px;
+
+            .features h2, .register-cta h2, .faq h2, .support-creator h2 {
+                font-size: 2em;
+            }
+
+            .number-item .value {
+                font-size: 3em;
+            }
+
+            .number-item .label {
+                font-size: 1em;
+            }
+            .faq-question {
+                font-size: 1.1em;
+                padding: 15px 20px;
+            }
+            .faq-answer {
+                padding: 0 20px 15px;
             }
         }
     </style>
 </head>
-<body class="no-scroll">
-
-<div class="preloader">
-    <div class="logo">Discshop</div>
-</div>
-
-<div class="popup-overlay" id="info-popup">
-    <div class="popup-content">
-        <span class="popup-close">×</span>
-        <h3><i class="fas fa-bullhorn"></i> Aviso Importante!</h3>
-        <p>Temos uma grande novidade! O **Gustavo** adquiriu a **Discshop MN677Y** e é o nosso **novo CEO**! Fiquem ligados, pois teremos **muitas novidades em breve!**</p>
-        <p>Agradecemos por usar nossa plataforma! Já são **mais de 50 mil clientes felizes!**</p>
-        <a href="javascript:void(0)" class="cta-button interactive rgb-glow popup-close-button">Entendi!</a>
-    </div>
-</div>
-
-
-<header class="hero" id="hero">    
-    <div class="hero-overlay"></div>
-    
-    <nav id="navbar">
-        <a href="#hero" class="nav-link interactive">Início</a>    
-        <a href="#terms-of-service" class="nav-link interactive">Termos de Serviço</a>
-    </nav>
-
-    <div class="hero-content">
-        <h1 class="main-title">Discshop</h1>    
-        <p>Seu Marketplace Definitivo para Compras e Vendas Seguras. <br>Comunidade vibrante e mais de 10.000 usuários ativos!</p>
-        <a href="https://licenses-leslie-cent-saint.trycloudflare.com" class="cta-button interactive rgb-glow" target="_blank" rel="noopener noreferrer">
-            Acessar a Loja Discshop <i class="fas fa-arrow-right"></i>
-        </a>
-    </div>
-</header>    
-
-<main id="main-content">
-
-    <section id="terms-of-service">
-        <h2 class="section-title">Termos de Serviço</h2>
-        <p class="section-subtitle">Ao utilizar a Discshop, você concorda com os seguintes termos e condições:</p>
-        <div class="terms-content">
-            <h3>1. Aceitação dos Termos</h3>
-            <p>Ao acessar e usar a plataforma Discshop, você concorda em cumprir estes Termos de Serviço e todas as leis e regulamentos aplicáveis. Se você não concorda com qualquer um destes termos, está proibido de usar ou acessar este site.</p>
-
-            <h3>2. Uso da Plataforma</h3>
+<body>
+    <header>
+        <a href="#" class="logo">Conext</a>
+        <nav>
             <ul>
-                <li><strong>Registro:</strong> Para acessar certas funcionalidades, você deve se registrar e criar uma conta. Você é responsável por manter a confidencialidade de sua senha e por todas as atividades que ocorram em sua conta.</li>
-                <li><strong>Conduta do Usuário:</strong> Você concorda em não usar a Discshop para qualquer finalidade ilegal ou proibida por estes Termos. Isso inclui, mas não se limita a, postar conteúdo ilegal, fraudulento, difamatório ou que viole direitos autorais.</li>
-                <li><strong>Moderação:</strong> A Discshop reserva-se o direito de monitorar e remover qualquer conteúdo ou usuário que viole estes termos, a nosso critério exclusivo.</li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Como Funciona</a></li>
+                <li><a href="#support-creator-section">Apoie seu Criador</a></li> <li><a href="#faq-section">FAQ</a></li>
+                <li><a href="#terms-section">Termos de Uso</a></li> <li><a href="#">Contato</a></li>
             </ul>
+        </nav>
+        <a href="https://received-feed-col-whats.trycloudflare.com/" class="cta-button" target="_blank">Criar Conta / Vender</a>
+    </header>
 
-            <h3>3. Transações de Compra e Venda</h3>
-            <ul>
-                <li><strong>Responsabilidade:</strong> A Discshop é uma plataforma que conecta compradores e vendedores. Não somos responsáveis pela qualidade, segurança ou legalidade dos itens anunciados, nem pela veracidade ou precisão dos anúncios.</li>
-                <li><strong>Pagamentos:</strong> As transações de pagamento (ex: via PIX) são feitas diretamente entre comprador e vendedor. A Discshop não processa nem retém fundos.</li>
-                <li><strong>Disputas:</strong> Em caso de disputas entre compradores e vendedores, a Discshop pode oferecer suporte na mediação, mas não garante a resolução a favor de qualquer parte.</li>
-            </ul>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Conext: Seu Universo de Jogos e Produtos Digitais!</h1>
+                <p>Encontre os melhores produtos digitais e de jogos, conectando-se diretamente com criadores e vendedores. **Todos os pagamentos são via PIX e a Conext NÃO retém valores** – a transação é direta entre você e o vendedor!</p>
+                <div class="hero-buttons">
+                    <a href="https://received-feed-col-whats.trycloudflare.com/" class="btn-primary" target="_blank">Comprar Agora</a>
+                    <a href="https://received-feed-col-whats.trycloudflare.com/" class="btn-secondary" target="_blank">Vender Meus Produtos</a>
+                </div>
+            </div>
+        </section>
 
-            <h3>4. Propriedade Intelectual</h3>
-            <p>Todo o conteúdo presente na Discshop (textos, gráficos, logos, etc.), exceto o conteúdo de usuário, é propriedade da Discshop ou de seus licenciadores e protegido por leis de propriedade intelectual.</p>
+        <section class="numbers-section">
+            <div class="container">
+                <div class="numbers-grid">
+                    <div class="number-item">
+                        <span class="value">32K+</span>
+                        <span class="label">Produtos Listados</span>
+                    </div>
+                    <div class="number-item">
+                        <span class="value">10K+</span>
+                        <span class="label">Criadores e Vendedores</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <h3>5. Limitação de Responsabilidade</h3>
-            <p>A Discshop não será responsável por quaisquer danos diretos, indiretos, incidentais, especiais ou consequenciais resultantes do uso ou da incapacidade de usar a plataforma.</p>
+        <section class="features">
+            <div class="container">
+                <h2>Por que escolher a Conext?</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h3>Pagamento Direto via PIX</h3>
+                        <p>Total transparência! Transações rápidas e seguras diretamente para o vendedor, sem intermediários. A Conext não retém valores.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Variedade de Produtos</h3>
+                        <p>Descubra uma vasta gama de jogos, softwares, e-books, ativos digitais e muito mais, tudo em um só lugar.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Conexão com Criadores</h3>
+                        <p>Suporte e interaja diretamente com os criadores dos produtos que você ama. Compre com confiança!</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Venda Simples e Rápida</h3>
+                        <p>Crie sua loja e comece a vender seus produtos digitais em minutos. Receba diretamente via PIX.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <h3>6. Alterações nos Termos</h3>
-            <p>A Discshop reserva-se o direito de revisar estes Termos de Serviço a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual destes Termos.</p>
+        <section class="support-creator" id="support-creator-section">
+            <div class="container">
+                <h2>Apoie Seu Criador de Conteúdo Favorito!</h2>
+                <p>Insira um código de apoio para demonstrar seu suporte. É uma forma simples de reconhecer o trabalho de quem cria conteúdo incrível.</p>
+                <div class="code-input-group">
+                    <input type="text" id="creatorCode" placeholder="Digite o código aqui" aria-label="Código de apoio ao criador">
+                    <button id="applyCodeButton">Aplicar Código</button>
+                </div>
+                <div id="support-message"></div>
+            </div>
+        </section>
 
-            <h3>7. Contato</h3>
-            <p>Para dúvidas sobre estes Termos de Serviço, por favor, entre em contato conosco através da seção "Fale Conosco".</p>
+        <section class="faq" id="faq-section">
+            <div class="container">
+                <h2>Perguntas Frequentes (FAQ)</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">Como funciona o pagamento na Conext?</div>
+                        <div class="faq-answer">
+                            <p>Todos os pagamentos na Conext são feitos diretamente via PIX entre o comprador e o vendedor. A Conext facilita a conexão, mas **NÃO retém nenhum valor** das transações, garantindo total controle e agilidade para ambas as partes.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Quais tipos de produtos posso vender na Conext?</div>
+                        <div class="faq-answer">
+                            <p>Você pode vender uma ampla variedade de produtos de jogos e digitais, como chaves de jogos, itens in-game, e-books, cursos online, softwares, ativos gráficos, músicas e muito mais, desde que esteja de acordo com nossos Termos de Uso.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">A Conext cobra alguma taxa sobre as vendas?</div>
+                        <div class="faq-answer">
+                            <p>Para manter a plataforma simples e justa, a Conext não cobra taxas sobre as transações de venda. Os valores são repassados integralmente ao vendedor via PIX. Possíveis custos podem estar associados a recursos premium ou publicidade, se você optar por eles.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Como posso apoiar meu criador de conteúdo favorito?</div>
+                        <div class="faq-answer">
+                            <p>Na seção "Apoie Seu Criador", você pode inserir um código fornecido pelo seu criador de conteúdo. Ao aplicar o código, você demonstra seu apoio e ajuda a impulsionar a comunidade. É uma forma gratuita de incentivo!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Como crio minha conta na Conext?</div>
+                        <div class="faq-answer">
+                            <p>É simples! Clique no botão "Criar Conta / Vender" no canto superior direito ou nos botões de ação na seção principal. Você será redirecionado para o nosso painel de registro e poderá começar a comprar ou vender rapidamente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="register-cta" id="register">
+            <div class="container">
+                <h2>Pronto para Explorar o Universo Conext?</h2>
+                <p>Crie sua conta agora e comece a descobrir ou vender os melhores produtos de jogos e digitais!</p>
+                <div class="cta-button-group">
+                    <a href="https://received-feed-col-whats.trycloudflare.com/" class="btn-cliente" target="_blank">Quero Comprar</a>
+                    <a href="https://received-feed-col-whats.trycloudflare.com/" class="btn-empresa" target="_blank">Quero Vender</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#">Sobre a Conext</a></li>
+                    <li><a href="#" id="footer-terms-link">Termos de Uso</a></li> <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#faq-section">FAQ</a></li>
+                    <li><a href="#support-creator-section">Apoie seu Criador</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 Conext. Todos os direitos reservados.</p>
         </div>
-    </section>
+    </footer>
 
-</main>
+    <script>
+        // Funcionalidade para o FAQ (Acordeão)
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
 
-<footer>
-    <p>© 2025 Discshop. Todos os direitos reservados.</p>
-    <p>Construindo um marketplace seguro e vibrante para você.</p>
-</footer>
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    item.classList.toggle('active');
+                });
+            });
 
-<script>
-    // JavaScript incorporado diretamente no HTML
-    // PRELOADER
-    window.addEventListener('load', () => {
-        const preloader = document.querySelector('.preloader');
-        document.body.classList.remove('no-scroll');    
-        
-        preloader.classList.add('hidden');
-        setTimeout(() => {
-            preloader.style.display = 'none';
-            document.body.classList.add('loaded');
-            
-            const mainTitle = document.querySelector('.main-title');
-            const heroParagraph = document.querySelector('.hero p');
-            const ctaButton = document.querySelector('.hero .cta-button');
+            // Funcionalidade para o Apoie Seu Criador
+            const creatorCodeInput = document.getElementById('creatorCode');
+            const applyCodeButton = document.getElementById('applyCodeButton');
+            const supportMessage = document.getElementById('support-message');
+            const registrationLink = "https://received-feed-col-whats.trycloudflare.com/"; // Link de registro
 
-            // Animação manual para elementos do hero
-            if (mainTitle) {
-                mainTitle.style.opacity = 1;
-                mainTitle.style.transform = 'translateY(0)';
-                mainTitle.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-                mainTitle.style.transitionDelay = '0.5s';
-            }
-            if (heroParagraph) {
-                heroParagraph.style.opacity = 1;
-                heroParagraph.style.transform = 'translateY(0)';
-                heroParagraph.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-                heroParagraph.style.transitionDelay = '0.7s';
-            }
-            if (ctaButton) {
-                ctaButton.style.opacity = 1;
-                ctaButton.style.transform = 'translateY(0)';
-                ctaButton.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-                ctaButton.style.transitionDelay = '0.9s';
-            }
+            // Data de expiração para "discovernews": 31 de dezembro de 2025 (mês 11, pois é base 0)
+            const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59);
 
-            // Pop-up de informações sobre a Discshop (ativação)
-            const infoPopup = document.getElementById('info-popup');
-            if (infoPopup) {
-                setTimeout(() => {
-                    infoPopup.classList.add('active');
-                }, 1500);    
-            }
+            applyCodeButton.addEventListener('click', () => {
+                const code = creatorCodeInput.value.trim().toLowerCase(); // Converte para minúsculas para case-insensitivity
+                const now = new Date();
 
-            // Mostrar a seção hero por padrão
-            const heroSection = document.getElementById('hero');
-            if (heroSection) {
-                heroSection.classList.add('active');
-            }
+                supportMessage.textContent = ''; // Limpa mensagens anteriores
+                supportMessage.classList.remove('error'); // Remove classe de erro
 
-        }, 800);
-    });
+                if (code === 'marcola2025') {
+                    supportMessage.textContent = 'Obrigado pelo apoio! Crie agora sua conta.';
+                    // Redireciona para a página de registro após um pequeno atraso
+                    setTimeout(() => {
+                        window.open(registrationLink, '_blank');
+                    }, 1500); // Abre em nova aba após 1.5 segundos
+                } else if (code === 'discovernews') {
+                    if (now <= discoverNewsExpiry) {
+                        supportMessage.textContent = 'Obrigado pelo apoio! Crie agora sua conta.';
+                        setTimeout(() => {
+                            window.open(registrationLink, '_blank');
+                        }, 1500); // Abre em nova aba após 1.5 segundos
+                    } else {
+                        supportMessage.textContent = 'Código "discovernews" expirou. Por favor, tente outro.';
+                        supportMessage.classList.add('error');
+                    }
+                } else {
+                    supportMessage.textContent = 'Código inválido. Por favor, verifique e tente novamente.';
+                    supportMessage.classList.add('error');
+                }
+            });
 
-    // Animação da Navbar ao Scroll
-    window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (navbar) {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }
-    });
-
-    // POPUP LOGIC para o pop-up de informações da Discshop
-    const infoPopup = document.getElementById('info-popup');
-    const popupCloseButtons = infoPopup ? infoPopup.querySelectorAll('.popup-close, .popup-close-button') : [];
-
-    popupCloseButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();    
-            if (infoPopup) {
-                infoPopup.classList.remove('active');
+            // Funcionalidade para o link dos Termos de Uso
+            const footerTermsLink = document.getElementById('footer-terms-link');
+            if (footerTermsLink) {
+                footerTermsLink.addEventListener('click', (event) => {
+                    event.preventDefault(); // Impede o comportamento padrão do link
+                    alert('Os Termos de Uso serão exibidos aqui. Por favor, crie uma página com o conteúdo completo.');
+                    // Em um site real, você redirecionaria para uma página como:
+                    // window.open('termos-de-uso.html', '_blank');
+                });
             }
         });
-    });
-
-    // Gerenciamento de Seções Dinâmicas (SPA-like) para navegação no site
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('main section, header.hero');
-
-    function showSection(targetId) {
-        sections.forEach(section => {
-            const sectionId = section.id;
-            const targetIdClean = targetId.startsWith('#') ? targetId.substring(1) : targetId;
-
-            if (sectionId === targetIdClean) {    
-                section.classList.add('active');
-            } else {
-                section.classList.remove('active');
-            }
-        });
-    }
-
-    // Ajuste para que os links de navegação controlem a exibição das seções
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();    
-            const targetId = link.getAttribute('href');
-            showSection(targetId);
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-
-    // Ativa a primeira seção (hero) no carregamento
-    document.addEventListener('DOMContentLoaded', () => {
-        const heroSection = document.getElementById('hero');
-        if (heroSection && !heroSection.classList.contains('active')) {
-            showSection('#hero');
-        }
-    });
-
-</script>
+    </script>
 </body>
 </html>
