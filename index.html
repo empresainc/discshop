@@ -22,20 +22,20 @@
             padding: 20px 0;
         }
 
-        /* Animações CSS */
+        /* Animações CSS - Mantendo sutileza e profissionalismo */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(50px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            50% { transform: scale(1.01); } /* Pulso mais suave */
             100% { transform: scale(1); }
         }
 
@@ -141,7 +141,36 @@
             text-align: center;
             border-bottom: 1px solid #eee;
         }
-        
+
+        .numbers-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .number-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .number-item .value {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .number-item .label {
+            font-size: 1.2em;
+            color: #555;
+            font-weight: 600;
+        }
+
         /* Seção de Funcionalidades */
         .features {
             padding: 60px 0;
@@ -149,13 +178,41 @@
             background-color: #f4f7f6;
         }
 
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
         .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .feature-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .feature-item h3 {
+            color: #007bff;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            font-size: 1.05em;
+            color: #666;
         }
 
         /* Seção Apoie seu Criador */
@@ -166,19 +223,126 @@
             color: #2c3e50;
         }
 
+        .support-creator h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .support-creator p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .support-creator .code-input-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .support-creator .code-input-group input[type="text"] {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 250px;
+            max-width: 80%;
+        }
+
         .support-creator .code-input-group button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         .support-creator .code-input-group button:hover {
+            background-color: #218838;
             transform: translateY(-2px);
         }
 
+        #support-message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #007bff;
+            min-height: 25px;
+        }
+        #support-message.error {
+            color: #dc3545;
+        }
 
         /* Seção FAQ */
         .faq {
             background-color: #fff;
             padding: 60px 0;
             text-align: center;
+        }
+
+        .faq h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .faq-item {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5em;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+            transform: rotate(0deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px 20px;
+            font-size: 1.05em;
+            color: #555;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-top: 10px;
         }
 
         /* Termos de Uso Modal */
@@ -412,7 +576,8 @@
                 <li><a href="#">Como Funciona</a></li>
                 <li><a href="#support-creator-section">Apoie seu Criador</a></li>
                 <li><a href="#faq-section">FAQ</a></li>
-                <li><a href="#" id="open-terms-modal">Termos de Uso</a></li> <li><a href="#">Contato</a></li>
+                <li><a href="#" id="open-terms-modal">Termos de Uso</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
         <a href="https://received-feed-col-whats.trycloudflare.com/" class="cta-button" target="_blank">Criar Conta / Vender</a>
@@ -494,7 +659,7 @@
                     <div class="faq-item">
                         <div class="faq-question">Quais tipos de produtos posso vender na Conext?</div>
                         <div class="faq-answer">
-                            <p>Você pode vender uma ampla variedade de produtos de jogos e digitais, como chaves de jogos, itens in-game, e-books, cursos online, softwares, ativos gráficos, músicas e muito mais, desde que esteja de acordo com nossos Termos de Uso.</p>
+                            <p>Você pode vender uma ampla variedade de produtos de jogos e digitais, como chaves de jogos, itens in-game, e-books, cursos online, softwares, ativos gráficos, licenças digitais e muito mais, desde que esteja de acordo com nossos Termos de Uso.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -626,8 +791,8 @@
             const supportMessage = document.getElementById('support-message');
             const registrationLink = "https://received-feed-col-whats.trycloudflare.com/"; // Link de registro
 
-            // Data de expiração para "discovernews": 31 de dezembro de 2025 (mês 11, pois é base 0)
-            const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59); // Current time is July 21, 2025
+            // Data de expiração para "discovernews": 31 de dezembro de 2025
+            const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59);
 
             applyCodeButton.addEventListener('click', () => {
                 const code = creatorCodeInput.value.trim().toLowerCase(); // Converte para minúsculas para case-insensitivity
@@ -660,30 +825,49 @@
 
             // Funcionalidade para o Modal dos Termos de Uso
             const openTermsModalButton = document.getElementById('open-terms-modal');
+            const footerTermsLink = document.getElementById('footer-terms-link'); // Também no rodapé
             const termsModal = document.getElementById('termsModal');
             const closeTermsModalButton = document.getElementById('close-terms-modal');
 
-            if (openTermsModalButton && termsModal && closeTermsModalButton) {
+            function openModal() {
+                termsModal.classList.add('active');
+            }
+
+            function closeModal() {
+                termsModal.classList.remove('active');
+            }
+
+            if (openTermsModalButton) {
                 openTermsModalButton.addEventListener('click', (event) => {
-                    event.preventDefault(); // Impede o link de navegar
-                    termsModal.classList.add('active'); // Mostra o modal
+                    event.preventDefault();
+                    openModal();
                 });
-
-                closeTermsModalButton.addEventListener('click', () => {
-                    termsModal.classList.remove('active'); // Esconde o modal
+            }
+            if (footerTermsLink) {
+                footerTermsLink.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    openModal();
                 });
+            }
+            if (closeTermsModalButton) {
+                closeTermsModalButton.addEventListener('click', closeModal);
+            }
 
-                // Fecha o modal ao clicar fora do conteúdo
+            // Fecha o modal ao clicar fora do conteúdo
+            if (termsModal) {
                 termsModal.addEventListener('click', (event) => {
                     if (event.target === termsModal) {
-                        termsModal.classList.remove('active');
+                        closeModal();
                     }
                 });
             }
 
-            // Animação de entrada das seções (opcional, se não for usar a que já está em CSS)
-            // Se as classes .animate-on-load já estiverem em uso, não precisa deste JS extra.
-            // Para animações baseadas em scroll-reveal, seria necessário Intersection Observer.
+            // Animações de entrada para todas as seções, com atraso progressivo
+            const sectionsToAnimate = document.querySelectorAll('main section, header');
+            sectionsToAnimate.forEach((section, index) => {
+                section.style.animationDelay = `${0.2 + (index * 0.2)}s`;
+                section.classList.add('animate-on-load');
+            });
         });
     </script>
 </body>
