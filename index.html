@@ -120,12 +120,12 @@
         }
 
         header .logo-container img {
-            height: 60px; /* Logo maior no cabeçalho */
+            height: 80px; /* Logo maior no cabeçalho */
             margin-right: 15px;
         }
         
         header .logo-text {
-            font-size: 2.8em; /* Ajuste para combinar com a logo maior */
+            font-size: 3.2em; /* Ajuste para combinar com a logo maior */
             font-weight: 800;
             letter-spacing: -1px;
         }
@@ -661,22 +661,10 @@
             border: none;
         }
 
-        .register-cta .btn-cliente {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
-            color: var(--white);
-            box-shadow: 0 8px 20px rgba(0,123,255,0.35);
-        }
-
         .register-cta .btn-cliente:hover {
             background-color: #0056b3;
             transform: translateY(-7px);
             box-shadow: 0 10px 30px rgba(0,123,255,0.5);
-        }
-
-        .register-cta .btn-empresa {
-            background: linear-gradient(135deg, var(--accent-color) 0%, #218838 100%);
-            color: var(--white);
-            box-shadow: 0 8px 20px rgba(40,167,69,0.35);
         }
 
         .register-cta .btn-empresa:hover {
@@ -703,7 +691,8 @@
         }
 
         .footer-logo {
-            height: 40px;
+            height: 60px; /* Logo maior no rodapé */
+            margin-bottom: 10px;
         }
 
         footer nav ul {
@@ -764,8 +753,9 @@
             .feature-item h3 { font-size: 1.6em; }
             .faq-question { font-size: 1.25em; }
             .modal-content h2 { font-size: 2.2em; }
-            header .logo-container img { height: 50px; } /* Ajuste para logo maior */
-            header .logo-text { font-size: 2.2em; }
+            header .logo-container img { height: 60px; }
+            header .logo-text { font-size: 2.5em; }
+            .footer-logo { height: 50px; }
         }
 
         @media (max-width: 768px) {
@@ -779,8 +769,9 @@
             header nav ul { flex-direction: column; align-items: flex-start; width: 100%; }
             header nav ul li { margin: 10px 0; }
             .cta-button { width: 100%; text-align: center; }
-            header .logo-container img { height: 40px; } /* Ajuste para logo menor em mobile */
-            header .logo-text { font-size: 1.8em; }
+            header .logo-container img { height: 50px; }
+            header .logo-text { font-size: 2.2em; }
+            .footer-logo { height: 40px; }
 
             .hero { padding: 80px 0; }
             .hero h1 { font-size: 2.8em; }
@@ -810,7 +801,7 @@
         }
 
         @media (max-width: 480px) {
-            header .logo-text { font-size: 1.6em; }
+            header .logo-text { font-size: 1.8em; }
             .hero h1 { font-size: 2.2em; }
             .hero p { font-size: 1.05em; }
             .features h2, .support-creator h2, .faq h2, .register-cta h2 { font-size: 2em; }
