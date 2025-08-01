@@ -17,9 +17,6 @@
             --white: #fff;
             --gradient-start: #E8F0F7;
             --gradient-end: #D2E0EE;
-            --warning-color: #FFC107; /* Amarelo para aviso */
-            --warning-bg-color: #FFF3CD; /* Fundo amarelo claro */
-            --warning-border-color: #FFE69C; /* Borda amarela */
             --body-bg: #EAEFF4; /* Fundo do site mais claro e profissional */
 
             --font-family-body: 'Inter', sans-serif;
@@ -97,28 +94,6 @@
             animation: pulseLight 2.5s infinite ease-in-out;
         }
 
-        /* Aviso de Manutenção */
-        .maintenance-banner {
-            background-color: var(--warning-bg-color);
-            border-bottom: 2px solid var(--warning-border-color);
-            color: #856404;
-            text-align: center;
-            padding: 15px;
-            font-size: 1.1em;
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-            animation: slideInDown 0.5s ease-out forwards;
-        }
-        @keyframes slideInDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-
         /* Cabeçalho */
         header {
             background-color: var(--white);
@@ -133,7 +108,7 @@
             padding-right: 5%;
             animation: fadeIn 0.5s ease-out forwards;
             position: sticky;
-            top: 60px; /* Ajustado para ficar abaixo do banner de manutenção */
+            top: 0;
             z-index: 999;
         }
 
@@ -145,7 +120,7 @@
         }
 
         header .logo-container img {
-            height: 40px; /* Ajuste o tamanho da logo conforme necessário */
+            height: 40px;
             margin-right: 15px;
         }
         
@@ -776,7 +751,6 @@
         }
 
         @media (max-width: 768px) {
-            .maintenance-banner { font-size: 1em; padding: 12px; }
             header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -844,13 +818,9 @@
     </style>
 </head>
 <body>
-    <div class="maintenance-banner">
-        ⚠️ **Aviso de Manutenção:** Estamos trabalhando para corrigir um problema onde as imagens dos anúncios não estavam carregando em alguns navegadores. Pedimos desculpas pelo transtorno e agradecemos a sua paciência!
-    </div>
-
     <header>
         <a href="#" class="logo-container">
-            <img src="shop.png" alt="Logo da Conext">
+            <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext">
             <span class="logo-text">Conext</span>
         </a>
         <nav>
