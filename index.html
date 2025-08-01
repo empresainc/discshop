@@ -18,6 +18,9 @@
             --gradient-start: #E8F0F7;
             --gradient-end: #D2E0EE;
             --body-bg: #EAEFF4; /* Fundo do site mais claro e profissional */
+            --farewell-bg: #E3342F; /* Vermelho para destaque */
+            --farewell-text: #fff;
+            --farewell-shadow: rgba(227, 52, 47, 0.5);
 
             --font-family-body: 'Inter', sans-serif;
             --font-family-heading: 'Inter', sans-serif;
@@ -35,7 +38,20 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
+        
+        /* Banner de Despedida */
+        .farewell-banner {
+            background-color: var(--farewell-bg);
+            color: var(--farewell-text);
+            text-align: center;
+            padding: 20px;
+            font-size: 1.3em;
+            font-weight: 700;
+            position: relative;
+            z-index: 1001;
+            box-shadow: 0 4px 15px var(--farewell-shadow);
+        }
+        
         .container {
             width: 90%;
             max-width: 1280px;
@@ -829,6 +845,10 @@
     </style>
 </head>
 <body>
+    <div class="farewell-banner">
+        Adeus Brasil, infelizmente chegamos ao fim. Obrigado a todo o público BR que fez isso acontecer. Até algum dia!
+    </div>
+    
     <header>
         <a href="#" class="logo-container">
             <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext">
@@ -844,7 +864,7 @@
                 <li><a href="#">Contato</a></li>
             </ul>
         </nav>
-        <a href="https://varying-designing-annotation-shoppers.trycloudflare.com" class="cta-button" target="_blank">Criar Conta / Vender</a>
+        <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="cta-button" target="_blank">Criar Conta / Vender</a>
     </header>
 
     <main>
@@ -853,8 +873,8 @@
                 <h1>Conext: Seu Universo de Jogos e Produtos Digitais!</h1>
                 <p>Encontre os melhores produtos digitais e de jogos, conectando-se diretamente com criadores e vendedores. A Conext garante a segurança da transação, analisando o pagamento antes de repassá-lo ao vendedor.</p>
                 <div class="hero-buttons">
-                    <a href="https://varying-designing-annotation-shoppers.trycloudflare.com" class="btn-primary" target="_blank">Comprar Agora</a>
-                    <a href="https://varying-designing-annotation-shoppers.trycloudflare.com" class="btn-secondary" target="_blank">Vender Meus Produtos</a>
+                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-primary" target="_blank">Comprar Agora</a>
+                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-secondary" target="_blank">Vender Meus Produtos</a>
                 </div>
             </div>
         </section>
@@ -978,8 +998,8 @@
                 <h2>Pronto para Explorar o Universo Conext?</h2>
                 <p>Crie sua conta agora e comece a descobrir ou vender os melhores produtos de jogos e digitais!</p>
                 <div class="cta-button-group">
-                    <a href="https://varying-designing-annotation-shoppers.trycloudflare.com" class="btn-cliente" target="_blank">Quero Comprar</a>
-                    <a href="https://varying-designing-annotation-shoppers.trycloudflare.com" class="btn-empresa" target="_blank">Quero Vender</a>
+                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-cliente" target="_blank">Quero Comprar</a>
+                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-empresa" target="_blank">Quero Vender</a>
                 </div>
             </div>
         </section>
@@ -1093,7 +1113,7 @@
             const creatorCodeInput = document.getElementById('creatorCode');
             const applyCodeButton = document.getElementById('applyCodeButton');
             const supportMessage = document.getElementById('support-message');
-            const registrationLink = "https://varying-designing-annotation-shoppers.trycloudflare.com";
+            const registrationLink = "https://reynolds-newport-seating-negotiations.trycloudflare.com/";
 
             // Data de expiração para "discovernews": 31 de dezembro de 2025
             const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59);
@@ -1177,4 +1197,3 @@
     </script>
 </body>
 </html>
-
