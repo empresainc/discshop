@@ -20,6 +20,7 @@
             --warning-color: #FFC107; /* Amarelo para aviso */
             --warning-bg-color: #FFF3CD; /* Fundo amarelo claro */
             --warning-border-color: #FFE69C; /* Borda amarela */
+            --body-bg: #EAEFF4; /* Fundo do site mais claro e profissional */
 
             --font-family-body: 'Inter', sans-serif;
             --font-family-heading: 'Inter', sans-serif;
@@ -30,33 +31,12 @@
             font-family: var(--font-family-body);
             margin: 0;
             padding: 0;
-            background-color: var(--light-gray);
+            background-color: var(--body-bg); /* Fundo profissional */
+            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
             color: var(--text-color);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Aviso de Manutenção */
-        .maintenance-banner {
-            background-color: var(--warning-bg-color);
-            border-bottom: 2px solid var(--warning-border-color);
-            color: #856404;
-            text-align: center;
-            padding: 15px;
-            font-size: 1.1em;
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-            animation: slideInDown 0.5s ease-out forwards;
-        }
-        @keyframes slideInDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
         }
 
         .container {
@@ -117,6 +97,28 @@
             animation: pulseLight 2.5s infinite ease-in-out;
         }
 
+        /* Aviso de Manutenção */
+        .maintenance-banner {
+            background-color: var(--warning-bg-color);
+            border-bottom: 2px solid var(--warning-border-color);
+            color: #856404;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: slideInDown 0.5s ease-out forwards;
+        }
+        @keyframes slideInDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
         /* Cabeçalho */
         header {
             background-color: var(--white);
@@ -135,12 +137,21 @@
             z-index: 999;
         }
 
-        header .logo {
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+
+        header .logo-container img {
+            height: 40px; /* Ajuste o tamanho da logo conforme necessário */
+            margin-right: 15px;
+        }
+        
+        header .logo-text {
             font-size: 2.2em;
             font-weight: 800;
-            color: var(--secondary-color);
-            text-decoration: none;
-            margin-right: 30px;
             letter-spacing: -1px;
         }
 
@@ -760,6 +771,8 @@
             .feature-item h3 { font-size: 1.6em; }
             .faq-question { font-size: 1.25em; }
             .modal-content h2 { font-size: 2.2em; }
+            header .logo-container img { height: 35px; }
+            header .logo-text { font-size: 1.8em; }
         }
 
         @media (max-width: 768px) {
@@ -769,11 +782,13 @@
                 align-items: flex-start;
                 padding-bottom: 15px;
             }
-            header .logo { margin-bottom: 15px; }
+            header .logo-container { margin-bottom: 15px; }
             header nav { width: 100%; margin-bottom: 15px; }
             header nav ul { flex-direction: column; align-items: flex-start; width: 100%; }
             header nav ul li { margin: 10px 0; }
             .cta-button { width: 100%; text-align: center; }
+            header .logo-container img { height: 30px; }
+            header .logo-text { font-size: 1.6em; }
 
             .hero { padding: 80px 0; }
             .hero h1 { font-size: 2.8em; }
@@ -803,7 +818,7 @@
         }
 
         @media (max-width: 480px) {
-            header .logo { font-size: 2em; }
+            header .logo-text { font-size: 1.4em; }
             .hero h1 { font-size: 2.2em; }
             .hero p { font-size: 1.05em; }
             .features h2, .support-creator h2, .faq h2, .register-cta h2 { font-size: 2em; }
@@ -834,7 +849,10 @@
     </div>
 
     <header>
-        <a href="#" class="logo">Conext</a>
+        <a href="#" class="logo-container">
+            <img src="shop.png" alt="Logo da Conext">
+            <span class="logo-text">Conext</span>
+        </a>
         <nav>
             <ul>
                 <li><a href="#">Catálogo</a></li>
@@ -845,17 +863,17 @@
                 <li><a href="#">Contato</a></li>
             </ul>
         </nav>
-        <a href="https://climb-processed-shorts-apartment.trycloudflare.com/" class="cta-button" target="_blank">Criar Conta / Vender</a>
+        <a href="https://corner-witch-myth-motorcycles.trycloudflare.com/" class="cta-button" target="_blank">Criar Conta / Vender</a>
     </header>
 
     <main>
         <section class="hero animate-on-load">
             <div class="container">
                 <h1>Conext: Seu Universo de Jogos e Produtos Digitais!</h1>
-                <p>Encontre os melhores produtos digitais e de jogos, conectando-se diretamente com criadores e vendedores. **Todos os pagamentos são via PIX e a Conext NÃO retém valores** – a transação é direta entre você e o vendedor!</p>
+                <p>Encontre os melhores produtos digitais e de jogos, conectando-se diretamente com criadores e vendedores. A Conext garante a segurança da transação, analisando o pagamento antes de repassá-lo ao vendedor.</p>
                 <div class="hero-buttons">
-                    <a href="https://climb-processed-shorts-apartment.trycloudflare.com/" class="btn-primary" target="_blank">Comprar Agora</a>
-                    <a href="https://climb-processed-shorts-apartment.trycloudflare.com/" class="btn-secondary" target="_blank">Vender Meus Produtos</a>
+                    <a href="https://corner-witch-myth-motorcycles.trycloudflare.com/" class="btn-primary" target="_blank">Comprar Agora</a>
+                    <a href="https://corner-witch-myth-motorcycles.trycloudflare.com/" class="btn-secondary" target="_blank">Vender Meus Produtos</a>
                 </div>
             </div>
         </section>
@@ -884,9 +902,9 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet">
                                 <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h12a2 2 0 0 1 0 4H5a2 2 0 0 0 0 4h12c.74 0 1.42-.28 1.9-.76l2.44-2.44A1 1 0 0 0 22 12V8a2 2 0 0 0-2-2h-1"></path>
                             </svg>
-                            Pagamento Direto via PIX
+                            Segurança na Transação
                         </h3>
-                        <p>Total transparência! Transações rápidas e seguras diretamente para o vendedor, sem intermediários. A Conext não retém valores.</p>
+                        <p>Seu pagamento via PIX é analisado antes de ser aprovado e repassado. Assim, garantimos a segurança da compra e a entrega do produto.</p>
                     </div>
                     <div class="feature-item">
                         <h3>
@@ -918,7 +936,7 @@
                             </svg>
                             Venda Simples e Rápida
                         </h3>
-                        <p>Crie sua loja e comece a vender seus produtos digitais em minutos. Receba diretamente via PIX.</p>
+                        <p>Crie sua loja e comece a vender seus produtos digitais em minutos. Receba diretamente via PIX, após o período de análise e segurança.</p>
                     </div>
                 </div>
             </div>
@@ -943,7 +961,7 @@
                     <div class="faq-item">
                         <div class="faq-question">Como funciona o pagamento na Conext?</div>
                         <div class="faq-answer">
-                            <p>Todos os pagamentos na Conext são feitos diretamente via PIX entre o comprador e o vendedor. A Conext facilita a conexão, mas **NÃO retém nenhum valor** das transações, garantindo total controle e agilidade para ambas as partes.</p>
+                            <p>Para garantir a segurança das transações, os pagamentos via PIX são primeiramente analisados pela Conext. Após a aprovação (que é instantânea), o valor é creditado no saldo do vendedor. Por segurança, o saque só é liberado após 2 dias. Isso protege tanto o comprador quanto o vendedor.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -979,8 +997,8 @@
                 <h2>Pronto para Explorar o Universo Conext?</h2>
                 <p>Crie sua conta agora e comece a descobrir ou vender os melhores produtos de jogos e digitais!</p>
                 <div class="cta-button-group">
-                    <a href="https://climb-processed-shorts-apartment.trycloudflare.com/" class="btn-cliente" target="_blank">Quero Comprar</a>
-                    <a href="https://climb-processed-shorts-apartment.trycloudflare.com/" class="btn-empresa" target="_blank">Quero Vender</a>
+                    <a href="https://corner-witch-myth-motorcycles.trycloudflare.com/" class="btn-cliente" target="_blank">Quero Comprar</a>
+                    <a href="https://corner-witch-myth-motorcycles.trycloudflare.com/" class="btn-empresa" target="_blank">Quero Vender</a>
                 </div>
             </div>
         </section>
@@ -1005,19 +1023,19 @@
         <div class="modal-content">
             <button class="modal-close-button" id="close-terms-modal">&times;</button>
             <h2>Termos de Uso da Conext</h2>
-            <p><strong>Última atualização: 21 de Julho de 2025</strong></p>
+            <p><strong>Última atualização: 1 de Agosto de 2025</strong></p>
 
             <h3>1. Aceitação dos Termos</h3>
             <p>Bem-vindo à Conext! Ao acessar ou utilizar nossa plataforma, você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, você não deve usar a plataforma Conext. Reservamo-nos o direito de modificar estes termos a qualquer momento, e as alterações entrarão em vigor imediatamente após a publicação na plataforma.</p>
 
             <h3>2. Descrição do Serviço</h3>
-            <p>A Conext é uma plataforma online que facilita a conexão entre vendedores e compradores de produtos digitais e de jogos. Atuamos como um intermediador de comunicação, permitindo que usuários anunciem e vendam, e que compradores encontrem e adquiram, produtos como chaves de jogos, itens in-game, softwares, e-books, ativos gráficos, licenças digitais e outros conteúdos digitais.</p>
+            <p>A Conext é uma plataforma online que facilita a conexão entre vendedores e compradores de produtos digitais e de jogos. Atuamos como um intermediador de transações, garantindo a segurança de ambas as partes. Isso significa que, ao realizar uma compra, o pagamento é processado e analisado pela nossa plataforma antes de ser creditado ao vendedor. Essa análise garante um ambiente de compra e venda mais seguro e confiável para todos os usuários.</p>
 
-            <h3>3. Pagamentos e Transações (PIX - Sem Retenção)</h3>
-            <p><strong>A Conext opera com um modelo de pagamento direto entre comprador e vendedor. Todas as transações financeiras são realizadas exclusivamente via PIX. A Conext NÃO retém, processa ou armazena quaisquer valores de transação.</strong> O pagamento é feito diretamente do comprador para a chave PIX fornecida pelo vendedor. É de responsabilidade exclusiva do comprador e do vendedor garantir a conclusão e a conformidade da transação PIX. A Conext não se responsabiliza por disputas de pagamento ou falhas na transação entre as partes.</p>
+            <h3>3. Pagamentos e Transações (PIX - Segurança e Análise)</h3>
+            <p><strong>A Conext processa todos os pagamentos via PIX para garantir a segurança da transação. O pagamento é analisado e, após a aprovação, o valor é enviado para o saldo do vendedor. Por motivos de segurança e para proteção contra fraudes, o valor do saque só é liberado para o vendedor após 2 dias.</strong> Este procedimento garante que o comprador tenha tempo de receber o produto e que qualquer problema possa ser resolvido antes que o valor seja liberado definitivamente. A Conext se responsabiliza pela análise e pelo repasse seguro dos valores, atuando como um mediador de confiança entre as partes.</p>
             <ul>
-                <li><strong>Responsabilidade do Vendedor:</strong> Fornecer informações PIX corretas e garantir a entrega do produto digital após a confirmação do pagamento.</li>
-                <li><strong>Responsabilidade do Comprador:</strong> Efetuar o pagamento correto para a chave PIX fornecida e verificar a autenticidade do vendedor.</li>
+                <li><strong>Responsabilidade do Vendedor:</strong> Entregar o produto digital ao comprador após a confirmação do pagamento. O valor ficará no saldo da Conext por 2 dias antes de ser liberado para saque.</li>
+                <li><strong>Responsabilidade do Comprador:</strong> Efetuar o pagamento correto via PIX. A Conext garantirá que a transação seja segura.</li>
             </ul>
 
             <h3>4. Contas de Usuário</h3>
@@ -1089,7 +1107,7 @@
             const creatorCodeInput = document.getElementById('creatorCode');
             const applyCodeButton = document.getElementById('applyCodeButton');
             const supportMessage = document.getElementById('support-message');
-            const registrationLink = "https://climb-processed-shorts-apartment.trycloudflare.com/"; // Link de registro
+            const registrationLink = "https://corner-witch-myth-motorcycles.trycloudflare.com/"; // Novo Link de registro
 
             // Data de expiração para "discovernews": 31 de dezembro de 2025
             const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59);
