@@ -120,12 +120,12 @@
         }
 
         header .logo-container img {
-            height: 40px;
+            height: 60px; /* Logo maior no cabeçalho */
             margin-right: 15px;
         }
         
         header .logo-text {
-            font-size: 2.2em;
+            font-size: 2.8em; /* Ajuste para combinar com a logo maior */
             font-weight: 800;
             letter-spacing: -1px;
         }
@@ -587,6 +587,13 @@
             border-bottom: 1px solid var(--mid-gray);
             padding-bottom: 20px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .modal-content h2 .modal-logo {
+            height: 40px;
         }
 
         .modal-content h3 {
@@ -687,6 +694,17 @@
             font-size: 0.98em;
             border-top: 1px solid #333;
         }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            height: 40px;
+        }
 
         footer nav ul {
             list-style: none;
@@ -746,8 +764,8 @@
             .feature-item h3 { font-size: 1.6em; }
             .faq-question { font-size: 1.25em; }
             .modal-content h2 { font-size: 2.2em; }
-            header .logo-container img { height: 35px; }
-            header .logo-text { font-size: 1.8em; }
+            header .logo-container img { height: 50px; } /* Ajuste para logo maior */
+            header .logo-text { font-size: 2.2em; }
         }
 
         @media (max-width: 768px) {
@@ -761,8 +779,8 @@
             header nav ul { flex-direction: column; align-items: flex-start; width: 100%; }
             header nav ul li { margin: 10px 0; }
             .cta-button { width: 100%; text-align: center; }
-            header .logo-container img { height: 30px; }
-            header .logo-text { font-size: 1.6em; }
+            header .logo-container img { height: 40px; } /* Ajuste para logo menor em mobile */
+            header .logo-text { font-size: 1.8em; }
 
             .hero { padding: 80px 0; }
             .hero h1 { font-size: 2.8em; }
@@ -792,7 +810,7 @@
         }
 
         @media (max-width: 480px) {
-            header .logo-text { font-size: 1.4em; }
+            header .logo-text { font-size: 1.6em; }
             .hero h1 { font-size: 2.2em; }
             .hero p { font-size: 1.05em; }
             .features h2, .support-creator h2, .faq h2, .register-cta h2 { font-size: 2em; }
@@ -985,14 +1003,20 @@
                     <li><a href="#support-creator-section">Apoie seu Criador</a></li>
                 </ul>
             </nav>
-            <p>&copy; 2025 Conext. Todos os direitos reservados.</p>
+            <div class="footer-content">
+                <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext" class="footer-logo">
+                <p>&copy; 2025 Conext. Todos os direitos reservados.</p>
+            </div>
         </div>
     </footer>
 
     <div class="modal-overlay" id="termsModal">
         <div class="modal-content">
             <button class="modal-close-button" id="close-terms-modal">&times;</button>
-            <h2>Termos de Uso da Conext</h2>
+            <h2>
+                <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext" class="modal-logo">
+                Termos de Uso da Conext
+            </h2>
             <p><strong>Última atualização: 1 de Agosto de 2025</strong></p>
 
             <h3>1. Aceitação dos Termos</h3>
@@ -1045,7 +1069,6 @@
         </div>
     </div>
 
-
     <script>
         // Funcionalidade para o FAQ (Acordeão)
         document.addEventListener('DOMContentLoaded', () => {
@@ -1077,30 +1100,29 @@
             const creatorCodeInput = document.getElementById('creatorCode');
             const applyCodeButton = document.getElementById('applyCodeButton');
             const supportMessage = document.getElementById('support-message');
-            const registrationLink = "https://corner-witch-myth-motorcycles.trycloudflare.com/"; // Novo Link de registro
+            const registrationLink = "https://corner-witch-myth-motorcycles.trycloudflare.com/";
 
             // Data de expiração para "discovernews": 31 de dezembro de 2025
             const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59);
 
             applyCodeButton.addEventListener('click', () => {
-                const code = creatorCodeInput.value.trim().toLowerCase(); // Converte para minúsculas para case-insensitivity
+                const code = creatorCodeInput.value.trim().toLowerCase();
                 const now = new Date();
 
-                supportMessage.textContent = ''; // Limpa mensagens anteriores
-                supportMessage.classList.remove('error'); // Remove classe de erro
+                supportMessage.textContent = '';
+                supportMessage.classList.remove('error');
 
                 if (code === 'marcola2025') {
                     supportMessage.textContent = 'Obrigado pelo apoio! Crie agora sua conta.';
-                    // Redireciona para a página de registro após um pequeno atraso
                     setTimeout(() => {
                         window.open(registrationLink, '_blank');
-                    }, 1500); // Abre em nova aba após 1.5 segundos
+                    }, 1500);
                 } else if (code === 'discovernews') {
                     if (now <= discoverNewsExpiry) {
                         supportMessage.textContent = 'Obrigado pelo apoio! Crie agora sua conta.';
                         setTimeout(() => {
                             window.open(registrationLink, '_blank');
-                        }, 1500); // Abre em nova aba após 1.5 segundos
+                        }, 1500);
                     } else {
                         supportMessage.textContent = 'Código "discovernews" expirou. Por favor, tente outro.';
                         supportMessage.classList.add('error');
@@ -1113,18 +1135,18 @@
 
             // Funcionalidade para o Modal dos Termos de Uso
             const openTermsModalButton = document.getElementById('open-terms-modal');
-            const footerTermsLink = document.getElementById('footer-terms-link'); // Também no rodapé
+            const footerTermsLink = document.getElementById('footer-terms-link');
             const termsModal = document.getElementById('termsModal');
             const closeTermsModalButton = document.getElementById('close-terms-modal');
 
             function openModal() {
                 termsModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Impede o scroll do body quando o modal está aberto
+                document.body.style.overflow = 'hidden';
             }
 
             function closeModal() {
                 termsModal.classList.remove('active');
-                document.body.style.overflow = ''; // Restaura o scroll do body
+                document.body.style.overflow = '';
             }
 
             if (openTermsModalButton) {
@@ -1155,7 +1177,7 @@
             // Animações de entrada para todas as seções, com atraso progressivo
             const sectionsToAnimate = document.querySelectorAll('main section, header');
             sectionsToAnimate.forEach((section, index) => {
-                section.style.animationDelay = `${0.2 + (index * 0.1)}s`; /* Atraso menor para parecer mais rápido */
+                section.style.animationDelay = `${0.2 + (index * 0.1)}s`;
                 section.classList.add('animate-on-load');
             });
         });
