@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo ao VIP!</title>
+    <title>Bem-vindo à Conextshop</title>
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Estilos originais mantidos para a aparência visual */
         :root {
-            --primary-color: #007BFF; /* Azul vibrante */
-            --secondary-color: #1A2C42; /* Azul escuro profundo */
-            --accent-color: #28A745; /* Verde para sucesso/botões */
+            --primary-color: #007BFF;
+            --secondary-color: #1A2C42;
             --text-color: #333;
-            --light-gray: #F0F2F5; /* Cinza claro suave */
+            --light-gray: #F0F2F5;
             --white: #fff;
             --gradient-start: #E8F0F7;
             --gradient-end: #D2E0EE;
-            --body-bg: #EAEFF4; /* Fundo do site mais claro e profissional */
+            --body-bg: #EAEFF4;
             --font-family-body: 'Inter', sans-serif;
-            --font-family-heading: 'Inter', sans-serif;
         }
 
-        /* Estilos Gerais */
         body, html {
-            height: 100%; /* Garante que o corpo ocupe a tela inteira */
+            height: 100%;
         }
         
         body {
             font-family: var(--font-family-body);
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: var(--body-bg);
-            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
             color: var(--text-color);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            
-            /* Centraliza o conteúdo vertical e horizontalmente */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,121 +36,111 @@
         }
 
         .container {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             width: 90%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 20px 0;
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
         }
 
-        h1 {
-            font-family: var(--font-family-heading);
-            color: var(--secondary-color);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        /* Animações */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate-on-load {
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        /* Seção Herói (Destaque principal) */
-        .hero {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 80px 40px;
-            text-align: center;
+        h1 {
             color: var(--secondary-color);
-            border-radius: 20px; /* Bordas arredondadas para um visual de card */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            width: 90%;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.2em;
-            margin-top: 15px; /* Espaçamento entre as mensagens */
-            margin-bottom: 40px;
             font-weight: 800;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+            font-size: 2.8em;
+            margin-bottom: 20px;
         }
 
-        .hero p {
-            font-size: 1.3em;
-            margin-bottom: 10px;
+        p {
+            font-size: 1.2em;
             color: #444;
-            font-weight: 500;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
-        
-        .hero .hero-buttons {
+
+        .button-container {
+            margin-top: 30px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 25px;
         }
-        
-        .hero .btn-primary {
-            padding: 18px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            border: none;
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
+
+        /* Botão para Acessar Painel (com estilo) */
+        .panel-button {
+            background: var(--secondary-color);
             color: var(--white);
-            box-shadow: 0 8px 20px rgba(0,123,255,0.35);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 80%;
+            max-width: 300px;
         }
 
-        .hero .btn-primary:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(0,123,255,0.5);
+        .panel-button:hover {
+            background-color: #0F1D2F;
+            transform: translateY(-5px);
+        }
+        
+        /* Estilo para o botão do Stripe (para garantir o espaçamento) */
+        stripe-buy-button {
+            width: 100%;
         }
 
         /* Responsividade */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1.1em;
-            }
-            .hero .btn-primary {
-                padding: 16px 35px;
-                font-size: 1.1em;
-            }
-        }
         @media (max-width: 480px) {
-            .hero {
-                padding: 60px 20px;
-            }
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
+            h1 { font-size: 2.2em; }
+            p { font-size: 1em; }
+            .container { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
     
-    <main class="animate-on-load">
-        <section class="hero">
-            <div class="container">
-                <p>Não se esqueça de renovar para não perder acesso às novidades.</p>
-                
-                <h1>Obrigado por comprar o nosso VIP!</h1>
-                
-                <div class="hero-buttons">
-                    <a href="https://association-calculation-coaches-collections.trycloudflare.com/" class="btn-primary" target="_blank">Acessar Painel</a>
-                </div>
-            </div>
-        </section>
-    </main>
+    <div class="container">
+        <div class="button-container">
+            <button id="access-panel-button" class="panel-button">Acessar Painel</button>
+        </div>
 
-</body>
+        <h1>Bem-vindo à Conextshop!</h1>
+        <p>A sua loja exclusiva para produtos e conteúdos VIP. Garanta o seu acesso agora mesmo clicando no botão abaixo!</p>
+        
+        <stripe-buy-button
+            buy-button-id="buy_btn_1Ru3S8RqbzoqkY8lq7hDrLTV"
+            publishable-key="pk_live_51R0nkARqbzoqkY8lkJYvIRoh8aqmcBF0cR9fJszaynH1U53doxH32x80z3911vKtnqlf4tpxnUet5fpk2Vuc9b6n00DbC5lINz"
+        >
+        </stripe-buy-button>
+        
+    </div>
+
+    <script>
+        // Adiciona a funcionalidade ao botão "Acessar Painel"
+        document.getElementById('access-panel-button').addEventListener('click', function() {
+            // Pede a senha ao utilizador
+            const password = prompt("Por favor, insira a sua senha de acesso VIP:");
+
+            // Verifica se o utilizador inseriu algo e se a senha está correta
+            if (password === "vip2025") {
+                // Se a senha estiver correta, redireciona para o painel
+                alert("Senha correta! A aceder ao painel...");
+                window.location.href = 'https://association-calculation-coaches-collections.trycloudflare.com/';
+            } else if (password !== null && password !== "") {
+                // Se a senha estiver incorreta (e o utilizador não cancelou)
+                alert("Senha incorreta. Por favor, tente novamente.");
+            }
+            // Se o utilizador clicar em "Cancelar", não faz nada.
+        });
+    </script>
+    
+    </body>
 </html>
