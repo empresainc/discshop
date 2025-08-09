@@ -3,55 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conext - Seu Hub de Produtos Digitais e de Jogos</title>
+    <title>Bem-vindo ao VIP!</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Variáveis CSS para Cores e Fontes */
+        /* Estilos originais mantidos para a aparência visual */
         :root {
             --primary-color: #007BFF; /* Azul vibrante */
             --secondary-color: #1A2C42; /* Azul escuro profundo */
             --accent-color: #28A745; /* Verde para sucesso/botões */
             --text-color: #333;
             --light-gray: #F0F2F5; /* Cinza claro suave */
-            --mid-gray: #DDE2E7; /* Cinza médio para bordas */
             --white: #fff;
             --gradient-start: #E8F0F7;
             --gradient-end: #D2E0EE;
             --body-bg: #EAEFF4; /* Fundo do site mais claro e profissional */
-            --farewell-bg: #E3342F; /* Vermelho para destaque */
-            --farewell-text: #fff;
-            --farewell-shadow: rgba(227, 52, 47, 0.5);
-
             --font-family-body: 'Inter', sans-serif;
             --font-family-heading: 'Inter', sans-serif;
         }
 
         /* Estilos Gerais */
+        body, html {
+            height: 100%; /* Garante que o corpo ocupe a tela inteira */
+        }
+        
         body {
             font-family: var(--font-family-body);
             margin: 0;
             padding: 0;
-            background-color: var(--body-bg); /* Fundo profissional */
+            background-color: var(--body-bg);
             background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
             color: var(--text-color);
-            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-        
-        /* Banner de Despedida */
-        .farewell-banner {
-            background-color: var(--farewell-bg);
-            color: var(--farewell-text);
+            
+            /* Centraliza o conteúdo vertical e horizontalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 20px;
-            font-size: 1.3em;
-            font-weight: 700;
-            position: relative;
-            z-index: 1001;
-            box-shadow: 0 4px 15px var(--farewell-shadow);
         }
-        
+
         .container {
             width: 90%;
             max-width: 1280px;
@@ -59,190 +50,57 @@
             padding: 20px 0;
         }
 
-        h1, h2, h3 {
+        h1 {
             font-family: var(--font-family-heading);
             color: var(--secondary-color);
             font-weight: 700;
             line-height: 1.2;
         }
-
-        h1 { font-size: 3.8em; margin-bottom: 20px; }
-        h2 { font-size: 2.8em; margin-bottom: 1em; }
-        h3 { font-size: 1.8em; margin-bottom: 0.8em; }
-
-        p {
-            font-size: 1.15em;
-            color: #555;
-        }
-
-        /* Animações Modernas e Sutis */
+        
+        /* Animações */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(60px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulseLight {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.02); opacity: 0.95; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
         .animate-on-load {
             animation: fadeIn 1s ease-out forwards;
-            opacity: 0;
         }
 
-        .hero h1, .hero p, .hero .hero-buttons {
-            animation: slideInUp 1.2s ease-out forwards;
-            opacity: 0;
-        }
-
-        .hero h1 { animation-delay: 0.2s; }
-        .hero p { animation-delay: 0.4s; }
-        .hero .hero-buttons { animation-delay: 0.6s; }
-
-        .number-item .value {
-            animation: pulseLight 2.5s infinite ease-in-out;
-        }
-
-        /* Cabeçalho */
-        header {
-            background-color: var(--white);
-            padding: 20px 0;
-            border-bottom: 1px solid var(--mid-gray);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            padding-left: 5%;
-            padding-right: 5%;
-            animation: fadeIn 0.5s ease-out forwards;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-
-        header .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: var(--secondary-color);
-        }
-
-        header .logo-container img {
-            height: 80px; /* Logo maior no cabeçalho */
-            margin-right: 15px;
-        }
-        
-        header .logo-text {
-            font-size: 3.2em; /* Ajuste para combinar com a logo maior */
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        header nav ul li {
-            margin-left: 35px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.2s ease;
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        header nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary-color);
-            transition: width 0.3s ease-out;
-        }
-
-        header nav ul li a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        header nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
-            color: var(--white);
-            padding: 14px 30px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0,123,255,0.3);
-            border: none;
-            font-size: 1.05em;
-        }
-
-        .cta-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,123,255,0.4);
-        }
-
-        /* Seção Herói (Destaque) */
+        /* Seção Herói (Destaque principal) */
         .hero {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 120px 0;
+            padding: 80px 40px;
             text-align: center;
             color: var(--secondary-color);
-            overflow: hidden;
-            position: relative;
+            border-radius: 20px; /* Bordas arredondadas para um visual de card */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 800px;
         }
 
         .hero h1 {
-            font-size: 4.5em;
-            margin-bottom: 25px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 3.2em;
+            margin-top: 15px; /* Espaçamento entre as mensagens */
+            margin-bottom: 40px;
             font-weight: 800;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
         }
 
         .hero p {
-            font-size: 1.4em;
-            margin-bottom: 50px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.3em;
+            margin-bottom: 10px;
             color: #444;
+            font-weight: 500;
         }
-
+        
         .hero .hero-buttons {
             display: flex;
             justify-content: center;
             gap: 25px;
-            flex-wrap: wrap;
         }
-
-        .hero .btn-primary, .hero .btn-secondary {
+        
+        .hero .btn-primary {
             padding: 18px 40px;
             border-radius: 10px;
             text-decoration: none;
@@ -250,950 +108,57 @@
             font-size: 1.2em;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
             border: none;
-        }
-
-        .hero .btn-primary {
             background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
             color: var(--white);
             box-shadow: 0 8px 20px rgba(0,123,255,0.35);
         }
 
         .hero .btn-primary:hover {
-            background-color: #0056b3;
             transform: translateY(-7px);
             box-shadow: 0 10px 30px rgba(0,123,255,0.5);
         }
 
-        .hero .btn-secondary {
-            background-color: var(--white);
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .hero .btn-secondary:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(0,123,255,0.5);
-        }
-
-        /* Seção de Números */
-        .numbers-section {
-            background-color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-            border-bottom: 1px solid var(--mid-gray);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .numbers-grid {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            flex-wrap: wrap;
-        }
-
-        .number-item {
-            flex: 1;
-            min-width: 280px;
-            max-width: 400px;
-            padding: 30px;
-            border-radius: 15px;
-            background: linear-gradient(145deg, var(--light-gray), #E2E6EC);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--mid-gray);
-        }
-
-        .number-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-        }
-
-        .number-item .value {
-            font-size: 5em;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: block;
-            text-shadow: 1px 1px 2px rgba(0,123,255,0.2);
-        }
-
-        .number-item .label {
-            font-size: 1.5em;
-            color: var(--secondary-color);
-            font-weight: 700;
-        }
-
-        /* Seção de Funcionalidades */
-        .features {
-            padding: 100px 0;
-            text-align: center;
-            background-color: var(--light-gray);
-        }
-
-        .features h2 {
-            margin-bottom: 70px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-item {
-            background-color: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            border: 1px solid var(--mid-gray);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .feature-item h3 {
-            color: var(--primary-color);
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 700;
-        }
-
-        .feature-item h3 svg {
-            width: 35px;
-            height: 35px;
-            color: var(--primary-color);
-            stroke-width: 2.5;
-        }
-
-        .feature-item p {
-            font-size: 1.1em;
-            color: #666;
-        }
-
-        /* Seção Apoie seu Criador */
-        .support-creator {
-            background: linear-gradient(135deg, var(--gradient-end) 0%, var(--gradient-start) 100%);
-            padding: 100px 0;
-            text-align: center;
-            color: var(--secondary-color);
-        }
-
-        .support-creator h2 {
-            margin-bottom: 35px;
-        }
-
-        .support-creator p {
-            font-size: 1.25em;
-            margin-bottom: 45px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #444;
-        }
-
-        .support-creator .code-input-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .support-creator .code-input-group input[type="text"] {
-            padding: 18px 25px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 1.2em;
-            width: 350px;
-            max-width: 90%;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .support-creator .code-input-group input[type="text"]:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(0,123,255,0.3);
-            outline: none;
-        }
-
-        .support-creator .code-input-group button {
-            background: linear-gradient(135deg, var(--accent-color) 0%, #218838 100%);
-            color: var(--white);
-            padding: 18px 35px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 20px rgba(40,167,69,0.3);
-        }
-
-        .support-creator .code-input-group button:hover {
-            background-color: #218838;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(40,167,69,0.4);
-        }
-
-        #support-message {
-            margin-top: 25px;
-            font-size: 1.3em;
-            font-weight: 600;
-            color: var(--primary-color);
-            min-height: 35px;
-        }
-        #support-message.error {
-            color: #dc3545;
-        }
-
-        /* Seção FAQ */
-        .faq {
-            background-color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .faq h2 {
-            margin-bottom: 70px;
-        }
-
-        .faq-list {
-            max-width: 950px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: var(--light-gray);
-            border: 1px solid var(--mid-gray);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            text-align: left;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
-            transition: box-shadow 0.3s ease, transform 0.2s ease;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
-        }
-
-        .faq-question {
-            padding: 25px 35px;
-            font-size: 1.35em;
-            font-weight: 600;
-            color: var(--secondary-color);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background-color: #EBF2F7;
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.8em;
-            line-height: 1;
-            transition: transform 0.3s ease;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .faq-item.active .faq-question::after {
-            content: '-';
-            transform: rotate(0deg);
-        }
-
-        .faq-answer {
-            padding: 0 35px 25px;
-            font-size: 1.1em;
-            color: #555;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 400px; /* Ajuste conforme necessário para o conteúdo */
-            padding-top: 15px;
-        }
-
-        /* Termos de Uso Modal */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background-color: var(--white);
-            padding: 45px;
-            border-radius: 15px;
-            max-width: 950px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            transform: translateY(50px);
-            opacity: 0;
-            transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .modal-close-button {
-            position: absolute;
-            top: 25px;
-            right: 30px;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #777;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0;
-            line-height: 1;
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-
-        .modal-close-button:hover {
-            color: #000;
-            transform: rotate(90deg);
-        }
-
-        .modal-content h2 {
-            font-size: 2.5em;
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--mid-gray);
-            padding-bottom: 20px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        .modal-content h2 .modal-logo {
-            height: 50px; /* Logo no modal */
-        }
-
-        .modal-content h3 {
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-top: 35px;
-            margin-bottom: 18px;
-            font-weight: 700;
-        }
-
-        .modal-content p {
-            font-size: 1.1em;
-            margin-bottom: 12px;
-            color: #444;
-        }
-
-        .modal-content ul {
-            list-style: disc;
-            margin-left: 30px;
-            margin-bottom: 20px;
-            color: #444;
-        }
-
-        .modal-content ul li {
-            margin-bottom: 10px;
-            font-size: 1.05em;
-        }
-
-        /* Seção CTA para Registro */
-        .register-cta {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #0F1D2F 100%);
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .register-cta h2 {
-            color: var(--white);
-            margin-bottom: 35px;
-        }
-
-        .register-cta p {
-            font-size: 1.25em;
-            margin-bottom: 45px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: rgba(255,255,255,0.85);
-        }
-
-        .register-cta .cta-button-group {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .register-cta .btn-cliente, .register-cta .btn-empresa {
-            padding: 18px 40px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            border: none;
-        }
-
-        .register-cta .btn-cliente:hover {
-            background-color: #0056b3;
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(0,123,255,0.5);
-        }
-
-        .register-cta .btn-empresa:hover {
-            background-color: #218838;
-            transform: translateY(-7px);
-            box-shadow: 0 10px 30px rgba(40,167,69,0.5);
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: #1A1A1A; /* Quase preto */
-            color: #F4F7F6;
-            padding: 60px 0;
-            text-align: center;
-            font-size: 0.98em;
-            border-top: 1px solid #333;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-logo {
-            height: 80px; /* Logo maior no rodapé */
-            margin-bottom: 10px;
-        }
-
-        footer nav ul {
-            list-style: none;
-            margin: 0 0 30px 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        footer nav ul li a {
-            text-decoration: none;
-            color: rgba(255,255,255,0.75);
-            font-weight: 500;
-            transition: color 0.3s ease, transform 0.2s ease;
-            position: relative;
-            padding-bottom: 3px;
-        }
-
-        footer nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--primary-color);
-            transition: width 0.3s ease-out;
-        }
-
-        footer nav ul li a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        footer nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        footer p {
-            color: rgba(255,255,255,0.6);
-            margin-top: 25px;
-            font-size: 0.9em;
-        }
-        
-        /* Responsividade Avançada */
-        @media (max-width: 1024px) {
-            h1 { font-size: 3.5em; }
-            h2 { font-size: 2.5em; }
-            .hero { padding: 100px 0; }
-            .hero h1 { font-size: 3.5em; }
-            .hero p { font-size: 1.2em; }
-            .number-item .value { font-size: 4em; }
-            .number-item .label { font-size: 1.3em; }
-            .features h2, .support-creator h2, .faq h2, .register-cta h2 { font-size: 2.5em; }
-            .feature-item h3 { font-size: 1.6em; }
-            .faq-question { font-size: 1.25em; }
-            .modal-content h2 { font-size: 2.2em; }
-            header .logo-container img { height: 70px; }
-            header .logo-text { font-size: 2.8em; }
-            .footer-logo { height: 60px; }
-            .modal-content h2 .modal-logo { height: 45px; }
-        }
-
+        /* Responsividade */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding-bottom: 15px;
+            .hero h1 {
+                font-size: 2.5em;
             }
-            header .logo-container { margin-bottom: 15px; }
-            header nav { width: 100%; margin-bottom: 15px; }
-            header nav ul { flex-direction: column; align-items: flex-start; width: 100%; }
-            header nav ul li { margin: 10px 0; }
-            .cta-button { width: 100%; text-align: center; }
-            header .logo-container img { height: 60px; }
-            header .logo-text { font-size: 2.5em; }
-            .footer-logo { height: 50px; }
-            .modal-content h2 .modal-logo { height: 40px; }
-
-            .hero { padding: 80px 0; }
-            .hero h1 { font-size: 2.8em; }
-            .hero p { font-size: 1.15em; }
-            .hero .hero-buttons { flex-direction: column; gap: 20px; }
-            .hero .btn-primary, .hero .btn-secondary { width: 90%; max-width: 400px; }
-
-            .numbers-grid { flex-direction: column; gap: 50px; }
-            .number-item { max-width: 90%; }
-
-            .feature-grid { grid-template-columns: 1fr; }
-            .feature-item { text-align: center; align-items: center; }
-            .feature-item h3 { justify-content: center; }
-
-            .support-creator .code-input-group { flex-direction: column; gap: 20px; }
-            .support-creator .code-input-group input[type="text"],
-            .support-creator .code-input-group button { width: 90%; max-width: 400px; }
-
-            .faq-list { padding: 0 20px; }
-            .faq-question { padding: 20px 30px; font-size: 1.2em; }
-            .faq-answer { padding: 0 30px 20px; }
-
-            .register-cta .cta-button-group { flex-direction: column; gap: 20px; }
-            .register-cta .btn-cliente, .register-cta .btn-empresa { width: 90%; max-width: 400px; }
-
-            footer nav ul { flex-direction: column; gap: 20px; }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .hero .btn-primary {
+                padding: 16px 35px;
+                font-size: 1.1em;
+            }
         }
-
         @media (max-width: 480px) {
-            header .logo-text { font-size: 1.6em; }
-            .hero h1 { font-size: 2.2em; }
-            .hero p { font-size: 1.05em; }
-            .features h2, .support-creator h2, .faq h2, .register-cta h2 { font-size: 2em; }
-            .number-item .value { font-size: 3.5em; }
-            .number-item .label { font-size: 1.1em; }
-            .feature-item h3 { font-size: 1.4em; }
-            .modal-content { padding: 30px; }
-            .modal-content h2 { font-size: 2em; }
-            .modal-content h3 { font-size: 1.5em; }
-            .modal-close-button { font-size: 2.2em; top: 15px; right: 20px; }
-            .cta-button { padding: 12px 25px; }
-            .hero .btn-primary, .hero .btn-secondary,
-            .register-cta .btn-cliente, .register-cta .btn-empresa {
-                padding: 15px 30px;
-                font-size: 1.1em;
+            .hero {
+                padding: 60px 20px;
             }
-            .support-creator .code-input-group input[type="text"],
-            .support-creator .code-input-group button {
-                padding: 15px 20px;
-                font-size: 1.1em;
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="farewell-banner">
-        Adeus Brasil, infelizmente chegamos ao fim. Obrigado a todo o público BR que fez isso acontecer. Até algum dia!
-    </div>
     
-    <header>
-        <a href="#" class="logo-container">
-            <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext">
-            <span class="logo-text">Conext</span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#">Catálogo</a></li>
-                <li><a href="#">Como Funciona</a></li>
-                <li><a href="#support-creator-section">Apoie seu Criador</a></li>
-                <li><a href="#faq-section">FAQ</a></li>
-                <li><a href="#" id="open-terms-modal">Termos de Uso</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-        <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="cta-button" target="_blank">Criar Conta / Vender</a>
-    </header>
-
-    <main>
-        <section class="hero animate-on-load">
+    <main class="animate-on-load">
+        <section class="hero">
             <div class="container">
-                <h1>Conext: Seu Universo de Jogos e Produtos Digitais!</h1>
-                <p>Encontre os melhores produtos digitais e de jogos, conectando-se diretamente com criadores e vendedores. A Conext garante a segurança da transação, analisando o pagamento antes de repassá-lo ao vendedor.</p>
+                <p>Não se esqueça de renovar para não perder acesso às novidades.</p>
+                
+                <h1>Obrigado por comprar o nosso VIP!</h1>
+                
                 <div class="hero-buttons">
-                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-primary" target="_blank">Comprar Agora</a>
-                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-secondary" target="_blank">Vender Meus Produtos</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="numbers-section animate-on-load">
-            <div class="container">
-                <div class="numbers-grid">
-                    <div class="number-item">
-                        <span class="value">10K+</span>
-                        <span class="label">Clientes Registrados</span>
-                    </div>
-                    <div class="number-item">
-                        <span class="value">20K+</span>
-                        <span class="label">Vendedores Certificados</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features animate-on-load">
-            <div class="container">
-                <h2>Por que escolher a Conext?</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet">
-                                <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h12a2 2 0 0 1 0 4H5a2 2 0 0 0 0 4h12c.74 0 1.42-.28 1.9-.76l2.44-2.44A1 1 0 0 0 22 12V8a2 2 0 0 0-2-2h-1"></path>
-                            </svg>
-                            Segurança na Transação
-                        </h3>
-                        <p>Seu pagamento via PIX é analisado antes de ser aprovado e repassado. Assim, garantimos a segurança da compra e a entrega do produto.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart">
-                                <circle cx="8" cy="21" r="1"></circle>
-                                <circle cx="19" cy="21" r="1"></circle>
-                                <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
-                            </svg>
-                            Variedade de Produtos
-                        </h3>
-                        <p>Descubra uma vasta gama de jogos, softwares, e-books, ativos digitais e muito mais, tudo em um só lugar.</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                            Conexão com Criadores
-                        </h3>
-                        <p>Suporte e interaja diretamente com os criadores dos produtos que você ama. Compre com confiança!</p>
-                    </div>
-                    <div class="feature-item">
-                        <h3>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap">
-                                <path d="M4 14a1 1 0 0 1-.49-1.96l4-7.92A1 1 0 0 1 9 4h6a1 1 0 0 1 .49 1.96l-4 7.92A1 1 0 0 0 9 4"></path>
-                            </svg>
-                            Venda Simples e Rápida
-                        </h3>
-                        <p>Crie sua loja e comece a vender seus produtos digitais em minutos. Receba diretamente via PIX, após o período de análise e segurança.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="support-creator animate-on-load" id="support-creator-section">
-            <div class="container">
-                <h2>Apoie Seu Criador de Conteúdo Favorito!</h2>
-                <p>Insira um código de apoio para demonstrar seu suporte. É uma forma simples de reconhecer o trabalho de quem cria conteúdo incrível.</p>
-                <div class="code-input-group">
-                    <input type="text" id="creatorCode" placeholder="Digite o código aqui" aria-label="Código de apoio ao criador">
-                    <button id="applyCodeButton">Aplicar Código</button>
-                </div>
-                <div id="support-message"></div>
-            </div>
-        </section>
-
-        <section class="faq animate-on-load" id="faq-section">
-            <div class="container">
-                <h2>Perguntas Frequentes (FAQ)</h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <div class="faq-question">Como funciona o pagamento na Conext?</div>
-                        <div class="faq-answer">
-                            <p>Para garantir a segurança das transações, os pagamentos via PIX são primeiramente analisados pela Conext. Após a aprovação (que é instantânea), o valor é creditado no saldo do vendedor. Por segurança, o saque só é liberado após 2 dias. Isso protege tanto o comprador quanto o vendedor.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Quais tipos de produtos posso vender na Conext?</div>
-                        <div class="faq-answer">
-                            <p>Você pode vender uma ampla variedade de produtos de jogos e digitais, como chaves de jogos, itens in-game, e-books, cursos online, softwares, ativos gráficos, licenças digitais e muito mais, desde que esteja de acordo com nossos Termos de Uso.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">A Conext cobra alguma taxa sobre as vendas?</div>
-                        <div class="faq-answer">
-                            <p>Para manter a plataforma simples e justa, a Conext não cobra taxas sobre as transações de venda. Os valores são repassados integralmente ao vendedor via PIX. Possíveis custos podem estar associados a recursos premium ou publicidade, se você optar por eles.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Como posso apoiar meu criador de conteúdo favorito?</div>
-                        <div class="faq-answer">
-                            <p>Na seção "Apoie Seu Criador", você pode inserir um código fornecido pelo seu criador de conteúdo. Ao aplicar o código, você demonstra seu apoio e ajuda a impulsionar a comunidade. É uma forma gratuita de incentivo!</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Como crio minha conta na Conext?</div>
-                        <div class="faq-answer">
-                            <p>É simples! Clique no botão "Criar Conta / Vender" no canto superior direito ou nos botões de ação na seção principal. Você será redirecionado para o nosso painel de registro e poderá começar a comprar ou vender rapidamente.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="register-cta animate-on-load" id="register">
-            <div class="container">
-                <h2>Pronto para Explorar o Universo Conext?</h2>
-                <p>Crie sua conta agora e comece a descobrir ou vender os melhores produtos de jogos e digitais!</p>
-                <div class="cta-button-group">
-                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-cliente" target="_blank">Quero Comprar</a>
-                    <a href="https://reynolds-newport-seating-negotiations.trycloudflare.com/" class="btn-empresa" target="_blank">Quero Vender</a>
+                    <a href="https://association-calculation-coaches-collections.trycloudflare.com/" class="btn-primary" target="_blank">Acessar Painel</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="#">Sobre a Conext</a></li>
-                    <li><a href="#" id="footer-terms-link">Termos de Uso</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#faq-section">FAQ</a></li>
-                    <li><a href="#support-creator-section">Apoie seu Criador</a></li>
-                </ul>
-            </nav>
-            <div class="footer-content">
-                <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext" class="footer-logo">
-                <p>&copy; 2025 Conext. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="modal-overlay" id="termsModal">
-        <div class="modal-content">
-            <button class="modal-close-button" id="close-terms-modal">&times;</button>
-            <h2>
-                <img src="https://i.imgur.com/NpSrO6l.png" alt="Logo da Conext" class="modal-logo">
-                Termos de Uso da Conext
-            </h2>
-            <p><strong>Última atualização: 1 de Agosto de 2025</strong></p>
-
-            <h3>1. Aceitação dos Termos</h3>
-            <p>Bem-vindo à Conext! Ao acessar ou utilizar nossa plataforma, você concorda em cumprir e estar vinculado a estes Termos de Uso. Se você não concordar com qualquer parte destes termos, você não deve usar a plataforma Conext. Reservamo-nos o direito de modificar estes termos a qualquer momento, e as alterações entrarão em vigor imediatamente após a publicação na plataforma.</p>
-
-            <h3>2. Descrição do Serviço</h3>
-            <p>A Conext é uma plataforma online que facilita a conexão entre vendedores e compradores de produtos digitais e de jogos. Atuamos como um intermediador de transações, garantindo a segurança de ambas as partes. Isso significa que, ao realizar uma compra, o pagamento é processado e analisado pela nossa plataforma antes de ser creditado ao vendedor. Essa análise garante um ambiente de compra e venda mais seguro e confiável para todos os usuários.</p>
-
-            <h3>3. Pagamentos e Transações (PIX - Segurança e Análise)</h3>
-            <p><strong>A Conext processa todos os pagamentos via PIX para garantir a segurança da transação. O pagamento é analisado e, após a aprovação, o valor é enviado para o saldo do vendedor. Por motivos de segurança e para proteção contra fraudes, o valor do saque só é liberado para o vendedor após 2 dias.</strong> Este procedimento garante que o comprador tenha tempo de receber o produto e que qualquer problema possa ser resolvido antes que o valor seja liberado definitivamente. A Conext se responsabiliza pela análise e pelo repasse seguro dos valores, atuando como um mediador de confiança entre as partes.</p>
-            <ul>
-                <li><strong>Responsabilidade do Vendedor:</strong> Entregar o produto digital ao comprador após a confirmação do pagamento. O valor ficará no saldo da Conext por 2 dias antes de ser liberado para saque.</li>
-                <li><strong>Responsabilidade do Comprador:</strong> Efetuar o pagamento correto via PIX. A Conext garantirá que a transação seja segura.</li>
-            </ul>
-
-            <h3>4. Contas de Usuário</h3>
-            <p>Para acessar certas funcionalidades da plataforma, você precisará criar uma conta. Você é responsável por manter a confidencialidade de suas informações de login e por todas as atividades que ocorram sob sua conta.</p>
-
-            <h3>5. Conduta do Usuário</h3>
-            <p>Você concorda em não usar a plataforma para:</p>
-            <ul>
-                <li>Publicar, enviar ou transmitir qualquer conteúdo ilegal, prejudicial, ameaçador, abusivo, difamatório, vulgar, obsceno ou de outra forma questionável.</li>
-                <li>Violar quaisquer leis locais, estaduais, nacionais ou internacionais.</li>
-                <li>Anunciar produtos ilegais, violadores de direitos autorais ou não autorizados.</li>
-                <li>Engajar-se em qualquer forma de fraude ou atividade enganosa.</li>
-            </ul>
-
-            <h3>6. Propriedade Intelectual</h3>
-            <p>Todos os direitos de propriedade intelectual relacionados aos produtos anunciados na plataforma são de propriedade dos respectivos criadores e vendedores. A Conext respeita os direitos de propriedade intelectual de terceiros e espera que seus usuários façam o mesmo.</p>
-
-            <h3>7. Isenção de Garantias</h3>
-            <p>A plataforma Conext é fornecida "como está" e "conforme disponível", sem garantias de qualquer tipo. Não garantimos que a plataforma será ininterrupta, livre de erros ou segura. A Conext não garante a qualidade, segurança ou legalidade dos produtos anunciados, a veracidade ou precisão dos anúncios, ou a capacidade dos vendedores de vender e dos compradores de pagar.</p>
-
-            <h3>8. Limitação de Responsabilidade</h3>
-            <p>Em nenhuma circunstância a Conext será responsável por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou exemplares resultantes do uso ou da incapacidade de usar a plataforma, incluindo, mas não se limitando a, perdas de lucros, dados ou outras perdas intangíveis.</p>
-
-            <h3>9. Indenização</h3>
-            <p>Você concorda em indenizar e isentar a Conext de qualquer reclamação ou demanda, incluindo honorários advocatícios razoáveis, feita por terceiros devido ou decorrente de sua violação destes Termos de Uso ou de sua violação de quaisquer direitos de terceiros.</p>
-
-            <h3>10. Rescisão</h3>
-            <p>Podemos rescindir ou suspender seu acesso à plataforma imediatamente, sem aviso prévio, por qualquer motivo, incluindo, sem limitação, se você violar estes Termos de Uso.</p>
-
-            <h3>11. Lei Aplicável</h3>
-            <p>Estes Termos de Uso serão regidos e interpretados de acordo com as leis do [País/Estado da Conext - Ex: Brasil], sem considerar seus princípios de conflito de leis.</p>
-
-            <h3>12. Alterações nos Termos de Uso</h3>
-            <p>A Conext se reserva o direito de alterar estes Termos de Uso a qualquer momento. Quaisquer alterações serão publicadas nesta página, e o uso contínuo da plataforma após tais modificações constituirá sua aceitação dos novos termos.</p>
-
-            <p>Para dúvidas ou suporte, entre em contato conosco através da seção "Contato" em nosso site.</p>
-        </div>
-    </div>
-
-    <script>
-        // Funcionalidade para o FAQ (Acordeão)
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    // Fecha todos os outros itens abertos
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                        }
-                    });
-
-                    // Alterna o item clicado
-                    item.classList.toggle('active');
-                    const answer = item.querySelector('.faq-answer');
-                    if (item.classList.contains('active')) {
-                        answer.style.maxHeight = answer.scrollHeight + "px"; // Define a altura para expandir
-                    } else {
-                        answer.style.maxHeight = null; // Recolhe
-                    }
-                });
-            });
-
-            // Funcionalidade para o Apoie Seu Criador
-            const creatorCodeInput = document.getElementById('creatorCode');
-            const applyCodeButton = document.getElementById('applyCodeButton');
-            const supportMessage = document.getElementById('support-message');
-            const registrationLink = "https://reynolds-newport-seating-negotiations.trycloudflare.com/";
-
-            // Data de expiração para "discovernews": 31 de dezembro de 2025
-            const discoverNewsExpiry = new Date(2025, 11, 31, 23, 59, 59);
-
-            applyCodeButton.addEventListener('click', () => {
-                const code = creatorCodeInput.value.trim().toLowerCase();
-                const now = new Date();
-
-                supportMessage.textContent = '';
-                supportMessage.classList.remove('error');
-
-                if (code === 'marcola2025') {
-                    supportMessage.textContent = 'Obrigado pelo apoio! Crie agora sua conta.';
-                    setTimeout(() => {
-                        window.open(registrationLink, '_blank');
-                    }, 1500);
-                } else if (code === 'discovernews') {
-                    if (now <= discoverNewsExpiry) {
-                        supportMessage.textContent = 'Obrigado pelo apoio! Crie agora sua conta.';
-                        setTimeout(() => {
-                            window.open(registrationLink, '_blank');
-                        }, 1500);
-                    } else {
-                        supportMessage.textContent = 'Código "discovernews" expirou. Por favor, tente outro.';
-                        supportMessage.classList.add('error');
-                    }
-                } else {
-                    supportMessage.textContent = 'Código inválido. Por favor, verifique e tente novamente.';
-                    supportMessage.classList.add('error');
-                }
-            });
-
-            // Funcionalidade para o Modal dos Termos de Uso
-            const openTermsModalButton = document.getElementById('open-terms-modal');
-            const footerTermsLink = document.getElementById('footer-terms-link');
-            const termsModal = document.getElementById('termsModal');
-            const closeTermsModalButton = document.getElementById('close-terms-modal');
-
-            function openModal() {
-                termsModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            function closeModal() {
-                termsModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            if (openTermsModalButton) {
-                openTermsModalButton.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    openModal();
-                });
-            }
-            if (footerTermsLink) {
-                footerTermsLink.addEventListener('click', (event) => {
-                    event.preventDefault();
-                    openModal();
-                });
-            }
-            if (closeTermsModalButton) {
-                closeTermsModalButton.addEventListener('click', closeModal);
-            }
-
-            // Fecha o modal ao clicar fora do conteúdo
-            if (termsModal) {
-                termsModal.addEventListener('click', (event) => {
-                    if (event.target === termsModal) {
-                        closeModal();
-                    }
-                });
-            }
-
-            // Animações de entrada para todas as seções, com atraso progressivo
-            const sectionsToAnimate = document.querySelectorAll('main section, header');
-            sectionsToAnimate.forEach((section, index) => {
-                section.style.animationDelay = `${0.2 + (index * 0.1)}s`;
-                section.classList.add('animate-on-load');
-            });
-        });
-    </script>
 </body>
 </html>
