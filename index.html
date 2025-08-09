@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo à Conextshop</title>
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    <title>Acesso VIP</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Estilos do site original para manter a aparência */
         :root {
             --primary-color: #007BFF;
             --secondary-color: #1A2C42;
             --text-color: #333;
-            --light-gray: #F0F2F5;
-            --white: #fff;
             --gradient-start: #E8F0F7;
             --gradient-end: #D2E0EE;
             --body-bg: #EAEFF4;
+            --white: #fff;
             --font-family-body: 'Inter', sans-serif;
+            --font-family-heading: 'Inter', sans-serif;
         }
 
+        /* Estilos Gerais para centralizar o conteúdo */
         body, html {
             height: 100%;
         }
@@ -33,114 +34,86 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
-        .container {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            width: 90%;
-            max-width: 600px;
-            animation: fadeIn 1s ease-out;
-        }
-
+        
+        /* Animação de entrada */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        h1 {
+        /* Container principal com o novo conteúdo */
+        .vip-container {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            width: 90%;
+            max-width: 700px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .vip-container h1 {
+            font-family: var(--font-family-heading);
             color: var(--secondary-color);
             font-weight: 800;
-            font-size: 2.8em;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            color: #444;
+            font-size: 3em;
+            margin-top: 15px;
             margin-bottom: 40px;
-            line-height: 1.6;
         }
 
-        .button-container {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
+        .vip-container p {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #444;
+            font-weight: 500;
         }
-
-        /* Botão para Acessar Painel (com estilo) */
+        
+        /* Estilo para o botão */
         .panel-button {
-            background: var(--secondary-color);
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
             color: var(--white);
-            border: none;
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 10px;
+            text-decoration: none;
             font-weight: 700;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            width: 80%;
-            max-width: 300px;
+            font-size: 1.2em;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,123,255,0.35);
+            border: none;
         }
 
         .panel-button:hover {
-            background-color: #0F1D2F;
             transform: translateY(-5px);
-        }
-        
-        /* Estilo para o botão do Stripe (para garantir o espaçamento) */
-        stripe-buy-button {
-            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,123,255,0.5);
         }
 
         /* Responsividade */
+        @media (max-width: 768px) {
+            .vip-container h1 { font-size: 2.5em; }
+            .vip-container p { font-size: 1.1em; }
+            .panel-button { padding: 16px 35px; font-size: 1.1em; }
+        }
         @media (max-width: 480px) {
-            h1 { font-size: 2.2em; }
-            p { font-size: 1em; }
-            .container { padding: 40px 20px; }
+            .vip-container { padding: 40px 20px; }
+            .vip-container h1 { font-size: 2em; }
         }
     </style>
 </head>
 <body>
     
-    <div class="container">
-        <div class="button-container">
-            <button id="access-panel-button" class="panel-button">Acessar Painel</button>
-        </div>
+    <div class="vip-container">
+        
+        <p>Não se esqueça de renovar para não perder acesso às novidades.</p>
+        
+        <h1>Obrigado por comprar o nosso VIP!</h1>
+        
+        <a href="https://association-calculation-coaches-collections.trycloudflare.com/" class="panel-button" target="_blank">Acessar Painel</a>
 
-        <h1>Bem-vindo à Conextshop!</h1>
-        <p>A sua loja exclusiva para produtos e conteúdos VIP. Garanta o seu acesso agora mesmo clicando no botão abaixo!</p>
-        
-        <stripe-buy-button
-            buy-button-id="buy_btn_1Ru3S8RqbzoqkY8lq7hDrLTV"
-            publishable-key="pk_live_51R0nkARqbzoqkY8lkJYvIRoh8aqmcBF0cR9fJszaynH1U53doxH32x80z3911vKtnqlf4tpxnUet5fpk2Vuc9b6n00DbC5lINz"
-        >
-        </stripe-buy-button>
-        
     </div>
-
-    <script>
-        // Adiciona a funcionalidade ao botão "Acessar Painel"
-        document.getElementById('access-panel-button').addEventListener('click', function() {
-            // Pede a senha ao utilizador
-            const password = prompt("Por favor, insira a sua senha de acesso VIP:");
-
-            // Verifica se o utilizador inseriu algo e se a senha está correta
-            if (password === "vip2025") {
-                // Se a senha estiver correta, redireciona para o painel
-                alert("Senha correta! A aceder ao painel...");
-                window.location.href = 'https://association-calculation-coaches-collections.trycloudflare.com/';
-            } else if (password !== null && password !== "") {
-                // Se a senha estiver incorreta (e o utilizador não cancelou)
-                alert("Senha incorreta. Por favor, tente novamente.");
-            }
-            // Se o utilizador clicar em "Cancelar", não faz nada.
-        });
-    </script>
     
-    </body>
+</body>
 </html>
