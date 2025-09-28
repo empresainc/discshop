@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ConexT — Comunidade & Suporte ao Vivo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suporte Conectado — Para Empresas</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    .hero {
-      background: linear-gradient(135deg, #4b6cb7, #182848);
-      color: white;
     }
     .btn-primary {
-      background-color: #5a67d8;
+      background: linear-gradient(135deg, #4b6cb7, #182848);
       color: white;
-      transition: background-color .3s ease;
+      transition: background .3s;
     }
     .btn-primary:hover {
-      background-color: #434190;
+      background: linear-gradient(135deg, #182848, #0f1b2e);
     }
     .card {
       background: white;
@@ -34,134 +25,136 @@
       transition: transform .3s ease, box-shadow .3s ease;
     }
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
   </style>
 </head>
-<body>
-  <!-- Header / Hero -->
-  <header class="hero py-20 px-6 text-center">
-    <div class="max-w-2xl mx-auto">
-      <h1 class="text-5xl font-bold mb-4">ConexT</h1>
-      <p class="text-xl mb-6">Comunidade, suporte e soluções para contas de streaming</p>
-      <a href="#plans" class="btn-primary px-8 py-3 rounded-lg font-semibold">Ver Planos</a>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Hero -->
+  <header class="bg-gradient-to-r from-indigo-600 to-blue-800 text-white py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-5xl font-bold mb-4">Suporte Inteligente para Empresas</h1>
+      <p class="text-xl mb-6">Transforme a experiência do cliente com especialistas da sua própria comunidade, disponíveis em tempo real.</p>
+      <a href="#plans" class="btn-primary px-8 py-3 rounded-lg font-semibold">Solicitar Demonstração</a>
     </div>
   </header>
 
-  <!-- Seção de Depoimentos / Destaques estilo Guuru -->
-  <section class="py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center mb-10">
-      <h2 class="text-3xl font-semibold mb-4">O que dizem sobre nós</h2>
-      <p class="text-gray-600">Experiências reais da nossa comunidade</p>
+  <!-- Vantagens -->
+  <section class="py-20 px-6">
+    <div class="max-w-5xl mx-auto text-center mb-14">
+      <h2 class="text-3xl font-semibold mb-4">Por que escolher nossa solução?</h2>
+      <p class="text-gray-600">Ofereça atendimento rápido, confiável e escalável sem aumentar custos operacionais.</p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-      <div class="card p-6">
-        <div class="flex items-center mb-4">
-          <img src="https://i.pravatar.cc/60?img=5" alt="Usuário" class="rounded-full w-12 h-12 mr-3" />
-          <div>
-            <p class="font-semibold">João Silva</p>
-            <p class="text-sm text-gray-500">Cliente</p>
-          </div>
-        </div>
-        <p class="text-gray-700">“Usei a ConexT para vender uma conta e fiquei surpreso com o atendimento. Recomendo!”</p>
-      </div>
-      <div class="card p-6">
-        <div class="flex items-center mb-4">
-          <img src="https://i.pravatar.cc/60?img=8" alt="Usuário" class="rounded-full w-12 h-12 mr-3" />
-          <div>
-            <p class="font-semibold">Maria Oliveira</p>
-            <p class="text-sm text-gray-500">Usuária</p>
-          </div>
-        </div>
-        <p class="text-gray-700">“Solicitei uma conta doada e recebi rapidamente. Serviço ótimo!”</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Planos estilo Guuru -->
-  <section id="plans" class="py-20 px-6 bg-gray-100">
-    <div class="max-w-3xl mx-auto text-center mb-10">
-      <h2 class="text-3xl font-semibold mb-4">Planos / Acesso</h2>
-      <p class="text-gray-600">Veja os planos disponíveis. Aproveite o plano grátis enquanto estiver ativo.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <!-- Plano Grátis -->
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
       <div class="card p-8 text-center">
-        <h3 class="text-2xl font-bold mb-2">Grátis</h3>
-        <p class="text-gray-500 mb-4">Tempo limitado</p>
-        <p class="text-4xl font-bold mb-6">€0</p>
-        <ul class="mb-6 space-y-2 text-gray-600">
-          <li>✔ Acesso básico</li>
-          <li>✔ Chat de suporte</li>
-        </ul>
-        <a href="#" class="btn-primary px-6 py-3 rounded-lg font-semibold block">Usar grátis</a>
+        <div class="text-4xl text-indigo-600 mb-4">⚡</div>
+        <h3 class="font-bold text-xl mb-2">Resposta em segundos</h3>
+        <p class="text-gray-600">Clientes recebem ajuda imediata, 24/7, por especialistas experientes.</p>
       </div>
-      <!-- Plano Premium (em breve) -->
-      <div class="card p-8 text-center opacity-80">
-        <h3 class="text-2xl font-bold mb-2">Premium</h3>
-        <p class="text-gray-500 mb-4">Em breve</p>
-        <p class="text-4xl font-bold mb-6">€9,99</p>
-        <ul class="mb-6 space-y-2 text-gray-600">
-          <li>✔ Recursos extras</li>
-          <li>✔ Atendimento prioritário</li>
-        </ul>
-        <span class="px-6 py-3 rounded-lg bg-gray-300 text-gray-500 inline-block cursor-not-allowed">Em breve</span>
+      <div class="card p-8 text-center">
+        <div class="text-4xl text-indigo-600 mb-4">💰</div>
+        <h3 class="font-bold text-xl mb-2">Redução de custos</h3>
+        <p class="text-gray-600">Menos tickets no suporte tradicional e maior eficiência operacional.</p>
       </div>
-      <!-- Plano Empresa (em breve) -->
-      <div class="card p-8 text-center opacity-80">
-        <h3 class="text-2xl font-bold mb-2">Empresarial</h3>
-        <p class="text-gray-500 mb-4">Em breve</p>
-        <p class="text-4xl font-bold mb-6">€29,99</p>
-        <ul class="mb-6 space-y-2 text-gray-600">
-          <li>✔ Uso corporativo</li>
-          <li>✔ Suporte dedicado</li>
-        </ul>
-        <span class="px-6 py-3 rounded-lg bg-gray-300 text-gray-500 inline-block cursor-not-allowed">Em breve</span>
+      <div class="card p-8 text-center">
+        <div class="text-4xl text-indigo-600 mb-4">🌍</div>
+        <h3 class="font-bold text-xl mb-2">Escalabilidade</h3>
+        <p class="text-gray-600">Expanda o suporte sem precisar contratar grandes equipas internas.</p>
       </div>
     </div>
   </section>
 
   <!-- Como Funciona -->
-  <section class="py-20 px-6">
-    <div class="max-w-3xl mx-auto text-center mb-10">
+  <section class="py-20 bg-white px-6">
+    <div class="max-w-3xl mx-auto text-center mb-14">
       <h2 class="text-3xl font-semibold mb-4">Como Funciona</h2>
-      <p class="text-gray-600">Três passos simples para usar a ConexT.</p>
+      <p class="text-gray-600">Integre facilmente com seu site ou app e ofereça suporte imediato aos clientes.</p>
     </div>
-    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
       <div>
-        <div class="text-4xl mb-3 text-purple-600"><i class="fas fa-user-plus"></i></div>
-        <h4 class="font-bold mb-2">Cadastre-se</h4>
-        <p class="text-gray-600">Crie uma conta grátis.</p>
+        <div class="text-4xl mb-3 text-indigo-600">1️⃣</div>
+        <h4 class="font-bold mb-2">Integração simples</h4>
+        <p class="text-gray-600">Adicione nosso widget ao seu site em minutos.</p>
       </div>
       <div>
-        <div class="text-4xl mb-3 text-purple-600"><i class="fas fa-cubes"></i></div>
-        <h4 class="font-bold mb-2">Escolha plano</h4>
-        <p class="text-gray-600">Use o plano grátis ou aguarde os próximos.</p>
+        <div class="text-4xl mb-3 text-indigo-600">2️⃣</div>
+        <h4 class="font-bold mb-2">Especialistas conectados</h4>
+        <p class="text-gray-600">Clientes recebem suporte de especialistas em tempo real.</p>
       </div>
       <div>
-        <div class="text-4xl mb-3 text-purple-600"><i class="fas fa-comments"></i></div>
-        <h4 class="font-bold mb-2">Converse via chat</h4>
-        <p class="text-gray-600">Suporte e interações em tempo real.</p>
+        <div class="text-4xl mb-3 text-indigo-600">3️⃣</div>
+        <h4 class="font-bold mb-2">Resultados imediatos</h4>
+        <p class="text-gray-600">Aumente a satisfação e reduza custos de suporte.</p>
       </div>
     </div>
   </section>
 
-  <!-- Termos / Faq / etc -->
-  <section class="py-16 px-6 bg-gray-50">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-4">Termos & Condições</h2>
-      <ul class="text-gray-600 space-y-3">
-        <li>• Ao usar a plataforma, você concorda com nossos termos.</li>
-        <li>• Podemos auditar contas em qualquer momento.</li>
-        <li>• Contas vendidas ficam sob responsabilidade da ConexT para doação.</li>
-      </ul>
+  <!-- Depoimentos -->
+  <section class="py-20 px-6 bg-gray-100">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl font-semibold mb-4">O que as empresas dizem</h2>
+      <p class="text-gray-600">Histórias reais de quem já usa nossa solução.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+      <div class="card p-8">
+        <p class="text-gray-700 mb-4">“Conseguimos reduzir em 40% os tickets de suporte e aumentar o NPS em apenas 2 meses.”</p>
+        <p class="font-bold">— Diretor de CX, Startup SaaS</p>
+      </div>
+      <div class="card p-8">
+        <p class="text-gray-700 mb-4">“A integração foi simples e agora nossos clientes recebem ajuda em segundos.”</p>
+        <p class="font-bold">— Head de Operações, E-commerce</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planos -->
+  <section id="plans" class="py-20 px-6 bg-white">
+    <div class="max-w-3xl mx-auto text-center mb-14">
+      <h2 class="text-3xl font-semibold mb-4">Planos para Empresas</h2>
+      <p class="text-gray-600">Escolha o plano ideal para o tamanho da sua equipa e base de clientes.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="card p-8 text-center">
+        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+        <p class="text-gray-500 mb-4">Para pequenas equipas</p>
+        <p class="text-4xl font-bold mb-6">€49/mês</p>
+        <ul class="mb-6 space-y-2 text-gray-600">
+          <li>✔ Até 5 agentes</li>
+          <li>✔ Integração rápida</li>
+          <li>✔ Suporte básico</li>
+        </ul>
+        <a href="#" class="btn-primary px-6 py-3 rounded-lg font-semibold block">Começar</a>
+      </div>
+      <div class="card p-8 text-center border-2 border-indigo-600">
+        <h3 class="text-2xl font-bold mb-2">Business</h3>
+        <p class="text-gray-500 mb-4">Mais popular</p>
+        <p class="text-4xl font-bold mb-6">€199/mês</p>
+        <ul class="mb-6 space-y-2 text-gray-600">
+          <li>✔ Até 20 agentes</li>
+          <li>✔ Analytics avançado</li>
+          <li>✔ Suporte prioritário</li>
+        </ul>
+        <a href="#" class="btn-primary px-6 py-3 rounded-lg font-semibold block">Assinar</a>
+      </div>
+      <div class="card p-8 text-center">
+        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+        <p class="text-gray-500 mb-4">Soluções sob medida</p>
+        <p class="text-4xl font-bold mb-6">Custom</p>
+        <ul class="mb-6 space-y-2 text-gray-600">
+          <li>✔ Equipa ilimitada</li>
+          <li>✔ API & integrações</li>
+          <li>✔ Gerente dedicado</li>
+        </ul>
+        <a href="#" class="btn-primary px-6 py-3 rounded-lg font-semibold block">Contactar</a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-10 bg-gray-800 text-gray-400 text-center">
-    <p class="font-bold text-white mb-2">ConexT</p>
+  <footer class="py-10 bg-gray-900 text-gray-400 text-center">
+    <p class="font-bold text-white mb-2">Suporte Conectado</p>
     <p>© 2025 Todos os direitos reservados.</p>
   </footer>
 
