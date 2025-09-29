@@ -30,82 +30,33 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-indigo-700">Suporte Conectado</h1>
+      <button onclick="openModal()" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700">
+        Testes em aberto
+      </button>
+    </div>
+  </nav>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-8 max-w-md text-center shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">Testes em aberto</h2>
+      <p class="text-gray-600 mb-6">Em breve teremos testes disponíveis para novos planos.</p>
+      <button onclick="closeModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg">Fechar</button>
+    </div>
+  </div>
+
   <!-- Hero -->
-  <header class="bg-gradient-to-r from-indigo-600 to-blue-800 text-white py-20 px-6 text-center">
+  <header class="bg-gradient-to-r from-indigo-600 to-blue-800 text-white py-28 px-6 text-center mt-16">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-5xl font-bold mb-4">Suporte Inteligente para Empresas</h1>
       <p class="text-xl mb-6">Transforme a experiência do cliente com especialistas da sua própria comunidade, disponíveis em tempo real.</p>
       <a href="#plans" class="btn-primary px-8 py-3 rounded-lg font-semibold">Solicitar Demonstração</a>
     </div>
   </header>
-
-  <!-- Vantagens -->
-  <section class="py-20 px-6">
-    <div class="max-w-5xl mx-auto text-center mb-14">
-      <h2 class="text-3xl font-semibold mb-4">Por que escolher nossa solução?</h2>
-      <p class="text-gray-600">Ofereça atendimento rápido, confiável e escalável sem aumentar custos operacionais.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-      <div class="card p-8 text-center">
-        <div class="text-4xl text-indigo-600 mb-4">⚡</div>
-        <h3 class="font-bold text-xl mb-2">Resposta em segundos</h3>
-        <p class="text-gray-600">Clientes recebem ajuda imediata, 24/7, por especialistas experientes.</p>
-      </div>
-      <div class="card p-8 text-center">
-        <div class="text-4xl text-indigo-600 mb-4">💰</div>
-        <h3 class="font-bold text-xl mb-2">Redução de custos</h3>
-        <p class="text-gray-600">Menos tickets no suporte tradicional e maior eficiência operacional.</p>
-      </div>
-      <div class="card p-8 text-center">
-        <div class="text-4xl text-indigo-600 mb-4">🌍</div>
-        <h3 class="font-bold text-xl mb-2">Escalabilidade</h3>
-        <p class="text-gray-600">Expanda o suporte sem precisar contratar grandes equipas internas.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Como Funciona -->
-  <section class="py-20 bg-white px-6">
-    <div class="max-w-3xl mx-auto text-center mb-14">
-      <h2 class="text-3xl font-semibold mb-4">Como Funciona</h2>
-      <p class="text-gray-600">Integre facilmente com seu site ou app e ofereça suporte imediato aos clientes.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
-      <div>
-        <div class="text-4xl mb-3 text-indigo-600">1️⃣</div>
-        <h4 class="font-bold mb-2">Integração simples</h4>
-        <p class="text-gray-600">Adicione nosso widget ao seu site em minutos.</p>
-      </div>
-      <div>
-        <div class="text-4xl mb-3 text-indigo-600">2️⃣</div>
-        <h4 class="font-bold mb-2">Especialistas conectados</h4>
-        <p class="text-gray-600">Clientes recebem suporte de especialistas em tempo real.</p>
-      </div>
-      <div>
-        <div class="text-4xl mb-3 text-indigo-600">3️⃣</div>
-        <h4 class="font-bold mb-2">Resultados imediatos</h4>
-        <p class="text-gray-600">Aumente a satisfação e reduza custos de suporte.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Depoimentos -->
-  <section class="py-20 px-6 bg-gray-100">
-    <div class="max-w-3xl mx-auto text-center mb-14">
-      <h2 class="text-3xl font-semibold mb-4">O que as empresas dizem</h2>
-      <p class="text-gray-600">Histórias reais de quem já usa nossa solução.</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-      <div class="card p-8">
-        <p class="text-gray-700 mb-4">“Conseguimos reduzir em 40% os tickets de suporte e aumentar o NPS em apenas 2 meses.”</p>
-        <p class="font-bold">— Diretor de CX, Startup SaaS</p>
-      </div>
-      <div class="card p-8">
-        <p class="text-gray-700 mb-4">“A integração foi simples e agora nossos clientes recebem ajuda em segundos.”</p>
-        <p class="font-bold">— Head de Operações, E-commerce</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Planos -->
   <section id="plans" class="py-20 px-6 bg-white">
@@ -114,30 +65,34 @@
       <p class="text-gray-600">Comece grátis hoje mesmo. Novos planos em breve.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      
       <!-- Grátis -->
       <div class="card p-8 text-center border-2 border-indigo-600">
-        <h3 class="text-2xl font-bold mb-2">Grátis</h3>
-        <p class="text-gray-500 mb-4">Plano inicial</p>
+        <h3 class="text-2xl font-bold mb-2 text-indigo-700">Grátis</h3>
+        <p class="text-gray-500 mb-2">Plano inicial</p>
+        <p class="text-lg text-green-600 font-semibold mb-2">Disponível até 04/10/2025</p>
         <p class="text-4xl font-bold mb-6">€0</p>
         <ul class="mb-6 space-y-2 text-gray-600">
           <li>✔ Até 5 agentes</li>
           <li>✔ Integração rápida</li>
           <li>✔ Suporte básico</li>
         </ul>
-        <a href="#" class="btn-primary px-6 py-3 rounded-lg font-semibold block">Começar grátis</a>
+        <a href="https://forms.gle/BwvuUdjXCSVR4KfJ7" target="_blank" 
+           class="btn-primary px-6 py-3 rounded-lg font-semibold block">Começar grátis</a>
       </div>
 
-      <!-- Business (em breve) -->
-      <div class="card p-8 text-center opacity-80">
+      <!-- Business -->
+      <div class="card p-8 text-center">
         <h3 class="text-2xl font-bold mb-2">Business</h3>
-        <p class="text-gray-500 mb-4">Em breve</p>
+        <p class="text-gray-500 mb-4">Plano recomendado</p>
         <p class="text-4xl font-bold mb-6">€199/mês</p>
         <ul class="mb-6 space-y-2 text-gray-600">
           <li>✔ Até 20 agentes</li>
           <li>✔ Analytics avançado</li>
           <li>✔ Suporte prioritário</li>
         </ul>
-        <span class="px-6 py-3 rounded-lg bg-gray-300 text-gray-500 inline-block cursor-not-allowed">Em breve</span>
+        <a href="https://buy.stripe.com/test_7sYdRa3HW8uGbwh6yS6AM00" target="_blank" 
+           class="btn-primary px-6 py-3 rounded-lg font-semibold block">Assinar agora</a>
       </div>
 
       <!-- Enterprise (em breve) -->
@@ -160,6 +115,11 @@
     <p class="font-bold text-white mb-2">Suporte Conectado</p>
     <p>© 2025 Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    function openModal(){ document.getElementById('modal').classList.remove('hidden'); }
+    function closeModal(){ document.getElementById('modal').classList.add('hidden'); }
+  </script>
 
   <!-- JivoChat widget -->
   <script src="//code.jivosite.com/widget/JOgmDjTU44" async></script>
