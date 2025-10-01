@@ -1,137 +1,114 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suporte Conectado — Para Empresas</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Site Suspenso — Aviso</title>
   <style>
-    body { font-family: 'Poppins', sans-serif; }
-    .btn-primary {
-      background: linear-gradient(135deg, #4b6cb7, #182848);
-      color: white;
-      transition: background .3s;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #182848, #0f1b2e);
-    }
-    .card {
-      background: white;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-      transition: transform .3s ease, box-shadow .3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    }
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#ffb86b;--muted:#9aa4b2;--white:#ffffff}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071029 0%,#0b1220 100%);color:var(--white);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border-radius:16px;padding:32px;max-width:880px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.7);border:1px solid rgba(255,255,255,0.04);display:grid;grid-template-columns:1fr 320px;gap:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff7a7a);display:flex;align-items:center;justify-content:center;font-weight:700;color:#102;box-shadow:0 6px 18px rgba(255,184,107,0.12)}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:12px 0 0;color:var(--muted)}
+    .content{padding-top:6px}
+    .important{background:rgba(255,184,107,0.06);padding:12px;border-radius:10px;border:1px solid rgba(255,184,107,0.08);color:var(--accent);margin:16px 0}
+    .meta{font-size:14px;color:var(--muted);margin-top:8px}
+    .actions{display:flex;gap:10px;margin-top:18px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-primary{background:var(--accent);color:#0b1220}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+    aside{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    dl{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0}
+    dt{color:var(--muted);font-size:13px}
+    dd{margin:0;font-weight:600}
+    footer{grid-column:1/-1;margin-top:18px;color:var(--muted);font-size:13px}
+    a.link{color:var(--accent);text-decoration:none}
+    .small{font-size:13px;color:var(--muted)}
+    @media (max-width:860px){.card{grid-template-columns:1fr;padding:20px}aside{order:2}}
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+  <main class="card" role="main">
+    <section>
+      <header>
+        <div class="logo">EU</div>
+        <div>
+          <h1>Serviço temporariamente suspenso</h1>
+          <p class="lead">Este site foi suspenso pela União Europeia devido à falta de certificação legal necessária para operar no mercado europeu.</p>
+          <p class="meta">Se for um visitante: lamentamos o incómodo. Se representar a entidade proprietária do site, siga os passos indicados para regularizar a situação.</p>
+        </div>
+      </header>
 
-  <!-- Navbar -->
-  <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-indigo-700">Suporte Conectado</h1>
-      <button onclick="openModal()" class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700">
-        Testes em aberto
-      </button>
-    </div>
-  </nav>
+      <div class="content">
+        <div class="important">Motivo da suspensão: <strong>Ausência de certificação legal para operar na UE</strong></div>
 
-  <!-- Modal -->
-  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white rounded-lg p-8 max-w-md text-center shadow-lg">
-      <h2 class="text-2xl font-bold mb-4">Testes em aberto</h2>
-      <p class="text-gray-600 mb-6">Em breve teremos testes disponíveis para novos planos.</p>
-      <button onclick="closeModal()" class="px-6 py-2 bg-indigo-600 text-white rounded-lg">Fechar</button>
-    </div>
-  </div>
+        <h3>O que significa</h3>
+        <p class="small">A suspensão indica que, conforme verificação das autoridades competentes, o serviço ainda não apresentou a documentação, licenças ou conformidade regulamentar exigida para prestar serviços nesta região.</p>
 
-  <!-- Hero -->
-  <header class="bg-gradient-to-r from-indigo-600 to-blue-800 text-white py-28 px-6 text-center mt-16">
-    <div class="max-w-3xl mx-auto">
-      <h1 class="text-5xl font-bold mb-4">Suporte Inteligente para Empresas</h1>
-      <p class="text-xl mb-6">Transforme a experiência do cliente com especialistas da sua própria comunidade, disponíveis em tempo real.</p>
-      <a href="#plans" class="btn-primary px-8 py-3 rounded-lg font-semibold">Solicitar Demonstração</a>
-    </div>
-  </header>
+        <h3>Passos recomendados para regularização</h3>
+        <ol class="small">
+          <li>Contactar o seu responsável jurídico para rever os requisitos legais aplicáveis ao setor e à natureza dos serviços prestados.</li>
+          <li>Reunir e submeter os documentos e certificações exigidas pelas autoridades regulatórias da UE.</li>
+          <li>Preencher qualquer formulário de conformidade ou pedido de notificação solicitado pela entidade que suspendeu o serviço.</li>
+          <li>Manter um canal de comunicação aberto com as autoridades e com os utilizadores para atualizações de progresso.</li>
+        </ol>
 
-  <!-- Planos -->
-  <section id="plans" class="py-20 px-6 bg-white">
-    <div class="max-w-3xl mx-auto text-center mb-14">
-      <h2 class="text-3xl font-semibold mb-4">Planos para Empresas</h2>
-      <p class="text-gray-600">Comece grátis hoje mesmo. Novos planos em breve.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      
-      <!-- Grátis -->
-      <div class="card p-8 text-center border-2 border-indigo-600">
-        <h3 class="text-2xl font-bold mb-2 text-indigo-700">Grátis</h3>
-        <p class="text-gray-500 mb-2">Plano inicial</p>
-        <p class="text-lg text-green-600 font-semibold mb-2">Disponível até 04/10/2025</p>
-        <p class="text-4xl font-bold mb-6">€0</p>
-        <ul class="mb-6 space-y-2 text-gray-600">
-          <li>✔ Até 5 agentes</li>
-          <li>✔ Integração rápida</li>
-          <li>✔ Suporte básico</li>
-        </ul>
-        <a href="https://forms.gle/BwvuUdjXCSVR4KfJ7" target="_blank" 
-           class="btn-primary px-6 py-3 rounded-lg font-semibold block">Começar grátis</a>
+        <div class="actions">
+          <button class="btn btn-primary" onclick="window.location.href='mailto:compliance@seudominio.tld?subject=Suspensao%20do%20Site'">Contactar o departamento de conformidade</button>
+          <button class="btn btn-ghost" onclick="window.location.href='#detalhes'">Ver detalhes</button>
+        </div>
+
+        <section id="detalhes" style="margin-top:16px">
+          <h3>Informações adicionais</h3>
+          <p class="small">Se acredita que a suspensão é um erro, prepare e envie o dossiê com evidência documental (licenças, pareceres jurídicos, certificados) e a sua justificação técnica para o endereço de conformidade acima. Inclua uma pessoa de contacto e um número de telefone.</p>
+        </section>
       </div>
 
-      <!-- Business -->
-      <div class="card p-8 text-center">
-        <h3 class="text-2xl font-bold mb-2">Business</h3>
-        <p class="text-gray-500 mb-2">Plano recomendado</p>
-        <p class="text-4xl font-bold mb-4">€199/mês</p>
-        <p class="text-indigo-600 font-semibold mb-6">✔ Até 10 agentes de suporte</p>
-        <ul class="mb-6 space-y-2 text-gray-600">
-          <li>✔ Analytics avançado</li>
-          <li>✔ Suporte prioritário</li>
-        </ul>
-        <a href="https://buy.stripe.com/test_7sYdRa3HW8uGbwh6yS6AM00" target="_blank" 
-           class="btn-primary px-6 py-3 rounded-lg font-semibold block">Assinar agora</a>
+    </section>
+
+    <aside aria-labelledby="status">
+      <h4 id="status">Estado</h4>
+      <dl>
+        <dt>Situação</dt>
+        <dd>Suspendido</dd>
+        <dt>Entidade</dt>
+        <dd>Autoridade de fiscalização competente</dd>
+        <dt>Data</dt>
+        <dd id="date"></dd>
+        <dt>Contacto</dt>
+        <dd>compliance@seudominio.tld</dd>
+      </dl>
+
+      <div style="margin-top:12px" class="small">
+        <strong>Recurso & Prazo</strong>
+        <p class="small">Certifique-se de submeter a documentação o mais rapidamente possível. Após avaliação, a decisão poderá ser revista.</p>
       </div>
 
-      <!-- Enterprise (em breve) -->
-      <div class="card p-8 text-center opacity-80">
-        <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-        <p class="text-gray-500 mb-4">Em breve</p>
-        <p class="text-4xl font-bold mb-6">Custom</p>
-        <ul class="mb-6 space-y-2 text-gray-600">
-          <li>✔ Equipa ilimitada</li>
-          <li>✔ API & integrações</li>
-          <li>✔ Gerente dedicado</li>
+      <div style="margin-top:12px" class="small">
+        <strong>Modelos úteis</strong>
+        <ul style="padding-left:18px;margin:8px 0">
+          <li>Lista de verificação de conformidade</li>
+          <li>Exemplo de carta de recurso</li>
         </ul>
-        <span class="px-6 py-3 rounded-lg bg-gray-300 text-gray-500 inline-block cursor-not-allowed">Em breve</span>
       </div>
-    </div>
-  </section>
+    </aside>
 
-  <!-- Contacto -->
-  <section class="py-16 bg-gray-100 px-6">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-3xl font-semibold mb-4">Precisa de Ajuda?</h2>
-      <p class="text-gray-600 mb-6">Se adquiriu algum plano pago, nossa equipa está à disposição para dar suporte personalizado.</p>
-      <p class="text-lg font-medium mb-2">📧 <a href="mailto:shopeu@accountant.com" class="text-indigo-600 font-bold hover:underline">shopeu@accountant.com</a></p>
-      <p class="text-gray-700 font-medium">⏰ Disponível das <span class="font-bold">14h às 23h</span> (Horário da Europa)</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-10 bg-gray-900 text-gray-400 text-center">
-    <p class="font-bold text-white mb-2">Suporte Conectado</p>
-    <p>© 2025 Todos os direitos reservados.</p>
-  </footer>
+    <footer>
+      <p>Este é um aviso informativo. Para procedimentos formais e legais, consulte o seu assessor jurídico. Todos os direitos reservados.</p>
+    </footer>
+  </main>
 
   <script>
-    function openModal(){ document.getElementById('modal').classList.remove('hidden'); }
-    function closeModal(){ document.getElementById('modal').classList.add('hidden'); }
+    // Inserir data atual em formato dd/mm/aaaa
+    const d = new Date();
+    const day = String(d.getDate()).padStart(2,'0');
+    const month = String(d.getMonth()+1).padStart(2,'0');
+    const year = d.getFullYear();
+    document.getElementById('date').textContent = `${day}/${month}/${year}`;
   </script>
-
-  <!-- JivoChat widget -->
-  <script src="//code.jivosite.com/widget/JOgmDjTU44" async></script>
 </body>
 </html>
+
