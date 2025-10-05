@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Live Sports — FC Porto x Benfica</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #f9fafb; }
-    .gradient-btn {
-      background: linear-gradient(135deg, #0046ad, #c20000);
-      color: white;
-      padding: 10px 22px;
-      border-radius: 8px;
-      transition: opacity .3s;
+    body { font-family: 'Poppins', sans-serif; background-color: #f3f4f6; }
+    iframe { border-radius: 12px; overflow: hidden; border: none; }
+    .pulse { animation: pulse 1.5s infinite; }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.03); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
     }
-    .gradient-btn:hover { opacity: 0.9; }
-    iframe {
-      border-radius: 12px;
-      overflow: hidden;
-      border: none;
-    }
+    .viewer-badge { background: linear-gradient(90deg,#0046ad,#c20000); color: white; padding: 8px 14px; border-radius: 999px; font-weight:600; }
+    .avatar { width:44px; height:44px; border-radius:999px; object-fit:cover; }
+    .queue-card { background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75)); border-radius:12px; box-shadow: 0 6px 20px rgba(6,8,15,0.08); }
   </style>
 </head>
 <body class="text-gray-800">
@@ -29,7 +26,7 @@
   <nav class="bg-white shadow-md fixed top-0 w-full z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-blue-700">Live Sports</h1>
-      <a href="#player" class="gradient-btn font-semibold">Ver Jogo</a>
+      <a href="#player" class="px-4 py-2 rounded-xl viewer-badge">Ver Jogo</a>
     </div>
   </nav>
 
@@ -37,49 +34,211 @@
   <header class="bg-gradient-to-r from-blue-700 to-red-700 text-white text-center py-28 px-6 mt-16">
     <h1 class="text-4xl font-bold mb-4">FC Porto x Benfica — Ao Vivo</h1>
     <p class="text-lg mb-6">Assista ao jogo em tempo real. O acesso é de livre vontade e deve respeitar as leis do seu país.</p>
-    <a href="#player" class="gradient-btn font-semibold">Assistir Agora</a>
+    <a href="#player" class="px-6 py-3 rounded-lg font-semibold bg-white text-gray-900">Assistir Agora</a>
   </header>
 
   <!-- Aviso Legal -->
-  <section class="bg-white py-10 px-6 text-center">
+  <section class="bg-white py-8 px-6 text-center">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-2xl font-semibold mb-4 text-gray-800">⚖️ Aviso Legal</h2>
       <p class="text-gray-600 mb-4">
-        Este site não hospeda nem transmite qualquer conteúdo audiovisual.
-        Todos os streams exibidos são incorporados de fontes públicas disponíveis na internet.
-      </p>
-      <p class="text-gray-600">
-        O acesso é de responsabilidade exclusiva do visitante.
-        Verifique as leis de transmissão e direitos desportivos do seu país antes de assistir.
+        Este site não hospeda nem transmite conteúdo protegido por direitos de autor.
+        Todos os streams incorporados provêm de fontes externas. O acesso é da responsabilidade do visitante.
       </p>
     </div>
   </section>
 
-  <!-- Player -->
-  <section id="player" class="py-10 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="aspect-w-16 aspect-h-9">
-        <iframe 
-          marginheight="0"
-          marginwidth="0"
-          src="https://sporturbo.com/player/multi/espn4hd"
-          scrolling="no"
-          allowfullscreen="yes"
-          allow="encrypted-media; picture-in-picture;"
-          width="100%"
-          height="100%"
-          frameborder="0">
-        </iframe>
+  <!-- Main content -->
+  <main class="max-w-6xl mx-auto px-6 grid lg:grid-cols-3 gap-8 pb-20">
+
+    <!-- Player + big area -->
+    <section id="player" class="lg:col-span-2">
+      <div class="bg-white p-4 rounded-xl queue-card">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-xl font-semibold">Transmissão — FC Porto x Benfica</h3>
+            <p class="text-sm text-gray-500">Canal: ESPN4HD (incorporado)</p>
+          </div>
+          <div class="text-right">
+            <div id="viewers" class="viewer-badge pulse">--</div>
+            <div class="text-xs text-gray-500 mt-1">Espectadores simulados</div>
+          </div>
+        </div>
+
+        <!-- Responsive iframe wrapper -->
+        <div style="position:relative; padding-top:56.25%; border-radius:12px; overflow:hidden;">
+          <!-- O teu iframe com atributos exactos -->
+          <iframe marginheight="0" marginwidth="0" src="https://sporturbo.com/player/multi/espn4hd" scrolling="no"
+                  allowfullscreen="yes" allow="encrypted-media; picture-in-picture;" width="100%" height="100%" frameborder="0"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-3">Anúncios que apareçam no player pertencem à fonte externa e não podem ser removidos.</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Right column: fila e estatísticas -->
+    <aside class="space-y-6">
+
+      <!-- Fila de espera -->
+      <div class="p-4 queue-card">
+        <div class="flex items-center justify-between mb-3">
+          <h4 class="font-semibold">Pessoas à espera</h4>
+          <span id="queue-count" class="text-sm text-gray-500">-- na fila</span>
+        </div>
+
+        <!-- Lista de avatares -->
+        <div id="queue-list" class="flex flex-col gap-3">
+          <!-- Entradas geradas via JS -->
+        </div>
+
+        <div class="mt-4 flex gap-2">
+          <button id="join-btn" class="flex-1 px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold">Entrar na fila</button>
+          <button id="leave-btn" class="px-4 py-2 rounded-lg border border-gray-300">Sair</button>
+        </div>
+
+        <p class="mt-3 text-xs text-gray-500">Os nomes e avatares aqui são simulados para demonstrar a fila de espera.</p>
+      </div>
+
+      <!-- Estatísticas rápidas -->
+      <div class="p-4 queue-card">
+        <h4 class="font-semibold mb-3">Estatísticas (simulação)</h4>
+        <div class="flex items-center justify-between mb-2">
+          <div class="text-sm text-gray-600">Visitantes agora</div>
+          <div id="now-visitors" class="font-bold text-gray-800">--</div>
+        </div>
+        <div class="flex items-center justify-between mb-2">
+          <div class="text-sm text-gray-600">Taxa de entrada / saída</div>
+          <div id="rate" class="font-bold text-gray-800">--%</div>
+        </div>
+        <div class="mt-3 text-xs text-gray-500">Valores gerados localmente — apenas para efeito visual.</div>
+      </div>
+
+    </aside>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 text-center py-8">
     <p class="text-white font-semibold">© 2025 Live Sports. Todos os direitos reservados.</p>
-    <p class="text-gray-500 text-sm mt-2">Conteúdo exibido apenas para fins informativos e educacionais.</p>
+    <p class="text-gray-500 text-sm mt-2">Conteúdo exibido apenas para fins informativos.</p>
   </footer>
+
+  <!-- Script: lógica do contador e fila -->
+  <script>
+    // Formatação PT-PT
+    function fmt(n){ return n.toLocaleString('pt-PT'); }
+
+    // Contador de espectadores (simulação entre 10.000 e 20.000)
+    let viewers = Math.floor(10000 + Math.random() * 10000);
+    const viewersEl = document.getElementById('viewers');
+
+    // Estatísticas auxiliares
+    const nowVisitorsEl = document.getElementById('now-visitors');
+    const rateEl = document.getElementById('rate');
+
+    // Fila (simulada) — nomes e avatares placeholder
+    const sampleNames = [
+      'Ana', 'Bruno', 'Carla', 'Diogo', 'Eva', 'Fábio', 'Graça', 'Henrique',
+      'Isabel', 'João', 'Kátia', 'Luís', 'Marta', 'Nuno', 'Olga', 'Paulo'
+    ];
+    const avatars = [
+      'https://i.pravatar.cc/100?img=12','https://i.pravatar.cc/100?img=13','https://i.pravatar.cc/100?img=14',
+      'https://i.pravatar.cc/100?img=15','https://i.pravatar.cc/100?img=16','https://i.pravatar.cc/100?img=17',
+      'https://i.pravatar.cc/100?img=18','https://i.pravatar.cc/100?img=19'
+    ];
+
+    let queue = []; // cada item: {name, avatar, since}
+    const queueListEl = document.getElementById('queue-list');
+    const queueCountEl = document.getElementById('queue-count');
+
+    // Inicializa a fila com 6 pessoas
+    for(let i=0;i<6;i++){
+      queue.push({ name: sampleNames[Math.floor(Math.random()*sampleNames.length)] + ' #' + (100+i), avatar: avatars[i % avatars.length], since: Date.now() - Math.floor(Math.random()*600000) });
+    }
+    renderQueue();
+
+    // Atualiza o contador periodicamente com pequenas variações
+    setInterval(()=> {
+      // variação aleatória - sobe ou desce até 200 por passo
+      const delta = Math.floor((Math.random() - 0.45) * 400); // bias leve para subida
+      viewers = Math.max(10000, Math.min(20000, viewers + delta));
+      viewersEl.textContent = fmt(viewers);
+
+      // Estatísticas derivadas
+      const nowVisitors = Math.max(100, Math.round(viewers * (0.02 + Math.random()*0.06)));
+      nowVisitorsEl.textContent = fmt(nowVisitors);
+
+      const rate = (Math.random()*8 + 1).toFixed(1) + '%';
+      rateEl.textContent = rate;
+
+      // ocasionalmente simular alguém a entrar/ sair da fila
+      if(Math.random() < 0.4){
+        // entra
+        queue.unshift({ name: sampleNames[Math.floor(Math.random()*sampleNames.length)] + ' #' + Math.floor(100+Math.random()*900), avatar: avatars[Math.floor(Math.random()*avatars.length)], since: Date.now() });
+        if(queue.length > 12) queue.pop();
+        renderQueue();
+      } else if(Math.random() < 0.25 && queue.length>0){
+        // sai
+        queue.pop();
+        renderQueue();
+      }
+
+    }, 1200);
+
+    // Renderiza a fila
+    function renderQueue(){
+      queueListEl.innerHTML = '';
+      queue.forEach((p, idx) => {
+        const item = document.createElement('div');
+        item.className = 'flex items-center gap-3';
+        item.innerHTML = `
+          <img src="${p.avatar}" alt="${p.name}" class="avatar border-2 border-white shadow-sm">
+          <div class="flex-1">
+            <div class="font-medium text-sm">${p.name}</div>
+            <div class="text-xs text-gray-500">Há ${timeAgo(p.since)}</div>
+          </div>
+          <div class="text-xs text-gray-400">#${idx+1}</div>
+        `;
+        queueListEl.appendChild(item);
+      });
+      queueCountEl.textContent = queue.length + (queue.length === 1 ? ' na fila' : ' na fila');
+    }
+
+    // Join / Leave simulated buttons
+    document.getElementById('join-btn').addEventListener('click', ()=>{
+      const newp = { name: 'Tu' + ' #' + Math.floor(1000+Math.random()*9000), avatar: avatars[Math.floor(Math.random()*avatars.length)], since: Date.now() };
+      queue.unshift(newp);
+      if(queue.length>20) queue.pop();
+      renderQueue();
+    });
+    document.getElementById('leave-btn').addEventListener('click', ()=>{
+      // remove first occurrence of 'Tu' if exists, senão remove do fim
+      const idx = queue.findIndex(q=> q.name && q.name.startsWith('Tu'));
+      if(idx !== -1) queue.splice(idx,1);
+      else queue.pop();
+      renderQueue();
+    });
+
+    // função helper 'time ago' simples
+    function timeAgo(ts){
+      const s = Math.floor((Date.now() - ts) / 1000);
+      if(s < 60) return `${s}s`;
+      const m = Math.floor(s/60);
+      if(m < 60) return `${m}m`;
+      const h = Math.floor(m/60);
+      return `${h}h`;
+    }
+
+    // inicializa a exibição
+    viewersEl.textContent = fmt(viewers);
+    nowVisitorsEl.textContent = fmt(Math.max(100, Math.round(viewers * 0.03)));
+    rateEl.textContent = (Math.random()*5 + 1).toFixed(1) + '%';
+    queueCountEl.textContent = queue.length + ' na fila';
+  </script>
 
 </body>
 </html>
+
+
 
