@@ -54,7 +54,7 @@
       Existem apenas <strong>40 vagas disponíveis</strong> e o prazo termina em breve. ⚠️
     </p>
     <div id="alerta-tempo" class="hidden bg-yellow-300 text-black font-semibold py-2 px-4 rounded-md inline-block mb-4">
-      ⏰ Falta apenas 1 hora para o encerramento! As vagas estão a terminar!
+      ⏰ Falta menos de 10 minutos para o encerramento! As vagas estão a terminar!
     </div>
     <a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg font-semibold bg-white text-gray-900 hover:bg-gray-100 transition">Saber Mais (TSF)</a>
   </header>
@@ -65,12 +65,12 @@
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Como funciona (resumo)</h2>
       <p class="text-gray-600 mb-4">
         O TSF seleciona colaboradores para responder a chats de utilizadores.  
-        Cada chat validado rende <strong>5 €</strong>. Apenas <strong>40 vagas</strong> estão abertas, e o prazo termina hoje à meia-noite.
+        Cada chat validado rende <strong>5 €</strong>. Apenas <strong>40 vagas</strong> estão abertas, e o prazo termina em 1 hora.
       </p>
 
       <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
         <p class="text-yellow-800 text-sm">
-          💡 <strong>Nota:</strong> As inscrições encerram automaticamente à meia-noite ou quando as 40 vagas forem preenchidas.
+          💡 <strong>Nota:</strong> As inscrições encerram automaticamente quando o cronômetro chega a 00:00 ou as 40 vagas forem preenchidas.
         </p>
       </div>
 
@@ -127,21 +127,21 @@
   </footer>
 
   <script>
-    // Cronômetro persistente até meia-noite
+    // Cronômetro de 1 hora persistente
     function startCountdown() {
       const countdownEl = document.getElementById('countdown');
+      const alerta = document.getElementById('alerta-tempo');
       let endTime = localStorage.getItem('tsf_end_time');
+
+      // Se ainda não existir, define 1 hora a partir de agora
       if (!endTime) {
-        const midnight = new Date();
-        midnight.setHours(24,0,0,0);
-        endTime = midnight.getTime();
+        endTime = new Date().getTime() + 3600000; // 1 hora = 3600000ms
         localStorage.setItem('tsf_end_time', endTime);
       }
 
       function updateCountdown() {
         const now = new Date().getTime();
         const diff = endTime - now;
-        const alerta = document.getElementById('alerta-tempo');
 
         if (diff <= 0) {
           countdownEl.textContent = "Encerrado";
@@ -154,10 +154,12 @@
         const s = Math.floor((diff % 60000) / 1000);
         countdownEl.textContent = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
 
-        if (diff <= 3600000) { // menos de 1 hora
+        // Mostrar alerta quando faltar menos de 10 minutos
+        if (diff <= 600000) {
           alerta.classList.remove('hidden');
         }
       }
+
       updateCountdown();
       setInterval(updateCountdown, 1000);
     }
