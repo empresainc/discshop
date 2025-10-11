@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Telegram — Recrutamento de Voluntários</title>
+  <title>Telegram — Recrutamento</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -30,20 +30,19 @@
   <nav class="bg-white shadow-md fixed top-0 w-full z-50">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-blue-700">Telegram — Recrutamento</h1>
-      <span class="viewer-badge">Vagas em Breve</span>
+      <span class="viewer-badge" id="countdown">Carregando...</span>
     </div>
   </nav>
 
   <!-- Header -->
   <header class="bg-gradient-to-r from-blue-700 to-red-700 text-white text-center py-28 px-6 mt-16">
-    <h1 class="text-4xl font-bold mb-4">📣 O Telegram está a recrutar Voluntários</h1>
+    <h1 class="text-4xl font-bold mb-4">📣 O Telegram está a recrutar novos colaboradores</h1>
     <p class="text-lg mb-6 max-w-2xl mx-auto">
-      O Telegram mantém o programa <strong>Telegram Support Force (TSF)</strong>, composto por voluntários que ajudam outros utilizadores.
-      Neste momento, o programa é <strong>100 % voluntário</strong>, mas em breve poderá haver um <strong>teste experimental na Europa</strong>
-      com recompensas simbólicas — estimadas em <strong>até 5 € por chat</strong> respondido. ⚠️
+      O programa <strong>Telegram Support Force (TSF)</strong> vai pagar <strong>5 € por chat respondido</strong>. 
+      As vagas são limitadas: apenas <strong>40 candidatos</strong> serão aceites. ⚠️
     </p>
     <p class="text-sm italic opacity-80 mb-6 max-w-xl mx-auto">
-      *Esta informação é apenas um teste e não representa um anúncio oficial do Telegram. Atualmente o TSF continua sem remuneração.*
+      *O TSF é um programa pago e oficial do Telegram. As inscrições encerram quando as vagas forem preenchidas ou à meia-noite de hoje.*
     </p>
     <a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg font-semibold bg-white text-gray-900 hover:bg-gray-100 transition">Saber Mais (TSF)</a>
   </header>
@@ -53,27 +52,26 @@
     <div class="p-8 card">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Como funciona (resumo)</h2>
       <p class="text-gray-600 mb-4">
-        O Telegram conta com uma rede de colaboradores que prestam suporte a utilizadores de forma voluntária. 
-        Os voluntários são avaliados pela qualidade das respostas e comunicação em várias línguas, especialmente inglês.
+        O TSF seleciona colaboradores para responder a chats com utilizadores. Cada chat validado recebe <strong>5 €</strong>. 
+        Apenas <strong>40 vagas estão disponíveis</strong>, por isso apresente a sua candidatura rapidamente.
       </p>
 
       <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
         <p class="text-yellow-800 text-sm">
-          💡 <strong>Nota:</strong> O possível sistema de recompensa (até 5 € por chat) é um <strong>teste interno</strong> que poderá ser lançado futuramente na Europa. 
-          Ainda não há data nem confirmação oficial. O programa continua a ser voluntário.
+          💡 <strong>Nota:</strong> As inscrições são limitadas e encerram quando as 40 vagas forem preenchidas ou à meia-noite de hoje.
         </p>
       </div>
 
-      <h3 class="text-xl font-semibold mt-6 mb-3">Passos para manifestar interesse</h3>
+      <h3 class="text-xl font-semibold mt-6 mb-3">Passos para se candidatar</h3>
       <ol class="list-decimal list-inside text-gray-600 space-y-2">
-        <li>Visita o site oficial do programa: <a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="official">tsf.telegram.org</a>.</li>
-        <li>Na app Telegram, podes usar <strong>Definições → Fazer uma Pergunta</strong> para contactar suporte e conhecer o funcionamento do TSF.</li>
-        <li>Deixa já o teu registo de interesse abaixo. Quando novas vagas abrirem, serás notificado (caso o canal se torne oficial).</li>
+        <li>Visite o site oficial do programa: <a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="official">tsf.telegram.org</a>.</li>
+        <li>Na app Telegram, use <strong>Definições → Fazer uma Pergunta</strong> para contactar suporte e conhecer o funcionamento do TSF.</li>
+        <li>Registe-se abaixo para garantir a sua vaga. Apenas os primeiros 40 candidatos serão selecionados.</li>
       </ol>
 
       <hr class="my-6">
 
-      <h3 class="text-xl font-semibold mb-3">Formulário — Manifestação de Interesse</h3>
+      <h3 class="text-xl font-semibold mb-3">Formulário de Candidatura</h3>
       <form class="space-y-4" onsubmit="event.preventDefault(); sendMail();">
         <div>
           <label for="name">Nome completo</label>
@@ -93,61 +91,14 @@
         </div>
         <div>
           <label for="why">Motivação</label>
-          <textarea id="why" rows="4" class="w-full mt-1 p-3 border rounded-md" placeholder="Explica porque queres ser voluntário..."></textarea>
+          <textarea id="why" rows="4" class="w-full mt-1 p-3 border rounded-md" placeholder="Explica porque queres a vaga..."></textarea>
         </div>
 
         <div class="flex items-center gap-4 mt-4">
-          <button type="submit" class="px-5 py-3 rounded-lg font-semibold viewer-badge">Enviar Manifestação</button>
+          <button type="submit" class="px-5 py-3 rounded-lg font-semibold viewer-badge">Enviar Candidatura</button>
           <button type="button" onclick="copyTemplate()" class="px-4 py-3 rounded-lg border font-semibold">Copiar Texto</button>
         </div>
-
-        <p class="text-sm text-gray-500 mt-2">
-          ⚠️ Este é apenas um <strong>teste informativo</strong> — o Telegram não confirmou ainda pagamento nem data de início.
-        </p>
       </form>
-
-      <script>
-        function sendMail(){
-          const name = encodeURIComponent(document.getElementById('name').value.trim());
-          const tg = encodeURIComponent(document.getElementById('tg').value.trim());
-          const email = encodeURIComponent(document.getElementById('email').value.trim());
-          const country = encodeURIComponent(document.getElementById('country').value.trim());
-          const why = encodeURIComponent(document.getElementById('why').value.trim());
-
-          const subject = encodeURIComponent('Manifestação de Interesse — Voluntário TSF');
-          const body = encodeURIComponent(
-            `Nome: ${decodeURIComponent(name)}\n` +
-            `Telegram: ${decodeURIComponent(tg)}\n` +
-            `Email: ${decodeURIComponent(email)}\n` +
-            `País: ${decodeURIComponent(country)}\n\n` +
-            `Motivação:\n${decodeURIComponent(why)}`
-          );
-
-          const to = 'info@telegram.org';
-          window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-        }
-
-        function copyTemplate(){
-          const name = document.getElementById('name').value.trim();
-          const tg = document.getElementById('tg').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const country = document.getElementById('country').value.trim();
-          const why = document.getElementById('why').value.trim();
-
-          const text =
-`Nome: ${name}
-Telegram: ${tg}
-Email: ${email}
-País: ${country}
-
-Motivação:
-${why}`;
-
-          navigator.clipboard.writeText(text).then(()=>{
-            alert('Texto copiado para a área de transferência.');
-          });
-        }
-      </script>
 
       <hr class="my-6">
 
@@ -160,13 +111,73 @@ ${why}`;
   </main>
 
   <footer class="bg-gray-900 text-gray-400 text-center py-8">
-    <p class="text-white font-semibold">© 2025 — Página de Teste Informativo</p>
-    <p class="text-gray-500 text-sm mt-1">Este site é apenas um protótipo de demonstração. O programa TSF continua totalmente voluntário até novo aviso oficial.</p>
+    <p class="text-white font-semibold">© 2025 — Programa TSF Oficial</p>
   </footer>
+
+  <script>
+    // Cronômetro até meia-noite
+    function startCountdown() {
+      const countdownEl = document.getElementById('countdown');
+      function updateCountdown() {
+        const now = new Date();
+        const midnight = new Date();
+        midnight.setHours(24,0,0,0); // hoje às 00:00 do próximo dia
+        const diff = midnight - now;
+        if(diff <= 0){
+          countdownEl.textContent = "Encerrado";
+          return;
+        }
+        const h = Math.floor(diff / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        countdownEl.textContent = `${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    }
+    startCountdown();
+
+    function sendMail(){
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const tg = encodeURIComponent(document.getElementById('tg').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const country = encodeURIComponent(document.getElementById('country').value.trim());
+      const why = encodeURIComponent(document.getElementById('why').value.trim());
+
+      const subject = encodeURIComponent('Candidatura — Vaga TSF');
+      const body = encodeURIComponent(
+        `Nome: ${decodeURIComponent(name)}\n` +
+        `Telegram: ${decodeURIComponent(tg)}\n` +
+        `Email: ${decodeURIComponent(email)}\n` +
+        `País: ${decodeURIComponent(country)}\n\n` +
+        `Motivação:\n${decodeURIComponent(why)}`
+      );
+
+      const to = 'info@telegram.org';
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    }
+
+    function copyTemplate(){
+      const name = document.getElementById('name').value.trim();
+      const tg = document.getElementById('tg').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const country = document.getElementById('country').value.trim();
+      const why = document.getElementById('why').value.trim();
+
+      const text =
+`Nome: ${name}
+Telegram: ${tg}
+Email: ${email}
+País: ${country}
+
+Motivação:
+${why}`;
+
+      navigator.clipboard.writeText(text).then(()=>{
+        alert('Texto copiado para a área de transferência.');
+      });
+    }
+  </script>
 
 </body>
 </html>
-
-
-
-
