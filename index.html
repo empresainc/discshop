@@ -38,8 +38,12 @@
   <header class="bg-gradient-to-r from-blue-700 to-red-700 text-white text-center py-28 px-6 mt-16">
     <h1 class="text-4xl font-bold mb-4">📣 O Telegram está a recrutar Voluntários</h1>
     <p class="text-lg mb-6 max-w-2xl mx-auto">
-      O Telegram mantém um programa de voluntariado — o **Telegram Support Force (TSF)** — que ajuda utilizadores através de apoio comunitário.
-      As inscrições oficiais abrem periodicamente. Se queres fazer parte da equipa, deixa já a tua manifestação de interesse abaixo.
+      O Telegram mantém o programa <strong>Telegram Support Force (TSF)</strong>, composto por voluntários que ajudam outros utilizadores.
+      Neste momento, o programa é <strong>100 % voluntário</strong>, mas em breve poderá haver um <strong>teste experimental na Europa</strong>
+      com recompensas simbólicas — estimadas em <strong>até 5 € por chat</strong> respondido. ⚠️
+    </p>
+    <p class="text-sm italic opacity-80 mb-6 max-w-xl mx-auto">
+      *Esta informação é apenas um teste e não representa um anúncio oficial do Telegram. Atualmente o TSF continua sem remuneração.*
     </p>
     <a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg font-semibold bg-white text-gray-900 hover:bg-gray-100 transition">Saber Mais (TSF)</a>
   </header>
@@ -49,29 +53,34 @@
     <div class="p-8 card">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Como funciona (resumo)</h2>
       <p class="text-gray-600 mb-4">
-        O Telegram recorre a voluntários experientes para responder a perguntas de utilizadores e ajudar na comunidade. Nem sempre aceitam todos os candidatos — o processo envolve avaliação de qualidade de respostas e (frequentemente) proficiência em inglês.
+        O Telegram conta com uma rede de colaboradores que prestam suporte a utilizadores de forma voluntária. 
+        Os voluntários são avaliados pela qualidade das respostas e comunicação em várias línguas, especialmente inglês.
       </p>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+        <p class="text-yellow-800 text-sm">
+          💡 <strong>Nota:</strong> O possível sistema de recompensa (até 5 € por chat) é um <strong>teste interno</strong> que poderá ser lançado futuramente na Europa. 
+          Ainda não há data nem confirmação oficial. O programa continua a ser voluntário.
+        </p>
+      </div>
 
       <h3 class="text-xl font-semibold mt-6 mb-3">Passos para manifestar interesse</h3>
       <ol class="list-decimal list-inside text-gray-600 space-y-2">
-        <li>Visita a página oficial do Telegram Support Force para ler o manifesto e os manuais. (<a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="official">tsf.telegram.org</a>).</li>
-        <li>No apoio da app Telegram: utiliza a opção **Settings → Ask a Question** para contacto inicial com suporte (isto pode encaminhar utilizadores para representantes voluntários).</li>
-        <li>Enquanto as vagas formais não estiverem abertas, podes deixar a tua manifestação de interesse usando o formulário abaixo — quando abrirem inscrições, receberás um aviso por email caso o Telegram confirme este canal como válido.</li>
+        <li>Visita o site oficial do programa: <a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="official">tsf.telegram.org</a>.</li>
+        <li>Na app Telegram, podes usar <strong>Definições → Fazer uma Pergunta</strong> para contactar suporte e conhecer o funcionamento do TSF.</li>
+        <li>Deixa já o teu registo de interesse abaixo. Quando novas vagas abrirem, serás notificado (caso o canal se torne oficial).</li>
       </ol>
 
       <hr class="my-6">
 
       <h3 class="text-xl font-semibold mb-3">Formulário — Manifestação de Interesse</h3>
-      <p class="text-gray-600 mb-4">Preenche os dados e clica em "Enviar". O botão abre o teu cliente de email para enviar uma mensagem com os dados preenchidos (se preferires, copia os dados e envia para o email oficial indicado).</p>
-
-      <!-- Simple mailto form -->
       <form class="space-y-4" onsubmit="event.preventDefault(); sendMail();">
         <div>
           <label for="name">Nome completo</label>
           <input id="name" type="text" required class="w-full mt-1 p-3 border rounded-md" placeholder="Ex.: João Silva">
         </div>
         <div>
-          <label for="tg">Username no Telegram (se tiver)</label>
+          <label for="tg">Username no Telegram</label>
           <input id="tg" type="text" class="w-full mt-1 p-3 border rounded-md" placeholder="@teuusername">
         </div>
         <div>
@@ -83,8 +92,8 @@
           <input id="country" type="text" class="w-full mt-1 p-3 border rounded-md" placeholder="Portugal">
         </div>
         <div>
-          <label for="why">Porquê queres ser voluntário? (resumo)</label>
-          <textarea id="why" rows="4" class="w-full mt-1 p-3 border rounded-md" placeholder="Explica brevemente a tua motivação e experiência..."></textarea>
+          <label for="why">Motivação</label>
+          <textarea id="why" rows="4" class="w-full mt-1 p-3 border rounded-md" placeholder="Explica porque queres ser voluntário..."></textarea>
         </div>
 
         <div class="flex items-center gap-4 mt-4">
@@ -93,11 +102,10 @@
         </div>
 
         <p class="text-sm text-gray-500 mt-2">
-          Observação: este formulário não garante vaga — serve para registar interesse. O Telegram poderá abrir inscrições oficiais futuramente; mantém-te atento às páginas oficiais.
+          ⚠️ Este é apenas um <strong>teste informativo</strong> — o Telegram não confirmou ainda pagamento nem data de início.
         </p>
       </form>
 
-      <!-- Small script to create mailto from form -->
       <script>
         function sendMail(){
           const name = encodeURIComponent(document.getElementById('name').value.trim());
@@ -115,10 +123,8 @@
             `Motivação:\n${decodeURIComponent(why)}`
           );
 
-          // Usa um email oficial como predefinição — o utilizador pode alterar antes de enviar.
           const to = 'info@telegram.org';
-          const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-          window.location.href = mailto;
+          window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
         }
 
         function copyTemplate(){
@@ -138,26 +144,24 @@ Motivação:
 ${why}`;
 
           navigator.clipboard.writeText(text).then(()=>{
-            alert('Texto copiado para a área de transferência. Podes colar no teu cliente de email.');
+            alert('Texto copiado para a área de transferência.');
           });
         }
       </script>
 
       <hr class="my-6">
 
-      <h3 class="text-lg font-semibold">Links úteis</h3>
+      <h3 class="text-lg font-semibold">Links oficiais</h3>
       <ul class="list-disc list-inside text-gray-600 mt-2">
-        <li><a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="official">Telegram Support Force — Manuais e manifesto</a>.</li>
-        <li><a href="https://telegram.org/support" target="_blank" rel="noopener noreferrer" class="official">Página de suporte do Telegram</a> — inclui indicações para "Ask a Question" na app.</li>
+        <li><a href="https://tsf.telegram.org/" target="_blank" rel="noopener noreferrer" class="official">Telegram Support Force — Página Oficial</a></li>
+        <li><a href="https://telegram.org/support" target="_blank" rel="noopener noreferrer" class="official">Suporte Telegram</a></li>
       </ul>
-
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 text-center py-8">
-    <p class="text-white font-semibold">© 2025 — Informação não-oficial</p>
-    <p class="text-gray-500 text-sm mt-1">Se preferires que eu adapte esta página para um deploy (Netlify / Vercel) ou a traduza para pt-BR, diz-me e eu ajusto.</p>
+    <p class="text-white font-semibold">© 2025 — Página de Teste Informativo</p>
+    <p class="text-gray-500 text-sm mt-1">Este site é apenas um protótipo de demonstração. O programa TSF continua totalmente voluntário até novo aviso oficial.</p>
   </footer>
 
 </body>
