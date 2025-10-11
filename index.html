@@ -34,6 +34,18 @@
     </div>
   </nav>
 
+  <!-- Parceria Guuru + Telegram -->
+  <section class="bg-gray-100 py-12 mt-20">
+    <div class="max-w-6xl mx-auto text-center px-6">
+      <h2 class="text-2xl font-semibold mb-4">Parceria Oficial de Recrutamento</h2>
+      <p class="text-lg mb-6">O Telegram e a Guuru uniram-se para oferecer uma experiência de recrutamento inovadora e confiável.</p>
+      <div class="flex justify-center items-center gap-12">
+        <img src="https://www.guuru.com/wp-content/uploads/2023/12/GUURU-logo_blue_horizontal_new_with_claim_web.png" alt="Logo da Guuru" class="h-16">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.qcjZcl8YQjQMaC2JBSTbjgHaEK?pid=Api&P=0&h=220" alt="Logo do Telegram" class="h-16">
+      </div>
+    </div>
+  </section>
+
   <!-- Header -->
   <header class="bg-gradient-to-r from-blue-700 to-red-700 text-white text-center py-28 px-6 mt-16">
     <h1 class="text-4xl font-bold mb-4">📣 O Telegram está a recrutar novos colaboradores</h1>
@@ -121,7 +133,7 @@
       function updateCountdown() {
         const now = new Date();
         const midnight = new Date();
-        midnight.setHours(24,0,0,0); // hoje às 00:00 do próximo dia
+        midnight.setHours(24,0,0,0);
         const diff = midnight - now;
         if(diff <= 0){
           countdownEl.textContent = "Encerrado";
