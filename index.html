@@ -1,1 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conexshop — Anúncios & Parcerias para Lojas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#6C63FF;--accent-2:#00c2b3;--muted:#94a3b8;--card:#081226;--bg1:#071129;--bg2:#051028}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;line-height:1.45;margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e6eef8}
+    .container{max-width:1100px;margin:32px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#02111a}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    nav a{color:#cfe7ff;margin-left:18px;text-decoration:none;font-weight:600}
+
+    main{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:14px;padding:22px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+
+    .hero{padding:30px;border-radius:12px}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    .feature{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+
+    .plans{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+    .plan{padding:16px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);border:1px solid rgba(255,255,255,0.03)}
+    .plan h3{margin:0 0 6px}
+    .price{font-weight:800;font-size:20px}
+    .cta{display:inline-block;margin-top:12px;padding:8px 14px;border-radius:10px;background:var(--accent);color:#061124;text-decoration:none;font-weight:700}
+
+    aside .contact{position:sticky;top:28px;text-align:center}
+    .contact .big{font-size:22px;font-weight:800;margin-bottom:10px}
+    .contact p{color:var(--muted);margin:6px 0}
+    .contact a{color:var(--accent-2);font-weight:700;text-decoration:none;font-size:18px}
+
+    footer{margin-top:36px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media (max-width:900px){main{grid-template-columns:1fr}aside .contact{position:static}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">CS</div>
+        <div>
+          <h1>Conexshop</h1>
+          <p class="lead">Parcerias e anúncios inteligentes para lojas e marcas</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#plans">Planos</a>
+        <a href="#how">Como Anunciar</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="card hero">
+          <h2>Alcance clientes reais. Faça parcerias. Venda mais.</h2>
+          <p class="lead">Na Conexshop, oferecemos espaços de anúncio pensados para lojas físicas e e‑commerce: banners, destaques na página inicial, campanhas com influenciadores e parcerias personalizadas.</p>
+
+          <div class="features" style="margin-top:18px">
+            <div class="feature">
+              <strong>Diversos formatos</strong>
+              <div style="color:var(--muted);margin-top:6px">Banner, carrossel de produtos, link direto, cupom exclusivo e integração com redes sociais.</div>
+            </div>
+            <div class="feature">
+              <strong>Segmentação</strong>
+              <div style="color:var(--muted);margin-top:6px">Alcance clientes ideais por categoria, localidade e interesse.</div>
+            </div>
+            <div class="feature">
+              <strong>Relatórios</strong>
+              <div style="color:var(--muted);margin-top:6px">Acompanhe impressões, cliques e conversões das campanhas.</div>
+            </div>
+            <div class="feature">
+              <strong>Suporte dedicado</strong>
+              <div style="color:var(--muted);margin-top:6px">Nossa IA e equipe de suporte ajudam você a otimizar seus anúncios.</div>
+            </div>
+          </div>
+
+          <h3 id="plans" style="margin-top:20px">Planos para lojas</h3>
+          <div class="plans">
+            <div class="plan">
+              <h3>Básico</h3>
+              <div class="price">R$ 25,00 / mês</div>
+              <div style="color:var(--muted);margin-top:6px">Logotipo + link da loja na seção de parceiros. Ideal para começar.</div>
+            </div>
+
+            <div class="plan">
+              <h3>Intermediário</h3>
+              <div class="price">R$ 50,00 / mês</div>
+              <div style="color:var(--muted);margin-top:6px">Destaque na página inicial + imagem do produto + link direto.</div>
+            </div>
+
+            <div class="plan">
+              <h3>Premium</h3>
+              <div class="price">R$ 100,00 / mês</div>
+              <div style="color:var(--muted);margin-top:6px">Banner rotativo, botão de contato direto, prioridade nas buscas e relatório mensal.</div>
+            </div>
+
+            <div class="plan">
+              <h3>Parcerias Especiais</h3>
+              <div class="price">Sob consulta</div>
+              <div style="color:var(--muted);margin-top:6px">Campanhas com influenciadores, eventos e promoções de alta visibilidade.</div>
+            </div>
+          </div>
+
+          <h3 id="how" style="margin-top:18px">Como anunciar</h3>
+          <ol style="color:var(--muted);margin-top:8px">
+            <li>Escolha um plano que combine com sua loja.</li>
+            <li>Envie as informações do seu negócio para nossa IA Conexbot.</li>
+            <li>Receba sua campanha personalizada em minutos.</li>
+          </ol>
+
+          <p style="color:var(--muted);margin-top:12px">Novos parceiros ganham <strong>7 dias de anúncio gratuito</strong> para testar a visibilidade.</p>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Benefícios para lojas</h3>
+          <ul style="color:var(--muted);margin-top:8px">
+            <li>Aumento de tráfego e vendas</li>
+            <li>Conexões com influenciadores e marketplaces</li>
+            <li>Integração com cupons e promoções</li>
+            <li>Relatórios detalhados</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card contact" id="contact">
+          <div class="big">Suporte & Contato</div>
+          <p>Nosso atendimento é feito pela IA <strong>Conexbot</strong>, disponível 24h para responder suas dúvidas e configurar anúncios.</p>
+          <p style="margin-top:8px"><strong>E-mail:</strong><br><a href="mailto:Sandraciber@asia.com">Sandraciber@asia.com</a></p>
+          <p><strong>Atendimento humano:</strong><br>Seg–Sex, 9h–18h (Horário de Brasília)</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <p>© <strong>Conexshop</strong> — Soluções de anúncio para lojas e marcas. <span style="color:var(--muted)">Preços em reais (R$).</span></p>
+    </footer>
+  </div>
+</body>
+</html>
+
 
